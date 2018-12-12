@@ -8,7 +8,7 @@ const ListContainer = styled.ul`
 `
 
 const SectionTitle = styled.h2`
-  margin-top: 25px;
+  margin-top: 0px;
   margin-bottom: 0px;
 `
 
@@ -51,8 +51,15 @@ const Location = styled.span`
 `
 
 const SectionHeader = styled.div`
+  margin-top: 25px;
+  padding: 10px 0px;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
+
+  &:hover {
+    background: #3c3c3c;
+  }
 `
 
 const SectionToggle = styled(SectionTitle)`
@@ -77,11 +84,9 @@ export default class Section extends Component {
     const { showDetails } = this.state
     return (
       <section>
-        <SectionHeader>
+        <SectionHeader onClick={this.toggleSection}>
           <SectionTitle>{title}</SectionTitle>
-          <SectionToggle onClick={this.toggleSection}>
-            {showDetails ? '[-]' : '[+]'}
-          </SectionToggle>
+          <SectionToggle>{showDetails ? '[-]' : '[+]'}</SectionToggle>
         </SectionHeader>
         {showDetails && (
           <ListContainer>

@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import Typist from 'react-typist'
+import '../../node_modules/react-typist/dist/Typist.css'
+
+import Resume from '../../static/john_pham_resume.pdf'
 
 const HeaderContainer = styled.div`
   margin-bottom: 0px;
@@ -12,8 +16,13 @@ const LinksContainer = styled.div`
   justify-content: space-between;
 `
 
-const Title = styled.h1`
-  margin-bottom: 0px;
+const Title = styled(Link)`
+  all: unset;
+  cursor: pointer;
+
+  h1 {
+    margin-bottom: 0px;
+  }
 `
 
 const LinkItem = styled.div`
@@ -42,21 +51,18 @@ const Location = styled.span`
 const Header = () => {
   return (
     <HeaderContainer>
-      <Title>
-        JohnPham<Location>@Riverside</Location>
+      <Title to="/">
+        <h1>
+          <Typist>
+            JohnPham<Location>@Riverside</Location>
+          </Typist>
+        </h1>
       </Title>
       <LinksContainer>
         <LinkItem>
-          <a href="#">
+          <a href={Resume}>
             <Method>
               resume(<Argument>this</Argument>)
-            </Method>
-          </a>
-        </LinkItem>
-        <LinkItem>
-          <a href="mailto:johnphammail@gmail.com">
-            <Method>
-              email(<Argument>this</Argument>)
             </Method>
           </a>
         </LinkItem>
@@ -68,21 +74,44 @@ const Header = () => {
           </Link>
         </LinkItem>
         <LinkItem>
-          <a href="http://goo.gl/T7TX7j">
+          <a
+            href="mailto:johnphammail@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Method>
+              email(<Argument>this</Argument>)
+            </Method>
+          </a>
+        </LinkItem>
+        <LinkItem>
+          <a
+            href="http://goo.gl/T7TX7j"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Method>
               github(<Argument>this</Argument>)
             </Method>
           </a>
         </LinkItem>
         <LinkItem>
-          <a href="http://linkedin.com/in/johnpham97">
+          <a
+            href="http://linkedin.com/in/johnpham97"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Method>
               linkedin(<Argument>this</Argument>)
             </Method>
           </a>
         </LinkItem>
         <LinkItem>
-          <a href="https://goo.gl/7708EP">
+          <a
+            href="https://goo.gl/7708EP"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Method>
               design(<Argument>this</Argument>)
             </Method>

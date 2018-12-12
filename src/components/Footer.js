@@ -7,6 +7,7 @@ const FooterWrapper = styled.footer`
   bottom: 0;
   width: 100%;
   display: flex;
+  z-index: 5;
   h1 {
     margin: 0;
   }
