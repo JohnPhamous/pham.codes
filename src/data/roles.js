@@ -16,6 +16,11 @@ const ROLES = [
   },
   {
     class: 'old',
+    role: 'Supplemental Instructor',
+    location: 'Department of Computer Science at UC Riverside',
+  },
+  {
+    class: 'old',
     role: 'Web Consultant',
     location: 'SmartDocFinder',
   },

@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 const HeaderContainer = styled.div`
-  margin-bottom: 25px;
+  margin-bottom: 0px;
 `
 
 const LinksContainer = styled.div`
@@ -19,6 +20,10 @@ const LinkItem = styled.div`
   a {
     color: white;
     text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 10px;
   }
 `
 
@@ -56,11 +61,11 @@ const Header = () => {
           </a>
         </LinkItem>
         <LinkItem>
-          <a href="#">
+          <Link to="/projects">
             <Method>
               projects(<Argument>this</Argument>)
             </Method>
-          </a>
+          </Link>
         </LinkItem>
         <LinkItem>
           <a href="http://goo.gl/T7TX7j">

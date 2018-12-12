@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const ListContainer = styled.ul`
   list-style-type: none;
   padding: 0;
-  margin-top: 0px;
+  margin: 0px;
 `
 
 const SectionTitle = styled.h2`
+  margin-top: 25px;
   margin-bottom: 0px;
 `
 
@@ -29,7 +30,10 @@ const ListItem = styled.li`
   }
 
   &.old {
-    color: rgb(185, 180, 172);
+    span,
+    li {
+      color: rgb(185, 180, 172) !important;
+    }
   }
 
   &:hover {
@@ -46,19 +50,53 @@ const Location = styled.span`
   color: rgb(139, 233, 253);
 `
 
-const Section = props => {
-  return (
-    <div>
-      <SectionTitle>{props.title}</SectionTitle>
-      <ListContainer>
-        {props.data.map(role => (
-          <ListItem className={role.class}>
-            <Role>{role.role}</Role> at <Location>{role.location}</Location>
-          </ListItem>
-        ))}
-      </ListContainer>
-    </div>
-  )
-}
+const SectionHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
 
-export default Section
+const SectionToggle = styled(SectionTitle)`
+  cursor: pointer;
+`
+
+export default class Section extends Component {
+  state = {
+    showDetails: false,
+  }
+
+  toggleSection = () => {
+    this.setState({ showDetails: !this.state.showDetails })
+  }
+
+  componentDidMount = () => {
+    this.setState({ showDetails: this.props.showDefault })
+  }
+
+  render() {
+    const { title, data } = this.props
+    const { showDetails } = this.state
+    return (
+      <section>
+        <SectionHeader>
+          <SectionTitle>{title}</SectionTitle>
+          <SectionToggle onClick={this.toggleSection}>
+            {showDetails ? '[-]' : '[+]'}
+          </SectionToggle>
+        </SectionHeader>
+        {showDetails && (
+          <ListContainer>
+            {data.map(role => (
+              <ListItem
+                className={role.class}
+                key={`${role.role}${role.location}`}
+              >
+                <Role>{role.role}</Role> <span>at</span>{' '}
+                <Location>{role.location}</Location>
+              </ListItem>
+            ))}
+          </ListContainer>
+        )}
+      </section>
+    )
+  }
+}

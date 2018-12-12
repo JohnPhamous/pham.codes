@@ -3,13 +3,17 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './Header'
+import Footer from './Footer'
 import './layout.css'
 import styled from 'styled-components'
 
+const Wrapper = styled.div`
+  height: 100vh;
+`
 const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
-  padding: 50px;
+  padding: 0px 50px 50px 50px;
 `
 
 const Layout = ({ children }) => (
@@ -24,10 +28,13 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <Container>
-        <Header />
-        <div>{children}</div>
-      </Container>
+      <Wrapper>
+        <Container>
+          <Header />
+          <div>{children}</div>
+        </Container>
+        <Footer />
+      </Wrapper>
     )}
   />
 )

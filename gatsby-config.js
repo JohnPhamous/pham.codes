@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
-    description: 'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
-    author: '@gatsbyjs',
+    title: 'John Pham',
+    description: "John Pham's website",
+    author: '@johnphamous',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'John Pham',
+        short_name: 'John Pham',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',

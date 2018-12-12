@@ -11,8 +11,16 @@ body {
   width: 100vw;
   font-size: 18px;
   line-height: 1.3;
+  overflow-x: hidden;
+  font-display: swap;
 }
 
 h1 {
   font-size: 36px;
 }
+/* 
+#___gatsby,
+#___gatsby > div {
+  height: 100vh;
+  width: 100vw;
+} */
