@@ -1,42 +1,91 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
+import styled from 'styled-components'
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
-)
+const HeaderContainer = styled.div`
+  margin-bottom: 25px;
+`
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+const LinksContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`
 
-Header.defaultProps = {
-  siteTitle: '',
+const Title = styled.h1`
+  margin-bottom: 0px;
+`
+
+const LinkItem = styled.div`
+  a {
+    color: white;
+    text-decoration: none;
+  }
+`
+
+const Method = styled.span`
+  color: rgb(139, 233, 253);
+`
+
+const Argument = styled.span`
+  color: rgb(255, 121, 198);
+`
+
+const Location = styled.span`
+  color: rgb(189, 147, 249);
+`
+
+const Header = () => {
+  return (
+    <HeaderContainer>
+      <Title>
+        JohnPham<Location>@Riverside</Location>
+      </Title>
+      <LinksContainer>
+        <LinkItem>
+          <a href="#">
+            <Method>
+              resume(<Argument>this</Argument>)
+            </Method>
+          </a>
+        </LinkItem>
+        <LinkItem>
+          <a href="mailto:johnphammail@gmail.com">
+            <Method>
+              email(<Argument>this</Argument>)
+            </Method>
+          </a>
+        </LinkItem>
+        <LinkItem>
+          <a href="#">
+            <Method>
+              projects(<Argument>this</Argument>)
+            </Method>
+          </a>
+        </LinkItem>
+        <LinkItem>
+          <a href="http://goo.gl/T7TX7j">
+            <Method>
+              github(<Argument>this</Argument>)
+            </Method>
+          </a>
+        </LinkItem>
+        <LinkItem>
+          <a href="http://linkedin.com/in/johnpham97">
+            <Method>
+              linkedin(<Argument>this</Argument>)
+            </Method>
+          </a>
+        </LinkItem>
+        <LinkItem>
+          <a href="https://goo.gl/7708EP">
+            <Method>
+              design(<Argument>this</Argument>)
+            </Method>
+          </a>
+        </LinkItem>
+      </LinksContainer>
+    </HeaderContainer>
+  )
 }
 
 export default Header
