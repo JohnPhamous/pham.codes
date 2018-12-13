@@ -97,7 +97,7 @@ const Header = () => {
         </LinkItem>
         <LinkItem>
           <a
-            href="http://linkedin.com/in/johnpham97"
+            href="https://www.linkedin.com/in/johnphamous/"
             target="_blank"
             rel="noopener noreferrer"
           >
