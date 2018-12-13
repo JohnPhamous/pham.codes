@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const Project = styled.article`
   position: relative;
@@ -40,7 +41,7 @@ const Background = styled.div`
   top: 0;
 `
 
-const Button = styled.a`
+const Button = styled(OutboundLink)`
   all: unset;
   cursor: pointer;
   background: ${props => props.background};

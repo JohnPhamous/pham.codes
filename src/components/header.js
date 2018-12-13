@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Typist from 'react-typist'
 import '../../node_modules/react-typist/dist/Typist.css'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import Resume from '../../static/john_pham_resume.pdf'
 
@@ -74,7 +75,7 @@ const Header = () => {
           </Link>
         </LinkItem>
         <LinkItem>
-          <a
+          <OutboundLink
             href="mailto:johnphammail@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -82,21 +83,21 @@ const Header = () => {
             <Method>
               email(<Argument>this</Argument>)
             </Method>
-          </a>
+          </OutboundLink>
         </LinkItem>
         <LinkItem>
-          <a
-            href="http://goo.gl/T7TX7j"
+          <OutboundLink
+            href="https://github.com/JohnPhamous"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Method>
               github(<Argument>this</Argument>)
             </Method>
-          </a>
+          </OutboundLink>
         </LinkItem>
         <LinkItem>
-          <a
+          <OutboundLink
             href="https://www.linkedin.com/in/johnphamous/"
             target="_blank"
             rel="noopener noreferrer"
@@ -104,18 +105,18 @@ const Header = () => {
             <Method>
               linkedin(<Argument>this</Argument>)
             </Method>
-          </a>
+          </OutboundLink>
         </LinkItem>
         <LinkItem>
-          <a
-            href="https://goo.gl/7708EP"
+          <OutboundLink
+            href="https://www.flickr.com/photos/pnt101/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Method>
               design(<Argument>this</Argument>)
             </Method>
-          </a>
+          </OutboundLink>
         </LinkItem>
       </LinksContainer>
     </HeaderContainer>
