@@ -23,6 +23,10 @@ const Title = styled(Link)`
 
   h1 {
     margin-bottom: 0px;
+
+    @media (max-width: 500px) {
+      font-size: 28px;
+    }
   }
 `
 

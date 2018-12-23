@@ -14,6 +14,10 @@ const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 0px 50px 50px 50px;
+
+  @media (max-width: 500px) {
+    padding: 0px 15px 15px 15px;
+  }
 `
 
 const Layout = ({ children }) => (
