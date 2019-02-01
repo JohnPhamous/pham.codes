@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const Project = styled.article`
@@ -19,12 +19,21 @@ const ProjectImage = styled.img`
   max-height: 300px;
 `
 
+const OnHoverFade = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`
 const ProjectDetails = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
   z-index: 2;
+  animation: ${OnHoverFade} 0.2s linear 1;
 `
 
 const DetailsWrapper = styled.div`
