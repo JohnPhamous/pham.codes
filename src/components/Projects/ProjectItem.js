@@ -54,18 +54,18 @@ export default class ProjectItem extends Component {
     showDetails: false,
   }
 
-  toggleDetails = () => this.setState({ showDetails: !this.state.showDetails })
+  toggleDetails = val => this.setState({ showDetails: val })
 
   render() {
     const { project } = this.props
     return (
       <Project>
-        <ImageContainer onClick={this.toggleDetails}>
+        <ImageContainer onMouseOver={() => this.toggleDetails(true)}>
           <ProjectImage src={project.image} />
         </ImageContainer>
         {this.state.showDetails && (
           <>
-            <ProjectDetails>
+            <ProjectDetails onMouseLeave={() => this.toggleDetails(false)}>
               <DetailsWrapper>
                 <h2>{project.name}</h2>
                 <p>{project.description}</p>

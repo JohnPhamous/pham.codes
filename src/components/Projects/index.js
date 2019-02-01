@@ -16,14 +16,10 @@ const ProjectsContainer = styled.div`
 const Projects = ({ projects }) => {
   return (
     <ProjectsWrapper>
-      {/* <h1>Projects</h1> */}
       <ProjectsContainer>
         {projects.map(project => (
           <ProjectItem project={project} key={project.name} />
         ))}
-        {/* <ProjectItem />
-        <ProjectItem />
-        <ProjectItem /> */}
       </ProjectsContainer>
     </ProjectsWrapper>
   )
