@@ -6,18 +6,18 @@ const COMMUNITY = [
   },
   {
     class: '',
+    role: 'Campus Expert',
+    location: 'GitHub',
+  },
+  {
+    class: 'old',
     role: 'Captain',
     location: 'Clarifai',
   },
   {
-    class: '',
+    class: 'old',
     role: 'Lead Developer',
     location: 'Rose Hack',
-  },
-  {
-    class: '',
-    role: 'Campus Expert',
-    location: 'GitHub',
   },
   {
     class: 'old',

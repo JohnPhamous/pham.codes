@@ -1,11 +1,21 @@
 const ROLES = [
   {
     class: 'new',
+    role: 'Incoming Software Engineer',
+    location: 'Microsoft',
+  },
+  {
+    class: 'new',
     role: 'Incoming Software Engineer Intern',
     location: 'NASA Jet Propulsion Laboratory',
   },
   {
-    class: 'new',
+    class: '',
+    role: 'Consultant',
+    location: 'Long Produce',
+  },
+  {
+    class: '',
     role: 'Consultant',
     location: 'Riverside County Homeless Informatics Group',
   },
@@ -46,7 +56,7 @@ const ROLES = [
   },
   {
     class: 'old',
-    role: 'UX/UI Intern',
+    role: 'UI/UX Intern',
     location: 'Amazon',
   },
   {
