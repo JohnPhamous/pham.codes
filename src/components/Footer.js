@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const FooterWrapper = styled.footer`
   background: rgb(59, 62, 79);
@@ -31,8 +33,19 @@ const Size = styled(FooterItem)`
 `
 
 const Date = styled(FooterItem)`
-  /* margin-left: auto; */
   background: rgb(53, 63, 92);
+  @media (max-width: 600px) {
+    display: none;
+  }
+`
+
+const GitHub = styled.a`
+  padding: 5px 20px;
+  background: #bd93f9;
+  margin-left: 0;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
   @media (max-width: 600px) {
     display: none;
   }
@@ -79,6 +92,12 @@ export default class Footer extends React.Component {
 
         <Size onClick={this.toggleEdit}>Toggle INSERT Mode</Size>
         <Date>Last Updated: 02/1/2019</Date>
+        <GitHub
+          href="https://github.com/JohnPhamous/pham.codes"
+          target="_blank"
+        >
+          <FontAwesomeIcon icon={faGithub} />
+        </GitHub>
       </FooterWrapper>
     )
   }
