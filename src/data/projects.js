@@ -67,13 +67,69 @@ const PROJECTS = [
     prizes: [],
   },
   {
-    name: '',
-    description: '',
+    name: 'Hoike',
+    description:
+      'Hoike adds audio visualizing and helps teach new people learn by lighting up fret positions. ',
+    demo: 'https://www.youtube.com/watch?v=20wSy8CgxoM',
+    github: 'https://github.com/JohnPhamous/Hoike',
+    submission: '',
+    image:
+      'https://res.cloudinary.com/phamous/image/upload/v1549059875/hoike.jpg',
+    prizes: [],
+  },
+  {
+    name: 'ChitChat.tech',
+    description:
+      'ChitChat is an anonymous chatting application to help students fight the "this is a stupid question" problem in the classroom.',
+    demo: '',
+    github: 'https://github.com/JohnPhamous/chitchat',
+    submission: 'https://devpost.com/software/chitchat-tech',
+    image:
+      'https://res.cloudinary.com/phamous/image/upload/v1549059950/chitchat.jpg',
+    prizes: [],
+  },
+  {
+    name: 'C-SAMBA Website',
+    description:
+      "This website provides a public facing presence for the research group's activities and an internal tool for infrastructure management.",
+    demo: 'https://csamba.ucr.edu/',
+    github: '',
+    submission: '',
+    image:
+      'https://res.cloudinary.com/phamous/image/upload/v1549060008/Screenshot_2019-02-01_C-SAMBA.jpg',
+    prizes: [],
+  },
+  {
+    name: 'Video Computing Group Website',
+    description: "This website acts as the research group's online presence.",
+    demo: 'http://vcg.engr.ucr.edu/',
+    github: '',
+    submission: '',
+    image:
+      'https://res.cloudinary.com/phamous/image/upload/v1549060103/Screenshot_2019-02-01_Video_Computing_Group_at_UC_Riverside.png',
+    prizes: [],
+  },
+  {
+    name: 'Atomics',
+    description:
+      "Created an Ethereum Dapp that allows users to track where their or their love one's organs are during the donation process and allow medical centers to use tokens to request for organs from organ collection centers.",
     demo: '',
     github: '',
     submission: '',
-    image: '',
+    image:
+      'https://res.cloudinary.com/phamous/image/upload/v1549060279/atomics.jpg',
     prizes: [],
+  },
+  {
+    name: 'Grep Jobs',
+    description:
+      'Built using React.js and WebGL, this tool allows users to aggregate job listings across Indeed and LinkedIn and view the listings in a visual, interactive way.',
+    demo: '',
+    github: 'https://github.com/JohnPhamous/pennapps16-grepjobs',
+    submission: 'https://devpost.com/software/pennapps16-grepjobs',
+    image:
+      'https://res.cloudinary.com/phamous/image/upload/v1549060320/grepjobs.jpg',
+    prizes: ['Best Data Visualization'],
   },
 ]
 

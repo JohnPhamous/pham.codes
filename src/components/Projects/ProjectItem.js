@@ -76,7 +76,7 @@ export default class ProjectItem extends Component {
 
   injectCloudinaryOptimizations = src => {
     const tokens = src.split('upload')
-    const flags = 'upload/f_auto,w_512/'
+    const flags = 'upload/f_auto,w_700/'
     const newSrc = `${tokens[0]}${flags}${tokens[1]}`
     return newSrc
   }
