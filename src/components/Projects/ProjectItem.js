@@ -7,16 +7,16 @@ const Project = styled.article`
 `
 
 const ImageContainer = styled.div`
-  width: 100%;
-  height: auto;
+  height: 100%;
   overflow: hidden;
+  position: relative;
 `
 
 const ProjectImage = styled.img`
   margin-left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
-  max-height: 300px;
+  height: 100%;
 `
 
 const OnHoverFade = keyframes`
@@ -58,6 +58,15 @@ const Button = styled(OutboundLink)`
   margin-right: 15px;
 `
 
+const Prize = styled.span`
+  background: rgb(153, 0, 0);
+  padding: 5px;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+`
+
 export default class ProjectItem extends Component {
   state = {
     showDetails: false,
@@ -70,6 +79,9 @@ export default class ProjectItem extends Component {
     return (
       <Project>
         <ImageContainer onMouseOver={() => this.toggleDetails(true)}>
+          {project.prizes.map(prize => (
+            <Prize>{prize}</Prize>
+          ))}
           <ProjectImage src={project.image} />
         </ImageContainer>
         {this.state.showDetails && (
@@ -77,6 +89,7 @@ export default class ProjectItem extends Component {
             <ProjectDetails onMouseLeave={() => this.toggleDetails(false)}>
               <DetailsWrapper>
                 <h2>{project.name}</h2>
+
                 <p>{project.description}</p>
                 {project.demo && (
                   <Button
