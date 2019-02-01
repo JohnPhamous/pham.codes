@@ -74,6 +74,13 @@ export default class ProjectItem extends Component {
 
   toggleDetails = val => this.setState({ showDetails: val })
 
+  injectCloudinaryOptimizations = src => {
+    const tokens = src.split('upload')
+    const flags = 'upload/f_auto,w_512/'
+    const newSrc = `${tokens[0]}${flags}${tokens[1]}`
+    return newSrc
+  }
+
   render() {
     const { project } = this.props
     return (
@@ -82,7 +89,9 @@ export default class ProjectItem extends Component {
           {project.prizes.map(prize => (
             <Prize>{prize}</Prize>
           ))}
-          <ProjectImage src={project.image} />
+          <ProjectImage
+            src={this.injectCloudinaryOptimizations(project.image)}
+          />
         </ImageContainer>
         {this.state.showDetails && (
           <>

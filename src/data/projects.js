@@ -7,7 +7,7 @@ const PROJECTS = [
     github: '',
     submission: '',
     image:
-      'https://res.cloudinary.com/phamous/image/upload/f_auto,w_512/v1544657595/Screenshot_2018-12-12_SignMeIn.png',
+      'https://res.cloudinary.com/phamous/image/upload/v1544657595/Screenshot_2018-12-12_SignMeIn.png',
     prizes: [],
   },
   {
@@ -18,7 +18,7 @@ const PROJECTS = [
     github: '',
     submission: '',
     image:
-      'https://res.cloudinary.com/phamous/image/upload/f_auto,w_512/v1544657685/Screenshot_2018-12-12_UCR_Parking.png',
+      'https://res.cloudinary.com/phamous/image/upload/v1544657685/Screenshot_2018-12-12_UCR_Parking.png',
     prizes: [],
   },
   {
@@ -29,7 +29,7 @@ const PROJECTS = [
     github: 'https://github.com/JohnPhamous/birdy-search',
     submission: '',
     image:
-      'https://res.cloudinary.com/phamous/image/upload/f_auto,w_512/v1544656854/Screenshot_2018-12-12_Birdy_Search.png',
+      'https://res.cloudinary.com/phamous/image/upload/v1544656854/Screenshot_2018-12-12_Birdy_Search.png',
     prizes: [],
   },
   {
@@ -40,7 +40,7 @@ const PROJECTS = [
     github: 'https://github.com/BCOELC/BCOELC.github.io',
     submission: '',
     image:
-      'https://res.cloudinary.com/phamous/image/upload/f_auto,w_512/v1549058811/Screenshot_2019-02-01_BCOE_Leadership_Council_UC_Riverside.png',
+      'https://res.cloudinary.com/phamous/image/upload/v1549058811/Screenshot_2019-02-01_BCOE_Leadership_Council_UC_Riverside.png',
     prizes: [],
   },
   {
@@ -52,8 +52,28 @@ const PROJECTS = [
     submission:
       'https://www.hackerearth.com/sprints/biohack/dashboard/ec470b9/submission/',
     image:
-      'https://res.cloudinary.com/phamous/image/upload/f_auto,w_512/v1549059080/seefood.jpg',
+      'https://res.cloudinary.com/phamous/image/upload/v1549059080/seefood.jpg',
     prizes: ['First Place at BioHack 2018'],
+  },
+  {
+    name: 'Coolors.AI',
+    description:
+      'Coolors.AI allows you to generate the perfect color scheme from you training a neural network. ',
+    demo: '',
+    github: 'https://github.com/JohnPhamous/coolorsai',
+    submission: '',
+    image:
+      'https://res.cloudinary.com/phamous/image/upload/v1549059541/coolorsai.jpg',
+    prizes: [],
+  },
+  {
+    name: '',
+    description: '',
+    demo: '',
+    github: '',
+    submission: '',
+    image: '',
+    prizes: [],
   },
 ]
 
