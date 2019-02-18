@@ -8,9 +8,9 @@ const ProjectsWrapper = styled.section`
 `
 
 const ProjectsContainer = styled.div`
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 30px;
+  grid-gap: 30px; */
 `
 
 const Projects = ({ projects }) => {

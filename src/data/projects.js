@@ -1,5 +1,16 @@
 const PROJECTS = [
   {
+    name: 'Milestones.codes',
+    description:
+      'A web app designed to help people keep track and celebrate their progress as they learn how to code.',
+    demo: 'https://milestones.codes',
+    github: 'https://github.com/JohnPhamous/pham.codes',
+    submission: 'https://devpost.com/software/milestones-codes',
+    image:
+      'https://res.cloudinary.com/phamous/image/upload/v1550456558/milestones-1.gif',
+    prizes: [],
+  },
+  {
     name: 'SignMeIn',
     description:
       'An online solution for classroom attendance, being used across UC Riverside.',

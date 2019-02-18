@@ -4,10 +4,11 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const Project = styled.article`
   position: relative;
+  margin-bottom: 36px;
 `
 
 const ImageContainer = styled.div`
-  height: 100%;
+  width: 100%;
   overflow: hidden;
   position: relative;
 `
@@ -16,7 +17,7 @@ const ProjectImage = styled.img`
   margin-left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
-  height: 100%;
+  width: 100%;
 `
 
 const OnHoverFade = keyframes`
