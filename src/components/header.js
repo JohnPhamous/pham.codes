@@ -5,8 +5,6 @@ import Typist from 'react-typist'
 import '../../node_modules/react-typist/dist/Typist.css'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
-import Resume from '../../static/john_pham_resume.pdf'
-
 const HeaderContainer = styled.div`
   margin-bottom: 0px;
 `
@@ -15,6 +13,7 @@ const LinksContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 12px;
 `
 
 const Title = styled(Link)`
@@ -53,7 +52,66 @@ const Location = styled.span`
   color: rgb(189, 147, 249);
 `
 
+const NavItems = [
+  {
+    name: 'projects',
+    path: '/projects',
+  },
+  {
+    name: 'email',
+    url: 'mailto:johnphammail@gmail.com',
+  },
+  {
+    name: 'github',
+    url: 'https://github.com/JohnPhamous',
+  },
+  {
+    name: 'linkedin',
+    url: 'https://www.linkedin.com/in/johnphamous/',
+  },
+  {
+    name: 'design',
+    url: 'https://www.flickr.com/photos/pnt101/',
+  },
+  {
+    name: 'thePhamous',
+    path: '/hall-of-fame',
+  },
+]
+
 const Header = () => {
+  const NavItemsRender = NavItems.map(item => {
+    // Render for internal page if path exists, external page if url exists
+    if (item.path) {
+      return (
+        <LinkItem key={item.name}>
+          <Link to={item.path}>
+            <Method>
+              {item.name}
+              <Argument>()</Argument>
+            </Method>
+            ;
+          </Link>
+        </LinkItem>
+      )
+    } else {
+      return (
+        <LinkItem>
+          <OutboundLink
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Method>
+              {item.name}
+              <Argument>()</Argument>
+            </Method>
+            ;
+          </OutboundLink>
+        </LinkItem>
+      )
+    }
+  })
   return (
     <HeaderContainer>
       <Title to="/">
@@ -63,66 +121,7 @@ const Header = () => {
           </Typist>
         </h1>
       </Title>
-      <LinksContainer>
-        <LinkItem>
-          <a href={Resume}>
-            <Method>
-              resume(<Argument>this</Argument>)
-            </Method>
-          </a>
-        </LinkItem>
-        <LinkItem>
-          <Link to="/projects">
-            <Method>
-              projects(<Argument>this</Argument>)
-            </Method>
-          </Link>
-        </LinkItem>
-        <LinkItem>
-          <OutboundLink
-            href="mailto:johnphammail@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Method>
-              email(<Argument>this</Argument>)
-            </Method>
-          </OutboundLink>
-        </LinkItem>
-        <LinkItem>
-          <OutboundLink
-            href="https://github.com/JohnPhamous"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Method>
-              github(<Argument>this</Argument>)
-            </Method>
-          </OutboundLink>
-        </LinkItem>
-        <LinkItem>
-          <OutboundLink
-            href="https://www.linkedin.com/in/johnphamous/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Method>
-              linkedin(<Argument>this</Argument>)
-            </Method>
-          </OutboundLink>
-        </LinkItem>
-        <LinkItem>
-          <OutboundLink
-            href="https://www.flickr.com/photos/pnt101/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Method>
-              design(<Argument>this</Argument>)
-            </Method>
-          </OutboundLink>
-        </LinkItem>
-      </LinksContainer>
+      <LinksContainer>{NavItemsRender}</LinksContainer>
     </HeaderContainer>
   )
 }
