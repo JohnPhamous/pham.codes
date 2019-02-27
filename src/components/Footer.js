@@ -36,19 +36,6 @@ const Date = styled(FooterItem)`
     display: none;
   }
 `
-
-const GitHub = styled.a`
-  padding: 5px 20px;
-  background: #bd93f9;
-  margin-left: 0;
-  cursor: pointer;
-  color: white;
-  text-decoration: none;
-  @media (max-width: 600px) {
-    display: none;
-  }
-`
-
 export default class Footer extends React.Component {
   state = {
     isEditing: false,
