@@ -7,7 +7,7 @@ const PROJECTS = [
     github: 'https://github.com/JohnPhamous/pham.codes',
     submission: 'https://devpost.com/software/milestones-codes',
     image:
-      'https://res.cloudinary.com/phamous/image/upload/v1550456558/milestones-1.gif',
+      'https://res.cloudinary.com/phamous/image/upload/v1551230881/Kapture_2019-02-26_at_17.27.45.gif',
     prizes: [],
   },
   {

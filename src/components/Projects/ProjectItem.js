@@ -76,6 +76,10 @@ export default class ProjectItem extends Component {
   toggleDetails = val => this.setState({ showDetails: val })
 
   injectCloudinaryOptimizations = src => {
+    if (src.includes('gif')) {
+      return src
+    }
+
     const tokens = src.split('upload')
     const flags = 'upload/f_auto,w_700/'
     const newSrc = `${tokens[0]}${flags}${tokens[1]}`
