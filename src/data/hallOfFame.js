@@ -455,4 +455,8 @@ export default [
     name: 'Brian Linard',
     description: '',
   },
+  {
+    name: 'Stephanie Italiaie',
+    description: '',
+  },
 ]
