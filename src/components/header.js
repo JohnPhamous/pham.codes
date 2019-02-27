@@ -12,7 +12,6 @@ const HeaderContainer = styled.div`
 const LinksContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin-top: 12px;
 `
 
@@ -30,6 +29,7 @@ const Title = styled(Link)`
 `
 
 const LinkItem = styled.div`
+  margin-right: 24px;
   a {
     color: white;
     text-decoration: none;

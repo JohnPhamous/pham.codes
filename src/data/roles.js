@@ -10,6 +10,11 @@ const ROLES = [
     location: 'NASA Jet Propulsion Laboratory',
   },
   {
+    class: 'new',
+    role: 'Consultant',
+    location: 'Eotron',
+  },
+  {
     class: '',
     role: 'Consultant',
     location: 'Long Produce',
@@ -20,7 +25,7 @@ const ROLES = [
     location: 'Riverside County Homeless Informatics Group',
   },
   {
-    class: '',
+    class: 'old',
     role: 'Full Stack Web Developer',
     location: 'Bourns College of Engineering at UC Riverside',
   },

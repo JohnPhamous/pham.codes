@@ -35,7 +35,7 @@ const Layout = ({ children }) => (
       <Wrapper>
         <Container>
           <Header />
-          <div>{children}</div>
+          <main>{children}</main>
         </Container>
         <Footer />
       </Wrapper>
