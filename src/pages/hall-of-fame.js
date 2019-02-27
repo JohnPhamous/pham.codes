@@ -49,9 +49,17 @@ const IndexPage = () => (
       opportunities, and been there when I needed help.
     </p>
 
+    <p>To everyone here, thank you for everything and keep being awesome!</p>
+
+    <img
+      src="https://res.cloudinary.com/phamous/image/upload/v1551229104/be-phamous.png"
+      style={{ width: `50%`, margin: `0 auto`, display: `block` }}
+      alt="be phamous"
+    />
+
     <p style={{ color: `#9c9c9c` }}>
-      The ordering of names is based on the SHA256 encoding for each person's
-      name.
+      <sup>*</sup>The ordering of names is based on the SHA256 encoding for each
+      person's name.
     </p>
 
     <ul>

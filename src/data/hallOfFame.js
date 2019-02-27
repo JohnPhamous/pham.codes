@@ -252,7 +252,7 @@ export default [
     description: '',
   },
   {
-    name: 'Jeffrey McDaniels',
+    name: 'Jeffrey McDaniel',
     description: '',
   },
   {
