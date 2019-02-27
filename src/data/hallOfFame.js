@@ -459,4 +459,16 @@ export default [
     name: 'Stephanie Italiaie',
     description: '',
   },
+  {
+    name: 'Paea LePendu',
+    description: '',
+  },
+  {
+    name: 'Mariam Salloum',
+    description: '',
+  },
+  {
+    name: 'The GitHub Campus Experts',
+    description: '',
+  },
 ]
