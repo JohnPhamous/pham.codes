@@ -38,6 +38,10 @@ const LinkItem = styled.div`
   @media (max-width: 600px) {
     margin-bottom: 10px;
   }
+
+  .active-page {
+    font-weight: 800;
+  }
 `
 
 const Method = styled.span`
@@ -85,7 +89,7 @@ const Header = () => {
     if (item.path) {
       return (
         <LinkItem key={item.name}>
-          <Link to={item.path}>
+          <Link to={item.path} activeClassName="active-page">
             <Method>
               {item.name}
               <Argument>()</Argument>
