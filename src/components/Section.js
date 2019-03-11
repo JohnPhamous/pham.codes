@@ -21,6 +21,14 @@ const ListItem = styled.li`
     position: relative;
   }
 
+  &.primary::before {
+    content: '>>>';
+    color: rgb(51, 255, 51);
+    margin-right: -28px;
+    left: -40px;
+    position: relative;
+  }
+
   &.old::before {
     content: '-';
     color: rgb(255, 51, 51);

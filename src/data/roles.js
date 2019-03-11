@@ -5,12 +5,12 @@ const ROLES = [
     location: 'Microsoft',
   },
   {
-    class: 'new',
-    role: 'Incoming Software Engineer Intern',
+    class: 'primary',
+    role: 'Software Engineer Intern',
     location: 'NASA Jet Propulsion Laboratory',
   },
   {
-    class: 'new',
+    class: '',
     role: 'Consultant',
     location: 'Eotron',
   },
