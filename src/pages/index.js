@@ -16,8 +16,8 @@ const IndexPage = () => (
       title="Home"
       keywords={['john', 'pham', 'riverside', 'software', 'engineer']}
     />
-    <Section title="Technical Experience" data={ROLES} showDefault />
-    <Section title="Community Building" data={COMMUNITY} />
+    <Section title="Technical" data={ROLES} showDefault />
+    <Section title="Community" data={COMMUNITY} />
   </Layout>
 )
 

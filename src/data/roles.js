@@ -6,7 +6,7 @@ const ROLES = [
   },
   {
     class: 'primary',
-    role: 'Software Engineer Intern',
+    role: 'Software Engineer',
     location: 'NASA Jet Propulsion Laboratory',
   },
   {
@@ -20,7 +20,7 @@ const ROLES = [
     location: 'Long Produce',
   },
   {
-    class: '',
+    class: 'old',
     role: 'Consultant',
     location: 'Riverside County Homeless Informatics Group',
   },

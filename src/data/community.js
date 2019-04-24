@@ -1,11 +1,11 @@
 const COMMUNITY = [
   {
-    class: 'new',
+    class: 'old',
     role: 'Student Partner',
     location: 'Microsoft',
   },
   {
-    class: '',
+    class: 'old',
     role: 'Campus Expert',
     location: 'GitHub',
   },
