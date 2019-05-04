@@ -1,0 +1,85 @@
+@font-face {
+  font-family: NationalPark;
+  src: url("./fonts/NationalPark-Regular.otf") format("opentype");
+}
+
+html,
+body {
+  margin: 0;
+}
+body {
+  height: 100%;
+}
+
+#hero-container {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.if-landscape {
+  background: #dcdcd2;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scene-1 {
+  height: 100vh;
+  position: relative;
+  min-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+svg#scene-1 {
+  position: absolute;
+  width: auto;
+  min-height: 100vh;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  min-width: 100%;
+}
+
+.woods-transition {
+  height: 100vh;
+}
+
+#hero-text-container {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  text-align: center;
+  font-size: 3em;
+  font-family: NationalPark;
+}
+
+#hero-text {
+  background: #00000078;
+  color: white;
+  width: 80%;
+}
+
+main {
+  max-width: 38rem;
+  padding: 2rem;
+  margin: auto;
+}
+
+h2 {
+  font-family: NationalPark;
+  font-size: 2em;
+}
+
+p,li {
+  font-family: "Open Sans", "Roboto", "Helvetica";
+  font-size: 1.25em;
+  line-height: 1.3;
+}
