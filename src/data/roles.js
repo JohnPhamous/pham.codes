@@ -6,7 +6,7 @@ const ROLES = [
   },
   {
     class: 'primary',
-    role: 'Software Engineer Intern',
+    role: 'Software Engineer',
     location: 'NASA Jet Propulsion Laboratory',
   },
   {
