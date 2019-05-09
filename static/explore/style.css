@@ -80,6 +80,14 @@ h2 {
 
 p,li {
   font-family: "Open Sans", "Roboto", "Helvetica";
-  font-size: 1.25em;
+  font-size: 1.25rem;
   line-height: 1.3;
+}
+
+.banner {
+  padding: 24px; 
+}
+
+.blue {
+  background: #b3d9fe;
 }
