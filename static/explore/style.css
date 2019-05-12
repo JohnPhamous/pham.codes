@@ -76,6 +76,7 @@ main {
 h2 {
   font-family: NationalPark;
   font-size: 2em;
+  margin-top: 60px;
 }
 
 p,li {
