@@ -36,7 +36,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 name: 'twitter:card',
-                content: 'summary',
+                content: 'summary_large_image',
               },
               {
                 name: 'twitter:creator',
@@ -49,6 +49,11 @@ function SEO({ description, lang, meta, keywords, title }) {
               {
                 name: 'twitter:description',
                 content: metaDescription,
+              },
+              {
+                name: 'twitter:image',
+                content:
+                  'https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png',
               },
             ]
               .concat(
