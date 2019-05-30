@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'John Pham',
-    description: "John Pham's personal website. John Pham is a software engineer with experience in full stack web development.",
+    description:
+      "John Pham's personal website. John Pham is a software engineer with experience in full stack web development.",
     author: '@johnphamous',
   },
   plugins: [
@@ -23,7 +24,7 @@ module.exports = {
         start_url: '/',
         background_color: '#a08ff4',
         theme_color: '#a08ff4',
-        display: 'john-pham',
+        display: 'fullscreen',
         icon: 'src/images/icon.png', // This path is relative to the root of the site.
       },
     },
