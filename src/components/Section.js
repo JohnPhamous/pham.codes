@@ -74,6 +74,12 @@ const SectionToggle = styled(SectionTitle)`
   cursor: pointer;
 `
 
+const Comment = styled.p`
+  color: rgb(185, 180, 172);
+  margin: 0;
+  cursor: pointer;
+`
+
 export default class Section extends Component {
   state = {
     showDetails: false,
@@ -96,19 +102,24 @@ export default class Section extends Component {
           <SectionTitle>{title}</SectionTitle>
           <SectionToggle>{showDetails ? '[-]' : '[+]'}</SectionToggle>
         </SectionHeader>
-        {showDetails && (
+        {
           <ListContainer>
             {data.map(role => (
               <ListItem
                 className={role.class}
                 key={`${role.role}${role.location}`}
+                style={{
+                  display:
+                    showDetails || role.class !== 'old' ? 'block' : 'none',
+                }}
               >
                 <Role>{role.role}</Role> <span>at</span>{' '}
                 <Location>{role.location}</Location>
               </ListItem>
             ))}
           </ListContainer>
-        )}
+        }
+        {!showDetails && <Comment onClick={this.toggleSection}>...</Comment>}
       </section>
     )
   }
