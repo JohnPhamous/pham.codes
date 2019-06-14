@@ -10,21 +10,6 @@ const ROLES = [
     location: 'NASA Jet Propulsion Laboratory',
   },
   {
-    class: '',
-    role: 'Consultant',
-    location: 'Eotron',
-  },
-  {
-    class: '',
-    role: 'Consultant',
-    location: 'Long Produce',
-  },
-  {
-    class: 'old',
-    role: 'Consultant',
-    location: 'Riverside County Homeless Informatics Group',
-  },
-  {
     class: 'old',
     role: 'Full Stack Web Developer',
     location: 'Bourns College of Engineering at UC Riverside',
@@ -38,11 +23,6 @@ const ROLES = [
     class: 'old',
     role: 'Supplemental Instructor',
     location: 'Department of Computer Science at UC Riverside',
-  },
-  {
-    class: 'old',
-    role: 'Consultant',
-    location: 'SmartDocFinder',
   },
   {
     class: 'old',
@@ -66,13 +46,18 @@ const ROLES = [
   },
   {
     class: 'old',
-    role: 'UI/UX Intern',
+    role: 'User Experience Designer Intern',
     location: 'Amazon',
   },
   {
     class: 'old',
     role: 'Graphic Designer',
     location: 'American Advertising Agency',
+  },
+  {
+    class: 'old',
+    role: 'Design Apprentice',
+    location: 'Burberry Group',
   },
 ]
 
