@@ -7,7 +7,7 @@ const ListContainer = styled.ul`
   margin: 0px;
 `
 
-const SectionTitle = styled.h2`
+export const SectionTitle = styled.h2`
   margin-top: 0px;
   margin-bottom: 0px;
 `
@@ -58,7 +58,7 @@ const Location = styled.span`
   color: rgb(139, 233, 253);
 `
 
-const SectionHeader = styled.div`
+export const SectionHeader = styled.div`
   margin-top: 25px;
   padding: 10px 0px;
   display: flex;

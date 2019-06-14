@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Section from '../components/Section'
 import WritingSection from '../components/WritingSection'
+import Biography from '../components/Biography'
 
 // data
 import ROLES from '../data/roles'
@@ -18,9 +19,11 @@ const IndexPage = () => (
       title="Home"
       keywords={['john', 'pham', 'riverside', 'software', 'engineer']}
     />
-    <Section title="Technical" data={ROLES} />
-    <WritingSection title="Writing" data={WRITTING} showDefault />
-    <Section title="Community" data={COMMUNITY} />
+
+    <Biography />
+    <Section title="Tech" data={ROLES} />
+    <WritingSection title="Write" data={WRITTING} showDefault />
+    <Section title="Build" data={COMMUNITY} />
   </Layout>
 )
 
