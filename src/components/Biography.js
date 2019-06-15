@@ -25,7 +25,8 @@ const Biography = () => (
 
     <List>
       <li>🧠 Learning about pen testing and deep learning</li>
-      <li>💻 Freelance web dev for local businesses</li>
+      <li>🇨🇳 Learning Mandarin</li>
+      <li>💻 Freelance web dev'ing</li>
       <li>🏃‍♂️ Training for a marathon</li>
     </List>
   </Container>
