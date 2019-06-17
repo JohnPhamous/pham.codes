@@ -67,6 +67,16 @@ svg#scene-1 {
   width: 80%;
 }
 
+@media (max-width: 450px) {
+  #hero-text h1 {
+    font-size: 1em;
+  }
+  
+  #hero-text h3 {
+    font-size: 0.75em;
+}
+
+
 main {
   max-width: 38rem;
   padding: 2rem;
