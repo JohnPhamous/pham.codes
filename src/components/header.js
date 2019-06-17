@@ -63,7 +63,7 @@ const NavItems = [
   },
   {
     name: 'email',
-    url: 'mailto:johnphammail@gmail.com',
+    url: 'mailto:john@pham.codes',
   },
   {
     name: 'github',
