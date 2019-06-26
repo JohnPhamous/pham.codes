@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<head>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <section id="header">
+      <h1 contenteditable="true">Runs</h1>
+      <div id="menu">
+        <ul>
+          <li>
+            Upload
+            <form id="file-form" enctype="multipart/form-data" action="http://104.248.66.87/api" method="POST">
+              <input type="file" multiple accept=".gpx,.tcx" id="file-upload" name="routeData"/>
+              <input type="submit"></input>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="runs-container"></section>
+
+    <section id="footer">
+      <div id="year-container" class="stats">
+        <h3>Year</h3>
+        <h2 id="year">2019</h2>
+      </div>
+      <div id="name" class="stats">
+        <h3 contenteditable="true">Athlete</h3>
+        <h2 contenteditable="true">Alan Turing</h2>
+      </div>
+      <div class="stats">
+        <h3 contenteditable="true">Runs</h3>
+        <h2 id="number-of-runs">10</h2>
+      </div>
+      <div id="distance" class="stats">
+        <h3>Distance</h3>
+        <h2><span id="total-distance">50</span> miles</h2>
+      </div>
+    </section>
+  </main>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="upload.js"></script>
+  <script src="index.js"></script>
+</body>
