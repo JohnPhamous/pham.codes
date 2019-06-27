@@ -29,7 +29,7 @@ getData().then(runFiles => {
 });
 
 async function getData() {
-  const response = await fetch("http://104.248.66.87/api");
+  const response = await fetch("https://strava-art-board-backend.onrender.com/api");
   const runFiles = await response.json();
   return runFiles;
 }
