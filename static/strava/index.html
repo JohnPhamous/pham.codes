@@ -11,23 +11,26 @@
       <div id="menu">
         <ul>
           <li>
-            Upload Files
-            <form
-              id="file-form"
-              name="fileForm"
-              enctype="multipart/form-data"
-              action="https://strava-art-board-backend.onrender.com/api"
-              method="POST"
-            >
-              <input
-                type="file"
-                multiple
-                accept=".gpx,.tcx"
-                id="file-upload"
-                name="routeData"
-              />
-              <button type="submit">Upload</button>
-            </form>
+            <span id="uploading-prompt">Uploading Files...</span>
+            <span id="file-form-container">
+              Upload Files
+              <form
+                id="file-form"
+                name="fileForm"
+                enctype="multipart/form-data"
+                action="https://strava-art-board-backend.onrender.com/api"
+                method="POST"
+              >
+                <input
+                  type="file"
+                  multiple
+                  accept=".gpx,.tcx"
+                  id="file-upload"
+                  name="routeData"
+                />
+                <button type="submit">Upload</button>
+              </form>
+            </span>
           </li>
           <li>
             Background Color:

@@ -23,7 +23,7 @@ function main() {
 
   if (runFiles.length) {
     runFiles.forEach(run => {
-      if (run.features) {
+      if (run.features && run.features[0]) {
         const time = run.features[0].properties.time;
         const distance = totalDistance(run.features[0].geometry.coordinates);
         totalDistanceRan += parseFloat(distance);

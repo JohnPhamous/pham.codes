@@ -157,3 +157,7 @@ p {
 #menu ul {
   list-style: none;
 }
+
+#uploading-prompt {
+  display: none;
+}
