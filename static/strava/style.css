@@ -1,11 +1,20 @@
+:root {
+  --backgroundColor: #27343b;
+  --foregroundColor: #0da6e0;
+  --foregroundHoverColor: #ff4c4c;
+  --textColor: #ffffff;
+  --strokeWidth: 3px;
+}
+
 html,
 body {
   height: 100vh;
   width: 100vw;
   margin: 0;
-  font-family: "Helvetica neue";
-  background: #27343b;
-  color: #fff;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+  background: var(--backgroundColor);
+  color: var(--textColor);
   overflow-x: hidden;
 }
 
@@ -19,32 +28,20 @@ main {
   display: flex;
 }
 
-#menu {
-  margin-left: auto;
-}
-
-#menu ul {
-  list-style: none;
-}
-
 .arc {
   fill: none;
-  stroke-width: 5px;
+  stroke-width: var(--strokeWidth);
   stroke-linecap: round;
 
-  stroke: #0da6e0;
+  stroke: var(--foregroundColor);
   transition: ease-in all 0.15s;
 }
 
 #runs-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(min-content, 0));
   grid-row-gap: 50px;
-}
-
-div.run {
-  display: inline-block;
-  padding: 0;
 }
 
 section {
@@ -118,17 +115,45 @@ p {
   margin: 0;
 }
 
+.run {
+  display: flex;
+  justify-content: center;
+}
+
 .run-distance {
   opacity: 0;
   font-size: 1em;
-  fill: #0da6e0;
+  fill: var(--foregroundColor);
   transition: ease-in all 0.15s;
 }
 
 .run:hover > svg > path {
-  stroke: #ff4c4c;
+  stroke: var(--foregroundHoverColor);
 }
 
 .run:hover .run-distance {
   opacity: 1;
+}
+
+#menu-button {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2em;
+  opacity: 0.2;
+  transition: all ease-in 0.15s;
+}
+
+#menu-button:hover {
+  opacity: 1;
+}
+
+#menu {
+  display: none;
+  z-index: 5;
+}
+
+#menu ul {
+  list-style: none;
 }

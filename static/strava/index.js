@@ -1,17 +1,25 @@
 // @ts-nocheck
-const width = 125,
+let width = 75,
   height = width;
 
 const numberOfRunsContainer = document.getElementById("number-of-runs");
 const totalDistanceContainer = document.getElementById("total-distance");
 const container = document.getElementById("runs-container");
-container.style.gridTemplateColumns = `repeat(auto-fit, minmax(${width}px, 1fr))`;
-container.style.gridTemplateRows = `repeat(auto-fit, ${width}px)`;
 const year = document.getElementById("year");
 year.innerText = new Date().getFullYear();
+const API = "https://strava-visualization.onrender.com/api";
+document.fileForm.action = API;
+let data = undefined;
 
-getData().then(runFiles => {
+getData().then(_data => {
+  data = _data;
+  main();
+});
+
+function main() {
   let totalDistanceRan = 0;
+  const runFiles = data["data"];
+  container.style.gridTemplateColumns = `repeat(auto-fit, minmax(${width}px, 1fr))`;
 
   if (runFiles.length) {
     runFiles.forEach(run => {
@@ -26,10 +34,10 @@ getData().then(runFiles => {
     numberOfRunsContainer.innerText = runFiles.length;
     totalDistanceContainer.innerText = totalDistanceRan.toFixed(2);
   }
-});
+}
 
 async function getData() {
-  const response = await fetch("https://strava-art-board-backend.onrender.com/api");
+  const response = await fetch(API);
   const runFiles = await response.json();
   return runFiles;
 }
@@ -126,4 +134,7 @@ function calcDist(p1, p2) {
   return eR * d2;
 }
 
+function clear() {
+  container.innerHTML = "";
+}
 d3.select(self.frameElement).style("height", height + "px");

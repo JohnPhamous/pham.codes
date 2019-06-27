@@ -3,10 +3,9 @@ $(document).ready(function() {
   $("#file-form").submit(function() {
     $(this).ajaxSubmit({
       error: function(xhr) {
-        status("Error: " + xhr.status);
+        alert("Error: " + xhr.status);
       },
-      success: function(response) {
-        console.log(response);
+      success: function(_response) {
         location.reload();
       }
     });

@@ -7,14 +7,71 @@
   <main>
     <section id="header">
       <h1 contenteditable="true">Runs</h1>
+      <button id="menu-button">👋</button>
       <div id="menu">
         <ul>
           <li>
-            Upload
-            <form id="file-form" enctype="multipart/form-data" action="https://strava-art-board-backend.onrender.com/api" method="POST">
-              <input type="file" multiple accept=".gpx,.tcx" id="file-upload" name="routeData"/>
-              <input type="submit"></input>
+            Upload Files
+            <form
+              id="file-form"
+              name="fileForm"
+              enctype="multipart/form-data"
+              action="https://strava-art-board-backend.onrender.com/api"
+              method="POST"
+            >
+              <input
+                type="file"
+                multiple
+                accept=".gpx,.tcx"
+                id="file-upload"
+                name="routeData"
+              />
+              <button type="submit">Upload</button>
             </form>
+          </li>
+          <li>
+            Background Color:
+            <input
+              type="text"
+              value="#27343b"
+              oninput="colorChange('backgroundColor',this.value)"
+            />
+          </li>
+          <li>
+            Foreground Color:
+            <input
+              type="text"
+              value="#0da6e0"
+              oninput="colorChange('foregroundColor',this.value)"
+            />
+          </li>
+          <li>
+            Foreground Hover Color:
+            <input
+              type="text"
+              value="#ff4c4c"
+              oninput="colorChange('foregroundHoverColor',this.value)"
+            />
+          </li>
+          <li>
+            Text Color:
+            <input
+              type="text"
+              value="#FFFFFF"
+              oninput="colorChange('textColor',this.value)"
+            />
+          </li>
+          <li>
+            Stroke Width:
+            <input type="text" value="3" oninput="changeStroke(this.value)" />
+          </li>
+          <li>
+            Activity Size:
+            <input
+              type="text"
+              value="75"
+              oninput="changeDrawingSize(this.value)"
+            />
           </li>
         </ul>
       </div>
@@ -47,4 +104,5 @@
   <script src="https://d3js.org/d3.v3.min.js"></script>
   <script src="upload.js"></script>
   <script src="index.js"></script>
+  <script src="interactions.js"></script>
 </body>
