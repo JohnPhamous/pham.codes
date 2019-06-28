@@ -15,6 +15,10 @@ const List = styled.ul`
     margin-left: -40px;
     padding: 8px 0;
   }
+
+  a {
+    color: rgb(189, 147, 249);
+  }
 `
 
 const Biography = () => (
@@ -24,9 +28,12 @@ const Biography = () => (
     </SectionHeader>
 
     <List>
-      <li>🧠 Learning about pen testing and deep learning</li>
-      <li>🇨🇳 Learning Mandarin</li>
-      <li>💻 Freelance web dev'ing</li>
+      <li>🧠 Learning penetration testing</li>
+      <li>🇨🇳 Learning Mandarin, 你好!</li>
+      <li>
+        💻 Freelance web dev'ing, need some help? Let's{' '}
+        <a href="mailto:john@pham.codes">chat</a>.
+      </li>
       <li>🏃‍♂️ Training for a marathon</li>
     </List>
   </Container>
