@@ -39,12 +39,6 @@ module.exports = {
       options: {
         trackingId: 'UA-130975069-1',
         head: false,
-        anonymize: true,
-        respectDNT: true,
-        exclude: ['/preview/**', '/do-not-track/me/too/'],
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: 'pham.codes',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
