@@ -57,10 +57,10 @@ const Location = styled.span`
 `
 
 const NavItems = [
-  {
-    name: 'projects',
-    path: '/projects',
-  },
+  // {
+  //   name: 'projects',
+  //   path: '/projects',
+  // },
   {
     name: 'email',
     url: 'mailto:john@pham.codes',
@@ -121,7 +121,7 @@ const Header = () => {
       <Title to="/">
         <h1>
           <Typist>
-            JohnPham<Location>@Pasadena</Location>
+            JohnPham<Location>@Seattle</Location>
           </Typist>
         </h1>
       </Title>
