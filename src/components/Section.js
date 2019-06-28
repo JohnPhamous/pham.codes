@@ -104,13 +104,15 @@ export default class Section extends Component {
         </SectionHeader>
         {
           <ListContainer>
-            {data.map(role => (
+            {data.map((role, index) => (
               <ListItem
                 className={role.class}
                 key={`${role.role}${role.location}`}
                 style={{
                   display:
-                    showDetails || role.class !== 'old' ? 'block' : 'none',
+                    showDetails || (role.class !== 'old' || index === 1)
+                      ? 'block'
+                      : 'none',
                 }}
               >
                 <Role>{role.role}</Role> <span>at</span>{' '}

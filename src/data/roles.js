@@ -1,18 +1,18 @@
 const ROLES = [
   {
     class: 'new',
-    role: 'Incoming Software Engineer',
+    role: 'Software Engineer',
     location: 'Microsoft',
   },
   {
-    class: 'primary',
+    class: 'old',
     role: 'Software Engineer',
     location: 'NASA Jet Propulsion Laboratory',
   },
   {
     class: 'old',
-    role: 'Full Stack Web Developer',
-    location: 'Bourns College of Engineering at UC Riverside',
+    role: 'Web Developer',
+    location: 'Bourns College of Engineering',
   },
   {
     class: 'old',
@@ -21,8 +21,8 @@ const ROLES = [
   },
   {
     class: 'old',
-    role: 'Supplemental Instructor',
-    location: 'Department of Computer Science at UC Riverside',
+    role: 'Supplemental Instructor of Computer Science',
+    location: 'The University of California, Riverside',
   },
   {
     class: 'old',

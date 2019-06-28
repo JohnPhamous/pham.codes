@@ -23,7 +23,7 @@ const IndexPage = () => (
     <Biography />
     <Section title="Tech" data={ROLES} />
     <WritingSection title="Write" data={WRITTING} showDefault />
-    <Section title="Build" data={COMMUNITY} />
+    <Section title="Community" data={COMMUNITY} />
   </Layout>
 )
 
