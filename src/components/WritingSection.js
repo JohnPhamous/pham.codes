@@ -54,10 +54,6 @@ const Role = styled.a`
   color: rgb(189, 147, 249);
 `
 
-const Location = styled.span`
-  color: rgb(139, 233, 253);
-`
-
 const SectionHeader = styled.div`
   margin-top: 25px;
   padding: 10px 0px;
