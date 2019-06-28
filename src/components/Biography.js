@@ -28,13 +28,31 @@ const Biography = () => (
     </SectionHeader>
 
     <List>
-      <li>🧠 Learning penetration testing</li>
-      <li>🇨🇳 Learning Mandarin, 你好!</li>
       <li>
-        💻 Freelance web dev'ing, need some help? Let's{' '}
+        <span role="img" aria-label="Brain">
+          🧠
+        </span>{' '}
+        Learning penetration testing
+      </li>
+      <li>
+        <span role="img" aria-label="China Flag">
+          🇨🇳
+        </span>{' '}
+        Learning Mandarin, 你好!
+      </li>
+      <li>
+        <span role="img" aria-label="Laptop">
+          💻
+        </span>{' '}
+        Freelance web dev'ing, need some help? Let's{' '}
         <a href="mailto:john@pham.codes">chat</a>.
       </li>
-      <li>🏃‍♂️ Training for a marathon</li>
+      <li>
+        <span role="img" aria-label="Running">
+          🏃‍♂️
+        </span>{' '}
+        Training for a marathon
+      </li>
     </List>
   </Container>
 )
