@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #2b213a;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+}
+
+.container {
+  display: flex;
+  width: 900px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#gameWrapper {
+  display: none;
+}
+
+.snakeCanvas,
+.tetrisCanvas,
+.tetrisPreviewCanvas {
+  border: solid 1px #f000be;
+}
+
+.tetrisPreviewCanvas {
+  vertical-align: top;
+}
+
+.tetrisScore,
+.snakeScore {
+}
+.score {
+  display: flex;
+  justify-content: space-between;
+}
+.score p {
+  display: inline;
+}
+.controls {
+  text-align: center;
+}
+
+.highscores-container {
+  width: 900px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.highscores {
+  padding: 0;
+}
+
+.highscores li {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.date {
+  font-size: 15px;
+}
+.gameContainer {
+  height: 100%;
+  position: relative;
+}
