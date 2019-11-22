@@ -728,7 +728,7 @@ var Game$1 =
       this.items = new Items(this.area, this.snake);
       this.displayArea = new DisplayArea(this.area, this.ctx, cellSize);
       this.displayArea.setStyle(gameStyle$1);
-      this.speed = 180;
+      this.speed = 100;
     }
 
     _createClass(Game, [
@@ -934,7 +934,6 @@ var tetrisHighScores = [];
 var tetrisScore = 0;
 var tetrisScoreElt = document.querySelector(".js-tetrisScore");
 var tetrisHighScoresElt = document.querySelector(".js-tetrisHighScores");
-var snakeHighScores = [];
 var snakeScore = 0;
 var snakeScoreElt = document.querySelector(".js-snakeScore");
 
@@ -948,56 +947,56 @@ function start() {
   window.addEventListener("keydown", onDirection);
 }
 
+function getWeightedScore(game) {
+  const TETRIS_WEIGHT = 5;
+
+  const leftTetris = game.value * TETRIS_WEIGHT;
+  const leftSnake = game.other.value;
+  return leftTetris + leftSnake;
+}
+
 function compareScore(a, b) {
-  const TETRIS_WEIGHT = 2;
-
-  const leftTetris = a.value * TETRIS_WEIGHT;
-  const leftSnake = a.other.value;
-  const leftTotal = leftTetris + leftSnake;
-
-  const rightTetris = b.value * TETRIS_WEIGHT;
-  const rightSnake = b.other.value;
-  const rightTotal = rightTetris + rightSnake;
-
-  return rightTotal - leftTotal;
+  return getWeightedScore(b) - getWeightedScore(a);
 }
 
 function onGameOver() {
   tetris.stop();
   snake.stop();
   window.removeEventListener("keydown", onDirection);
-  const initials = prompt("What are your initials?");
 
-  var tetrisLast = {
+  var currentGameScore = {
     value: tetrisScore,
     other: {
       name: "snake",
       value: snakeScore
-    },
-    initials,
-    date: new Date().toLocaleString()
+    }
   };
-  tetrisHighScores.push(tetrisLast);
-  tetrisHighScores = tetrisHighScores.sort(compareScore).slice(0, 5);
-  displayHighScores(tetrisHighScoresElt, tetrisHighScores, tetrisLast);
 
-  saveScores();
+  const weightedScore = getWeightedScore(currentGameScore);
+  currentGameScore["weightedScore"] = weightedScore;
+
+  const SCORE_THRESHOLD_TO_UPLOAD =
+    tetrisHighScores[tetrisHighScores.length - 1]["weightedScore"];
+
+  if (weightedScore > SCORE_THRESHOLD_TO_UPLOAD) {
+    const initials =
+      prompt("You made the Top 5 scores! What are your initials?") || "N/A";
+    currentGameScore["initials"] = initials;
+    tetrisHighScores.push(currentGameScore);
+    tetrisHighScores = tetrisHighScores.sort(compareScore).slice(0, 5);
+    uploadScore(currentGameScore);
+  } else {
+    alert("Game over!");
+  }
+  getHighScores();
 
   setTimeout(start, 500);
-}
-
-function saveScores() {
-  localStorage.highscores = JSON.stringify({
-    tetrisHighScores: tetrisHighScores,
-    snakeHighScores: snakeHighScores
-  });
 }
 
 function retrieveScores() {
   if (localStorage.highscores) {
     const highScores = JSON.parse(localStorage.highscores);
     tetrisHighScores = highScores.tetrisHighScores.sort(compareScore);
-    snakeHighScores = highScores.snakeHighScores.sort(compareScore);
   }
 }
 
@@ -1015,7 +1014,7 @@ function onSnakeScoreUpdate(score) {
   snakeScoreField.innerHTML = snakeScore;
 }
 
-function displayHighScores(elt, highScores, last) {
+function displayHighScores(elt, highScores) {
   const scores = highScores
     .map((score, index) => {
       return `
@@ -1056,5 +1055,32 @@ function getScoreSuffix(rankNumber) {
   }
 }
 
-retrieveScores();
-displayHighScores(tetrisHighScoresElt, tetrisHighScores, undefined);
+getHighScores();
+
+function uploadScore(data) {
+  return firebase
+    .firestore()
+    .collection("scores")
+    .add(data);
+}
+
+function getHighScores() {
+  return firebase
+    .firestore()
+    .collection("scores")
+    .get()
+    .then(snapshots => {
+      const allScores = [];
+      snapshots.forEach(snapshot => {
+        allScores.push(snapshot.data());
+      });
+
+      const sortedAllScores = allScores.sort(compareScore).slice(0, 5);
+
+      localStorage.highscores = JSON.stringify({
+        tetrisHighScores: sortedAllScores
+      });
+      retrieveScores();
+      displayHighScores(tetrisHighScoresElt, tetrisHighScores);
+    });
+}

@@ -63,6 +63,26 @@
       </div>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAJNWLTQxGg-XjUMRzJ20lsRwDuuvWewaQ",
+        authDomain: "tetris-meets-snake.firebaseapp.com",
+        databaseURL: "https://tetris-meets-snake.firebaseio.com",
+        projectId: "tetris-meets-snake",
+        storageBucket: "tetris-meets-snake.appspot.com",
+        messagingSenderId: "557802879141",
+        appId: "1:557802879141:web:09c1fda8e090705a7bb54c",
+        measurementId: "G-7KFEKN7GC3"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
     <script src="./scripts/intro.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
