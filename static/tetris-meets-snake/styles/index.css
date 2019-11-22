@@ -95,3 +95,17 @@ body {
   color: #f000be;
   opacity: 1;
 }
+
+#no-mobile-message {
+  display: none;
+}
+
+@media only screen and (max-width: 850px) {
+  #no-mobile-message {
+    display: block;
+    text-align: center;
+  }
+  #introWrapper {
+    display: none;
+  }
+}
