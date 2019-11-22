@@ -17,7 +17,7 @@ body {
   display: flex;
   width: 900px;
   margin: 0 auto;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -29,6 +29,7 @@ body {
 .tetrisCanvas,
 .tetrisPreviewCanvas {
   border: solid 1px #f000be;
+  box-shadow: 10px 10px 100px -15px rgba(240, 0, 190, 0.25);
 }
 
 .tetrisPreviewCanvas {
@@ -46,16 +47,18 @@ body {
   display: inline;
 }
 .controls {
+  font-size: 0.75em;
   text-align: center;
 }
 
 .highscores-container {
-  width: 900px;
+  max-width: 900px;
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  font-size: 0.75em;
 }
 
 .highscores {
@@ -74,4 +77,21 @@ body {
 .gameContainer {
   height: 100%;
   position: relative;
+}
+
+#snake-beat-link {
+  position: absolute;
+  top: 16px;
+  right: 8px;
+  text-decoration: none;
+  font-size: 0.75em;
+  max-width: 85px;
+  text-align: center;
+  opacity: 0.5;
+  transition: all 0.25s ease-in-out;
+}
+
+#snake-beat-link:hover {
+  color: #f000be;
+  opacity: 1;
 }

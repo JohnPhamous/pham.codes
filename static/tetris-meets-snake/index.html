@@ -40,6 +40,12 @@
     </div>
 
     <div id="gameWrapper">
+      <a
+        id="snake-beat-link"
+        target="_blank"
+        href="https://johnpham.net/snake-beat/"
+        >Play Snake Beat</a
+      >
       <div class="container">
         <div class="gameContainer">
           <canvas class="tetrisCanvas"></canvas>
@@ -59,7 +65,7 @@
       <p class="controls">Controls: Arrows/W,A,S,D and Space</p>
       <div class="highscores-container">
         <h2 class="highscores-title">High Scores</h2>
-        <table class="highscores js-tetrisHighScores" cellspacing="20"></table>
+        <table class="highscores js-tetrisHighScores" cellspacing="10"></table>
       </div>
     </div>
 
@@ -67,7 +73,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js"></script>
     <script>
-      // Your web app's Firebase configuration
       var firebaseConfig = {
         apiKey: "AIzaSyAJNWLTQxGg-XjUMRzJ20lsRwDuuvWewaQ",
         authDomain: "tetris-meets-snake.firebaseapp.com",
@@ -78,7 +83,6 @@
         appId: "1:557802879141:web:09c1fda8e090705a7bb54c",
         measurementId: "G-7KFEKN7GC3"
       };
-      // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
     </script>
