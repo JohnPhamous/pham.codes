@@ -903,7 +903,7 @@ function onGameOver() {
   }
   getHighScores();
 
-  // setTimeout(start, 500);
+  setTimeout(start, 500);
 }
 
 function retrieveScores() {
