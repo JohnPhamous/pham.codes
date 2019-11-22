@@ -24,16 +24,10 @@ const List = styled.ul`
 const Biography = () => (
   <Container>
     <SectionHeader>
-      <SectionTitle>Currently</SectionTitle>
+      <SectionTitle>Current</SectionTitle>
     </SectionHeader>
 
     <List>
-      <li>
-        <span role="img" aria-label="Brain">
-          🧠
-        </span>{' '}
-        Learning penetration testing
-      </li>
       <li>
         <span role="img" aria-label="China Flag">
           🇨🇳
@@ -49,9 +43,9 @@ const Biography = () => (
       </li>
       <li>
         <span role="img" aria-label="Running">
-          🏃‍♂️
+          🧗‍♂️
         </span>{' '}
-        Training for a marathon
+        Finding the next wall to climb.
       </li>
     </List>
   </Container>

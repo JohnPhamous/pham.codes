@@ -75,7 +75,11 @@ const NavItems = [
   },
   {
     name: 'design',
-    url: 'https://www.flickr.com/photos/pnt101/',
+    url: 'https://www.flickr.com/photos/pnt101/albums/72157633512030429/page2',
+  },
+  {
+    name: 'twitter',
+    url: 'https://twitter.com/JohnPhamous',
   },
   {
     name: 'thePhamous',
@@ -121,7 +125,7 @@ const Header = () => {
       <Title to="/">
         <h1>
           <Typist>
-            JohnPham<Location>@Seattle</Location>
+            JohnPham<Location>@Washington</Location>
           </Typist>
         </h1>
       </Title>
