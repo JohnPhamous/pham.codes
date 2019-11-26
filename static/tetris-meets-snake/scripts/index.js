@@ -884,8 +884,12 @@ function onGameOver() {
   const weightedScore = getWeightedScore(currentGameScore);
   currentGameScore["weightedScore"] = weightedScore;
 
-  const SCORE_THRESHOLD_TO_UPLOAD =
-    tetrisHighScores[tetrisHighScores.length - 1]["weightedScore"];
+  let SCORE_THRESHOLD_TO_UPLOAD = 99999;
+
+  if (tetrisHighScores.length - 1 >= 0) {
+    SCORE_THRESHOLD_TO_UPLOAD =
+      tetrisHighScores[tetrisHighScores.length - 1]["weightedScore"];
+  }
 
   if (weightedScore > SCORE_THRESHOLD_TO_UPLOAD) {
     let initials = "";
