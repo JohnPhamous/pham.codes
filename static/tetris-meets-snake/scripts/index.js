@@ -14,14 +14,45 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 
+let gameSizeConfig = {
+  tetris: {
+    height: 26,
+    width: 10,
+    cellSize: 20
+  },
+  snake: {
+    height: 35,
+    width: 35,
+    cellSize: 15
+  }
+};
+
+const viewportWidth = screen.width;
+let isMobile = false;
+if (viewportWidth <= 850) {
+  isMobile = true;
+  gameSizeConfig = {
+    tetris: {
+      height: 20,
+      width: 10,
+      cellSize: 15
+    },
+    snake: {
+      height: 30,
+      width: 30,
+      cellSize: 10
+    }
+  };
+}
+
 var Tetris = (function() {
   function Tetris(scoreUpdateCallback, gameOverCallback) {
     this.scoreUpdateCallback = scoreUpdateCallback;
     this.gameOverCallback = gameOverCallback;
-    var cellSize = 20;
+    var cellSize = gameSizeConfig.tetris.cellSize;
     var canvas = document.querySelector(".tetrisCanvas");
-    var mapWidth = 10;
-    var mapHeight = 26;
+    var mapWidth = gameSizeConfig.tetris.width;
+    var mapHeight = gameSizeConfig.tetris.height;
     canvas.width = mapWidth * cellSize;
     canvas.height = mapHeight * cellSize;
     var ctx = canvas.getContext("2d");
@@ -697,10 +728,10 @@ var Game$1 = (function() {
     this.scoreUpdateCallback = scoreUpdateCallback;
     this.gameOverCallback = gameOverCallback;
     this.canvas = document.querySelector(".snakeCanvas");
-    var cellSize = 15;
+    var cellSize = gameSizeConfig.snake.cellSize;
     this.area = {
-      width: 35,
-      height: 35
+      width: gameSizeConfig.snake.width,
+      height: gameSizeConfig.snake.height
     };
     this.canvas.width = this.area.width * cellSize;
     this.canvas.height = this.area.height * cellSize;
@@ -791,10 +822,85 @@ var Game$1 = (function() {
 var tetris = new Tetris(onTetrisScoreUpdate, onGameOver);
 var snake = new Game$1(onSnakeScoreUpdate, onGameOver);
 
+document.addEventListener("touchstart", handleTouchStart, false);
+document.addEventListener("touchmove", handleTouchMove, false);
+document.addEventListener("touchend", handleTouchEnd, false);
+
+var xDown = null;
+var yDown = null;
+let direction = null;
+
+function getTouches(evt) {
+  return (
+    evt.touches || evt.originalEvent.touches // browser API
+  ); // jQuery
+}
+
+function handleTouchStart(evt) {
+  const firstTouch = getTouches(evt)[0];
+  xDown = firstTouch.clientX;
+  yDown = firstTouch.clientY;
+}
+
+function handleTouchMove(evt) {
+  if (!xDown || !yDown) {
+    return;
+  }
+
+  var xUp = evt.touches[0].clientX;
+  var yUp = evt.touches[0].clientY;
+
+  var xDiff = xDown - xUp;
+  var yDiff = yDown - yUp;
+
+  if (Math.abs(xDiff) > Math.abs(yDiff)) {
+    /*most significant*/
+    if (xDiff > 0) {
+      /* left swipe */
+      direction = "left";
+      return;
+    } else {
+      direction = "right";
+      return;
+      /* right swipe */
+    }
+  } else {
+    if (yDiff > 0) {
+      /* up swipe */
+      direction = "up";
+      return;
+    } else {
+      /* down swipe */
+      direction = "down";
+      return;
+    }
+  }
+  /* reset values */
+  xDown = null;
+  yDown = null;
+}
+
+function handleTouchEnd(e) {
+  switch (direction) {
+    case "up":
+      onDirection({ keyCode: 38 });
+      break;
+    case "right":
+      onDirection({ keyCode: 39 });
+      break;
+    case "down":
+      onDirection({ keyCode: 40 });
+      break;
+    case "left":
+      onDirection({ keyCode: 37 });
+      break;
+  }
+  direction = null;
+}
+
 function onDirection(e) {
   switch (e.keyCode) {
     case 32: {
-      e.preventDefault();
       tetris.hardDrop();
       break;
     }
@@ -803,7 +909,6 @@ function onDirection(e) {
     case 81:
     case 37: {
       //A Q Left
-      e.preventDefault();
       tetris.moveLeft();
       snake.setDirection(-1, 0);
       break;
@@ -813,7 +918,6 @@ function onDirection(e) {
     case 90:
     case 38: {
       //W Z Up
-      e.preventDefault();
       tetris.rotate();
       snake.setDirection(0, -1);
       break;
@@ -822,7 +926,6 @@ function onDirection(e) {
     case 68:
     case 39: {
       //D Right
-      e.preventDefault();
       tetris.moveRight();
       snake.setDirection(1, 0);
       break;
@@ -831,7 +934,6 @@ function onDirection(e) {
     case 83:
     case 40: {
       //S Down
-      e.preventDefault();
       tetris.moveDown();
       snake.setDirection(0, 1);
       break;

@@ -96,16 +96,53 @@ body {
   opacity: 1;
 }
 
-#no-mobile-message {
+#orientation-message {
   display: none;
+  text-align: center;
 }
 
 @media only screen and (max-width: 850px) {
-  #no-mobile-message {
-    display: block;
-    text-align: center;
+  @media (orientation: portrait) {
+    #orientation-message {
+      display: block;
+    }
+
+    #introWrapper {
+      display: none;
+    }
   }
-  #introWrapper {
+
+  .controls {
     display: none;
+  }
+
+  tr:nth-of-type(2) {
+    display: contents !important;
+  }
+
+  .highscores tr + tr {
+    display: none;
+  }
+
+  .highscores-container {
+    display: none;
+  }
+
+  .container {
+    height: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  #snake-beat-link {
+    display: none;
+  }
+
+  .score p {
+    margin-bottom: 0px;
+  }
+
+  .logo .text .line-2 {
+    transform: initial;
   }
 }
