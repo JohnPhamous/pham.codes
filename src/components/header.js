@@ -86,7 +86,7 @@ const NavItems = [
   {
     name: 'twitter',
     url: 'https://twitter.com/JohnPhamous',
-    classNames: '',
+    classNames: 'hide-on-mobile',
   },
   {
     name: 'thePhamous',
