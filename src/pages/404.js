@@ -40,6 +40,7 @@ const NotFoundPage = props => (
       <Link
         href="https://github.com/JohnPhamous/pham.codes/issues/new"
         target="_blank"
+        rel="noreferrer"
       >
         issue
       </Link>{' '}

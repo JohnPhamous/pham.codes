@@ -96,7 +96,7 @@ export default class Section extends Component {
           <ListContainer>
             {data.map(role => (
               <ListItem key={`${role.title}`}>
-                <Role href={`${role.link}`} target="_blank">
+                <Role href={`${role.link}`} target="_blank" rel="noreferrer">
                   {role.title}
                 </Role>
               </ListItem>

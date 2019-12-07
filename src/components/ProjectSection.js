@@ -110,7 +110,11 @@ export default class ProjectSection extends Component {
                   display: showDetails || index < showCount ? 'block' : 'none',
                 }}
               >
-                <ProjectName href={project.demo} target="_blank">
+                <ProjectName
+                  href={project.demo}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {project.name}
                 </ProjectName>
                 <Comment>// {project.description}</Comment>
