@@ -74,7 +74,6 @@ const Comment = styled.p`
   color: rgb(185, 180, 172);
   margin: 0;
   margin-top: 6px;
-  cursor: pointer;
   font-style: italic;
 `
 
