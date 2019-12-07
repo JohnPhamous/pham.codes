@@ -4,6 +4,11 @@ import { SectionTitle, SectionHeader } from './Section'
 
 const Container = styled.div`
   margin: 16px 0;
+
+  @media screen and (max-width: 600px) {
+    margin: 0;
+    padding-bottom: 30px;
+  }
 `
 
 const List = styled.ul`

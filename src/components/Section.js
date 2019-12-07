@@ -68,6 +68,10 @@ export const SectionHeader = styled.div`
   &:hover {
     background: #3c3c3c;
   }
+
+  @media screen and (max-width: 600px) {
+    margin: 0;
+  }
 `
 
 const SectionToggle = styled(SectionTitle)`
