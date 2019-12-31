@@ -38,13 +38,13 @@ const healthGoals = [
     by: '2020-03-01',
   },
   {
-    name: 'Squat 250lbs',
+    name: 'Squat 275lbs',
     done: false,
     link: null,
     by: '2020-03-01',
   },
   {
-    name: 'Deadlift 250lbs',
+    name: 'Deadlift 325lbs',
     done: false,
     link: null,
     by: '2020-03-01',
