@@ -30,6 +30,12 @@ const learningGoals = [
     link: null,
     by: '2020-05-01',
   },
+  {
+    name: 'A11y',
+    done: false,
+    link: null,
+    by: '2020-04-01',
+  },
 ]
 
 const healthGoals = [
