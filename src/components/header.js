@@ -47,6 +47,8 @@ const LinkItem = styled.div`
 
   .active-page {
     font-weight: 800;
+    border-bottom: 2px solid rgb(139, 233, 253);
+    padding-bottom: 4px;
   }
 `
 
@@ -84,8 +86,13 @@ const NavItems = [
     classNames: 'hide-on-mobile',
   },
   {
-    name: 'twitter',
+    name: 'tweet',
     url: 'https://twitter.com/JohnPhamous',
+    classNames: 'hide-on-mobile',
+  },
+  {
+    name: 'bucketList',
+    path: '/bucketlist',
     classNames: 'hide-on-mobile',
   },
   {

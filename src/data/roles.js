@@ -1,6 +1,6 @@
 const ROLES = [
   {
-    class: 'new',
+    class: '',
     role: 'Software Engineer',
     location: 'Microsoft',
   },
