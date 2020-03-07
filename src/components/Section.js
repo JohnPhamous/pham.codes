@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { green, red, gray, onHoverGray, purple, blue, comment } from '../colors'
 
 const ListContainer = styled.ul`
   list-style-type: none;
@@ -15,7 +16,7 @@ export const SectionTitle = styled.h2`
 const ListItem = styled.li`
   &.new::before {
     content: '+';
-    color: rgb(51, 255, 51);
+    color: ${green};
     margin-right: -8px;
     left: -20px;
     position: relative;
@@ -23,7 +24,7 @@ const ListItem = styled.li`
 
   &.primary::before {
     content: '>>>';
-    color: rgb(51, 255, 51);
+    color: ${green};
     margin-right: -28px;
     left: -40px;
     position: relative;
@@ -31,7 +32,7 @@ const ListItem = styled.li`
 
   &.old::before {
     content: '-';
-    color: rgb(255, 51, 51);
+    color: ${red};
     margin-right: -8px;
     left: -20px;
     position: relative;
@@ -40,22 +41,22 @@ const ListItem = styled.li`
   &.old {
     span,
     li {
-      color: rgb(185, 180, 172) !important;
+      color: ${gray} !important;
     }
   }
 
   &:hover {
-    background: #3c3c3c;
+    background: ${onHoverGray};
   }
   padding: 8px 0px;
 `
 
 const Role = styled.span`
-  color: rgb(189, 147, 249);
+  color: ${purple};
 `
 
 const Location = styled.span`
-  color: rgb(139, 233, 253);
+  color: ${blue};
 `
 
 export const SectionHeader = styled.div`
@@ -66,7 +67,7 @@ export const SectionHeader = styled.div`
   cursor: pointer;
 
   &:hover {
-    background: #3c3c3c;
+    background: ${onHoverGray};
   }
 
   @media screen and (max-width: 600px) {
@@ -79,7 +80,7 @@ const SectionToggle = styled(SectionTitle)`
 `
 
 const Comment = styled.p`
-  color: rgb(185, 180, 172);
+  color: ${comment};
   margin: 0;
   cursor: pointer;
 `
@@ -114,7 +115,7 @@ export default class Section extends Component {
                 key={`${role.role}${role.location}`}
                 style={{
                   display:
-                    showDetails || (role.class !== 'old' || index === 1)
+                    showDetails || role.class !== 'old' || index === 1
                       ? 'block'
                       : 'none',
                 }}
