@@ -131,4 +131,11 @@ export default [
     _html: null,
     isDone: false,
   },
+  {
+    name: 'Do yoga for 30 days',
+    progress: null,
+    url: null,
+    _html: null,
+    isDone: false,
+  },
 ]
