@@ -138,4 +138,18 @@ export default [
     _html: null,
     isDone: false,
   },
+  {
+    name: 'Publish a cross-platform game',
+    progress: null,
+    url: null,
+    _html: null,
+    isDone: false,
+  },
+  {
+    name: 'Do a 30-day design challenge',
+    progress: null,
+    url: null,
+    _html: null,
+    isDone: false,
+  },
 ]
