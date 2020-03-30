@@ -1,13 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import {
-  green,
-  red,
-  gray,
-  onHoverGray,
-  purple,
-  blue,
-  comment,
   positive,
   negative,
   textSecondary,
