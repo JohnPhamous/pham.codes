@@ -7,7 +7,6 @@ import Biography from '../components/Biography'
 import ProjectSection from '../components/ProjectSection'
 
 import ROLES from '../data/roles'
-import COMMUNITY from '../data/community'
 import PROJECTS from '../data/projects'
 
 const IndexPage = () => (
@@ -27,7 +26,6 @@ const IndexPage = () => (
     <Biography />
     <Section title="Experience" data={ROLES} />
     <ProjectSection title="Projects" data={PROJECTS} />
-    {/* <Section title="Community" data={COMMUNITY} /> */}
   </Layout>
 )
 
