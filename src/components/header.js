@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import Typist from 'react-typist'
 import '../../node_modules/react-typist/dist/Typist.css'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
+import { linkHover, link, textPrimary, textAccent, textBold } from '../colors'
 
 const HeaderContainer = styled.div`
   margin-bottom: 0px;
@@ -24,6 +25,7 @@ const LinksContainer = styled.div`
 const Title = styled(Link)`
   all: unset;
   cursor: pointer;
+  color: ${link} !important;
 
   h1 {
     margin-bottom: 0px;
@@ -31,6 +33,16 @@ const Title = styled(Link)`
     @media (max-width: 500px) {
       font-size: 28px;
     }
+  }
+
+  &:hover {
+    color: ${linkHover} !important;
+  }
+`
+
+const LinkAnchor = styled(Link)`
+  &:hover {
+    color: ${linkHover};
   }
 `
 
@@ -47,21 +59,21 @@ const LinkItem = styled.div`
 
   .active-page {
     font-weight: 800;
-    border-bottom: 2px solid rgb(139, 233, 253);
+    border-bottom: 2px solid ${link};
     padding-bottom: 4px;
   }
 `
 
 const Method = styled.span`
-  color: rgb(139, 233, 253);
+  color: ${link};
 `
 
 const Argument = styled.span`
-  color: rgb(255, 121, 198);
+  color: ${textAccent};
 `
 
 const Location = styled.span`
-  color: rgb(189, 147, 249);
+  color: ${textBold};
 `
 
 const NavItems = [
@@ -108,7 +120,7 @@ const Header = () => {
     if (item.path) {
       return (
         <LinkItem key={item.name}>
-          <Link
+          <LinkAnchor
             to={item.path}
             activeClassName="active-page"
             className={item.classNames}
@@ -118,7 +130,7 @@ const Header = () => {
               <Argument>()</Argument>
             </Method>
             ;
-          </Link>
+          </LinkAnchor>
         </LinkItem>
       )
     } else {

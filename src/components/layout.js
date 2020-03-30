@@ -6,9 +6,21 @@ import Header from './header'
 import Footer from './Footer'
 import './layout.css'
 import styled from 'styled-components'
+import { link, linkVisited, linkHover } from '../colors'
 
 const Wrapper = styled.div`
   height: 100vh;
+
+  a {
+    color: ${link};
+
+    &:visited {
+      color: ${linkVisited};
+    }
+    &:hover {
+      color: ${linkHover};
+    }
+  }
 `
 const Container = styled.div`
   max-width: 900px;

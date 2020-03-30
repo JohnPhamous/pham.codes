@@ -1,6 +1,20 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { green, red, gray, onHoverGray, purple, blue, comment } from '../colors'
+import {
+  green,
+  red,
+  gray,
+  onHoverGray,
+  purple,
+  blue,
+  comment,
+  positive,
+  negative,
+  textSecondary,
+  backgroundOnHover,
+  textBold,
+  textAccent,
+} from '../colors'
 
 const ListContainer = styled.ul`
   list-style-type: none;
@@ -16,7 +30,7 @@ export const SectionTitle = styled.h2`
 const ListItem = styled.li`
   &.new::before {
     content: '+';
-    color: ${green};
+    color: ${positive};
     margin-right: -8px;
     left: -20px;
     position: relative;
@@ -24,7 +38,7 @@ const ListItem = styled.li`
 
   &.primary::before {
     content: '>>>';
-    color: ${green};
+    color: ${positive};
     margin-right: -28px;
     left: -40px;
     position: relative;
@@ -32,7 +46,7 @@ const ListItem = styled.li`
 
   &.old::before {
     content: '-';
-    color: ${red};
+    color: ${negative};
     margin-right: -8px;
     left: -20px;
     position: relative;
@@ -41,22 +55,22 @@ const ListItem = styled.li`
   &.old {
     span,
     li {
-      color: ${gray} !important;
+      color: ${textSecondary} !important;
     }
   }
 
   &:hover {
-    background: ${onHoverGray};
+    background: ${backgroundOnHover};
   }
   padding: 8px 0px;
 `
 
 const Role = styled.span`
-  color: ${purple};
+  color: ${textBold};
 `
 
 const Location = styled.span`
-  color: ${blue};
+  color: ${textAccent};
 `
 
 export const SectionHeader = styled.div`
@@ -67,7 +81,7 @@ export const SectionHeader = styled.div`
   cursor: pointer;
 
   &:hover {
-    background: ${onHoverGray};
+    background: ${backgroundOnHover};
   }
 
   @media screen and (max-width: 600px) {
@@ -80,7 +94,7 @@ const SectionToggle = styled(SectionTitle)`
 `
 
 const Comment = styled.p`
-  color: ${comment};
+  color: ${textSecondary};
   margin: 0;
   cursor: pointer;
 `

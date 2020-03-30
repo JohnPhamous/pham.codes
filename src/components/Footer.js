@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { alert, passive, darkBackground, darkAccentBackground } from '../colors'
 
 const FooterWrapper = styled.footer`
-  background: rgb(59, 62, 79);
+  background: ${darkBackground};
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -22,7 +23,7 @@ const Mode = styled(FooterItem)`
 `
 
 const Size = styled(FooterItem)`
-  background: rgb(139, 72, 0);
+  background: ${darkAccentBackground};
   margin-left: auto;
   cursor: pointer;
   @media (max-width: 600px) {
@@ -31,7 +32,7 @@ const Size = styled(FooterItem)`
 `
 
 const Date = styled(FooterItem)`
-  background: rgb(53, 63, 92);
+  background: ${darkBackground};
   @media (max-width: 600px) {
     display: none;
   }
@@ -61,7 +62,7 @@ export default class Footer extends React.Component {
   }
 
   componentWillUnmount = () => {
-    document.removeEventListener('keydown', e => {}, false)
+    document.removeEventListener('keydown', _e => {}, false)
   }
 
   render() {
@@ -69,9 +70,9 @@ export default class Footer extends React.Component {
     return (
       <FooterWrapper>
         {isEditing ? (
-          <Mode background="rgb(153, 0, 0)">INSERT</Mode>
+          <Mode background={alert}>INSERT</Mode>
         ) : (
-          <Mode background="rgb(49, 6, 110)">NORMAL</Mode>
+          <Mode background={passive}>NORMAL</Mode>
         )}
         <FooterItem>pham.html</FooterItem>
 

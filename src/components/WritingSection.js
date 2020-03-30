@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { positive, negative, textSecondary, backgroundOnHover } from '../colors'
 
 const ListContainer = styled.ul`
   list-style-type: none;
@@ -15,7 +16,7 @@ const SectionTitle = styled.h2`
 const ListItem = styled.li`
   &.new::before {
     content: '+';
-    color: rgb(51, 255, 51);
+    color: ${positive};
     margin-right: -8px;
     left: -20px;
     position: relative;
@@ -23,7 +24,7 @@ const ListItem = styled.li`
 
   &.primary::before {
     content: '>>>';
-    color: rgb(51, 255, 51);
+    color: ${positive};
     margin-right: -28px;
     left: -40px;
     position: relative;
@@ -31,7 +32,7 @@ const ListItem = styled.li`
 
   &.old::before {
     content: '-';
-    color: rgb(255, 51, 51);
+    color: ${negative};
     margin-right: -8px;
     left: -20px;
     position: relative;
@@ -40,19 +41,17 @@ const ListItem = styled.li`
   &.old {
     span,
     li {
-      color: rgb(185, 180, 172) !important;
+      color: ${textSecondary} !important;
     }
   }
 
   &:hover {
-    background: #3c3c3c;
+    background: ${backgroundOnHover};
   }
   padding: 8px 0px;
 `
 
-const Role = styled.a`
-  color: rgb(189, 147, 249);
-`
+const Role = styled.a``
 
 const SectionHeader = styled.div`
   margin-top: 25px;
@@ -62,7 +61,7 @@ const SectionHeader = styled.div`
   cursor: pointer;
 
   &:hover {
-    background: #3c3c3c;
+    background: ${backgroundOnHover};
   }
 `
 
