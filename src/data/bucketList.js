@@ -9,6 +9,22 @@
  */
 export default [
   {
+    name: 'Join the 500 Pound Club',
+    progress: '500/500',
+    url:
+      'https://www.oswego.edu/fitness-centers/sites/www.oswego.edu.fitness-centers/files/1000_-_500_lb_rules.pdf',
+    _html: null,
+    isDone: true,
+  },
+  {
+    name: 'Join the 1000 Pound Club',
+    progress: '630/1000',
+    url:
+      'https://www.oswego.edu/fitness-centers/sites/www.oswego.edu.fitness-centers/files/1000_-_500_lb_rules.pdf',
+    _html: null,
+    isDone: false,
+  },
+  {
     name: 'Travel to all 7 continents',
     progress:
       '<span>Africa</span>, <span>Antarctica</span>, <span class="done">Asia</span>, <span class="done">Australia</span>, <span class="done">Europe</span>, <span class="done">North America</span>, <span>South America</span>',
@@ -18,7 +34,21 @@ export default [
   },
   {
     name: 'Pass the Test of Chinese as a Foreign Language (TOCFL)',
-    progress: '342 words learned',
+    progress: '355 words learned',
+    url: null,
+    _html: null,
+    isDone: false,
+  },
+  {
+    name: 'Do yoga for 30 days',
+    progress: '7/30',
+    url: null,
+    _html: null,
+    isDone: false,
+  },
+  {
+    name: 'Read 1000 books',
+    progress: '39/1000',
     url: null,
     _html: null,
     isDone: false,
@@ -38,32 +68,9 @@ export default [
     isDone: false,
   },
   {
-    name: 'Read 1000 books',
-    progress: '39/1000',
-    url: null,
-    _html: null,
-    isDone: false,
-  },
-  {
     name: 'Be vegan for a month',
     progress: null,
     url: null,
-    _html: null,
-    isDone: false,
-  },
-  {
-    name: 'Join the 500 Pound Club',
-    progress: '500/500',
-    url:
-      'https://www.oswego.edu/fitness-centers/sites/www.oswego.edu.fitness-centers/files/1000_-_500_lb_rules.pdf',
-    _html: null,
-    isDone: true,
-  },
-  {
-    name: 'Join the 1000 Pound Club',
-    progress: '630/1000',
-    url:
-      'https://www.oswego.edu/fitness-centers/sites/www.oswego.edu.fitness-centers/files/1000_-_500_lb_rules.pdf',
     _html: null,
     isDone: false,
   },
@@ -82,7 +89,7 @@ export default [
     isDone: false,
   },
   {
-    name: 'Write and self-publish and book',
+    name: 'Write and self-publish a book',
     progress: null,
     url: null,
     _html: null,
@@ -127,13 +134,6 @@ export default [
   {
     name: 'Start a crafts store',
     progress: null,
-    url: null,
-    _html: null,
-    isDone: false,
-  },
-  {
-    name: 'Do yoga for 30 days',
-    progress: '1/30',
     url: null,
     _html: null,
     isDone: false,
