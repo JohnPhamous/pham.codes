@@ -152,4 +152,11 @@ export default [
     _html: null,
     isDone: false,
   },
+  {
+    name: 'Walk while doing a handstand',
+    progress: null,
+    url: null,
+    _html: null,
+    isDone: false,
+  },
 ]
