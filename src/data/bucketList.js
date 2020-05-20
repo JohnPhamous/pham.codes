@@ -33,8 +33,15 @@ export default [
     isDone: false,
   },
   {
+    name: 'Solve a 3x3 Rubiks cube in under 1 minute',
+    progress: '8:31',
+    url: null,
+    _html: null,
+    isDone: false,
+  },
+  {
     name: 'Pass the Test of Chinese as a Foreign Language (TOCFL)',
-    progress: '589 words learned',
+    progress: '687 words learned',
     url: null,
     _html: null,
     isDone: false,
@@ -48,7 +55,7 @@ export default [
   },
   {
     name: 'Read 1000 books',
-    progress: '43/1000',
+    progress: '47/1000',
     url: null,
     _html: null,
     isDone: false,
