@@ -41,7 +41,7 @@ export default [
   },
   {
     name: 'Pass the Test of Chinese as a Foreign Language (TOCFL)',
-    progress: '687 words learned',
+    progress: '708 words learned',
     url: null,
     _html: null,
     isDone: false,
@@ -55,7 +55,7 @@ export default [
   },
   {
     name: 'Read 1000 books',
-    progress: '47/1000',
+    progress: '48/1000',
     url: null,
     _html: null,
     isDone: false,
