@@ -34,14 +34,14 @@ export default [
   },
   {
     name: 'Solve a 3x3 Rubiks cube in under 1 minute',
-    progress: '8:31',
+    progress: '1:55',
     url: null,
     _html: null,
     isDone: false,
   },
   {
     name: 'Pass the Test of Chinese as a Foreign Language (TOCFL)',
-    progress: '708 words learned',
+    progress: '749 words learned',
     url: null,
     _html: null,
     isDone: false,
