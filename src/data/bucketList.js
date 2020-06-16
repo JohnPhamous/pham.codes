@@ -34,7 +34,7 @@ export default [
   },
   {
     name: 'Solve a 3x3 Rubiks cube in under 1 minute',
-    progress: '1:55',
+    progress: '1:32',
     url: null,
     _html: null,
     isDone: false,
