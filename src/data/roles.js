@@ -1,5 +1,10 @@
 const ROLES = [
   {
+    class: 'new',
+    role: 'Consultant, Frontend Engineering Curriculum',
+    location: 'Codecademy',
+  },
+  {
     class: '',
     role: 'Software Engineer',
     location: 'Microsoft',
