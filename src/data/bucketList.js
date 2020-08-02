@@ -55,7 +55,7 @@ export default [
   },
   {
     name: 'Read 1000 books',
-    progress: '52/1000',
+    progress: '55/1000',
     url: null,
     _html: null,
     isDone: false,
