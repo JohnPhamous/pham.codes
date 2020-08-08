@@ -44,7 +44,7 @@ const Biography = () => (
           💻
         </span>{' '}
         Freelance web dev'ing, need some help? Let's{' '}
-        <a href="mailto:john@pham.codes">chat</a>.
+        <a href="https://calendly.com/johnpham/chat" target="_blank">chat</a>.
       </li>
       <li>
         <span role="img" aria-label="Running">
