@@ -1,6 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { alert, passive, darkBackground, darkAccentBackground } from '../colors'
+import {
+  alert,
+  darkBackground,
+  darkPurple,
+  darkAccentBackground,
+} from '../colors'
 
 const FooterWrapper = styled.footer`
   background: ${darkBackground};
@@ -72,7 +77,7 @@ export default class Footer extends React.Component {
         {isEditing ? (
           <Mode background={alert}>INSERT</Mode>
         ) : (
-          <Mode background={passive}>NORMAL</Mode>
+          <Mode background={darkPurple}>NORMAL</Mode>
         )}
         <FooterItem>pham.html</FooterItem>
 
