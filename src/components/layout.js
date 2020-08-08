@@ -9,8 +9,6 @@ import styled from 'styled-components'
 import { link, linkVisited, linkHover } from '../colors'
 
 const Wrapper = styled.div`
-  height: 100vh;
-
   a {
     color: ${link};
 
