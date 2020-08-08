@@ -6,7 +6,7 @@ import '../../node_modules/react-typist/dist/Typist.css'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { linkHover, link, textAccent, textBold } from '../colors'
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.header`
   margin-bottom: 0px;
 `
 
