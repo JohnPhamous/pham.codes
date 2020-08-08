@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Typist from 'react-typist'
 import '../../node_modules/react-typist/dist/Typist.css'
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { linkHover, link, textAccent, textBold } from '../colors'
 
 const HeaderContainer = styled.header`
@@ -136,17 +135,13 @@ const Header = () => {
     } else {
       return (
         <LinkItem key={item.name} className={item.classNames}>
-          <OutboundLink
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href={item.url} target="_blank" rel="noopener noreferrer">
             <Method>
               {item.name}
               <Argument>()</Argument>
             </Method>
             ;
-          </OutboundLink>
+          </a>
         </LinkItem>
       )
     }

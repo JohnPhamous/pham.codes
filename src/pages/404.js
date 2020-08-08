@@ -2,10 +2,9 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import styled from 'styled-components'
 
-const Link = styled(OutboundLink)`
+const Link = styled.a`
   color: rgb(139, 233, 253);
   text-decoration: none;
 `
