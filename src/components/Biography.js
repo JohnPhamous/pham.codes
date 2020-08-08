@@ -28,7 +28,7 @@ const List = styled.ul`
 
 const Biography = () => (
   <Container>
-    <SectionHeader>
+    <SectionHeader noHover>
       <SectionTitle>Current</SectionTitle>
     </SectionHeader>
 
@@ -44,7 +44,14 @@ const Biography = () => (
           💻
         </span>{' '}
         Freelance web dev'ing, need some help? Let's{' '}
-        <a href="https://calendly.com/johnpham/chat" target="_blank" rel="noreferrer">chat</a>.
+        <a
+          href="https://calendly.com/johnpham/chat"
+          target="_blank"
+          rel="noreferrer"
+        >
+          chat
+        </a>
+        .
       </li>
       <li>
         <span role="img" aria-label="Running">

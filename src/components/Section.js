@@ -8,6 +8,7 @@ import {
   textBold,
   textAccent,
 } from '../colors'
+import { InteractableComment } from './ProjectSection'
 
 const ListContainer = styled.ul`
   list-style-type: none;
@@ -52,9 +53,6 @@ const ListItem = styled.li`
     }
   }
 
-  &:hover {
-    background: ${backgroundOnHover};
-  }
   padding: 8px 0px;
 `
 
@@ -74,7 +72,7 @@ export const SectionHeader = styled.div`
   cursor: pointer;
 
   &:hover {
-    background: ${backgroundOnHover};
+    background: ${props => !props.noHover && backgroundOnHover};
   }
 
   @media screen and (max-width: 600px) {
@@ -146,7 +144,11 @@ export default class Section extends Component {
           <SectionToggle>{showDetails ? '[-]' : '[+]'}</SectionToggle>
         </SectionHeader>
         {this.renderRoles()}
-        {!showDetails && <Comment onClick={this.toggleSection}>...</Comment>}
+        {!showDetails && (
+          <InteractableComment onClick={this.toggleSection}>
+            ...
+          </InteractableComment>
+        )}
       </section>
     )
   }

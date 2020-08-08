@@ -44,10 +44,6 @@ const ListItem = styled.li`
       color: ${textSecondary} !important;
     }
   }
-
-  &:hover {
-    background: ${backgroundOnHover};
-  }
   padding: 8px 0px;
 `
 
@@ -74,6 +70,15 @@ const Comment = styled.p`
   margin: 0;
   margin-top: 6px;
   font-style: italic;
+`
+
+export const InteractableComment = styled(Comment)`
+  cursor: pointer;
+  display: inline;
+
+  &:hover {
+    background: ${backgroundOnHover};
+  }
 `
 
 export default class ProjectSection extends Component {
@@ -121,7 +126,11 @@ export default class ProjectSection extends Component {
             ))}
           </ListContainer>
         }
-        {!showDetails && <Comment onClick={this.toggleSection}>...</Comment>}
+        {!showDetails && (
+          <InteractableComment onClick={this.toggleSection}>
+            ...
+          </InteractableComment>
+        )}
       </section>
     )
   }
