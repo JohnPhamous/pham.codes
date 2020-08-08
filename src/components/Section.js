@@ -93,6 +93,7 @@ const Comment = styled.p`
 `
 
 export default class Section extends Component {
+  MIN_NUM_ROLES_TO_SHOW = 3
   state = {
     showDetails: false,
   }
@@ -105,8 +106,38 @@ export default class Section extends Component {
     this.setState({ showDetails: this.props.showDefault })
   }
 
+  renderRoles = () => {
+    let roles = []
+
+    if (this.state.showDetails) {
+      roles = this.props.data
+    } else {
+      roles = this.props.data.filter(
+        (role, index) =>
+          index < this.MIN_NUM_ROLES_TO_SHOW || role.class !== 'old'
+      )
+    }
+
+    return (
+      <ListContainer>
+        {roles.map(role => (
+          <ListItem
+            className={role.class}
+            key={`${role.role}${role.location}`}
+            style={{
+              display: 'block',
+            }}
+          >
+            <Role>{role.role}</Role> <span>at</span>{' '}
+            <Location>{role.location}</Location>
+          </ListItem>
+        ))}
+      </ListContainer>
+    )
+  }
+
   render() {
-    const { title, data } = this.props
+    const { title } = this.props
     const { showDetails } = this.state
     return (
       <section>
@@ -114,25 +145,7 @@ export default class Section extends Component {
           <SectionTitle>{title}</SectionTitle>
           <SectionToggle>{showDetails ? '[-]' : '[+]'}</SectionToggle>
         </SectionHeader>
-        {
-          <ListContainer>
-            {data.map((role, index) => (
-              <ListItem
-                className={role.class}
-                key={`${role.role}${role.location}`}
-                style={{
-                  display:
-                    showDetails || role.class !== 'old' || index === 1
-                      ? 'block'
-                      : 'none',
-                }}
-              >
-                <Role>{role.role}</Role> <span>at</span>{' '}
-                <Location>{role.location}</Location>
-              </ListItem>
-            ))}
-          </ListContainer>
-        }
+        {this.renderRoles()}
         {!showDetails && <Comment onClick={this.toggleSection}>...</Comment>}
       </section>
     )
