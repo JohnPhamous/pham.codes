@@ -1,11 +1,16 @@
 const ROLES = [
   {
     class: 'new',
+    role: 'Senior Software Engineer',
+    location: 'Smartsheet',
+  },
+  {
+    class: 'new',
     role: 'Consultant, Frontend Engineering Curriculum',
     location: 'Codecademy',
   },
   {
-    class: '',
+    class: 'old',
     role: 'Software Engineer',
     location: 'Microsoft',
   },
