@@ -151,7 +151,7 @@ const Header = () => {
       <Title to="/">
         <h1>
           <Typist>
-            JohnPham<Location>@Washington</Location>
+            JohnPham<Location>@Seattle</Location>
           </Typist>
         </h1>
       </Title>

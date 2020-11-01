@@ -29,8 +29,16 @@ const List = styled.ul`
 const Biography = () => (
   <Container>
     <SectionHeader noHover>
-      <SectionTitle>Current</SectionTitle>
+      <SectionTitle>About</SectionTitle>
     </SectionHeader>
+
+    <p>
+      <span role="img" aria-label="Hand waving hello">
+        👋
+      </span>{' '}
+      I'm John, a frontend engineer passionate about accessibility,
+      metacognition, and building delighters for the web.
+    </p>
 
     <List>
       <li>

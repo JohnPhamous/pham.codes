@@ -22,7 +22,6 @@ const IndexPage = () => (
         'seattle',
       ]}
     />
-
     <Biography />
     <Section title="Experience" data={ROLES} />
     <ProjectSection title="Projects" data={PROJECTS} />
