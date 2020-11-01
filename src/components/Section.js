@@ -91,7 +91,7 @@ const Comment = styled.p`
 `
 
 export default class Section extends Component {
-  MIN_NUM_ROLES_TO_SHOW = 3
+  MIN_NUM_ROLES_TO_SHOW = 4
   state = {
     showDetails: false,
   }

@@ -97,7 +97,7 @@ export default class ProjectSection extends Component {
   render() {
     const { title, data } = this.props
     const { showDetails } = this.state
-    const showCount = 3
+    const showCount = 5
 
     return (
       <section>

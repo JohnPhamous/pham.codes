@@ -6,6 +6,11 @@ const ROLES = [
   },
   {
     class: 'new',
+    role: 'Consultant, Redux Curriculum',
+    location: 'Codecademy',
+  },
+  {
+    class: 'old',
     role: 'Consultant, Frontend Engineering Curriculum',
     location: 'Codecademy',
   },

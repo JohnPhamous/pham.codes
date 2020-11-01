@@ -82,7 +82,7 @@ export default class Footer extends React.Component {
         <FooterItem>pham.html</FooterItem>
 
         <Size onClick={this.toggleEdit}>Toggle INSERT Mode</Size>
-        <Date>Last Updated: 08/08/2020</Date>
+        <Date>Last Updated: 10/31/2020</Date>
       </FooterWrapper>
     )
   }
