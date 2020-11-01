@@ -55,9 +55,9 @@ const Biography = () => (
       </li>
       <li>
         <span role="img" aria-label="Running">
-          🧗‍♂️
+          🏋️‍♀️
         </span>{' '}
-        Finding the next wall to climb.
+        Training to join the 1000 pound club.
       </li>
     </List>
   </Container>
