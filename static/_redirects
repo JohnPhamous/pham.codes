@@ -1,3 +1,4 @@
 # Netlify redirects: https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file
-/chat https://calendly.com/johnpham/chat 
+/chat https://calendly.com/johnphamous/chat 
 /user-guide https://docs.google.com/document/d/1K1gXpR_gZjYvkZ_DI-6259BVhmCOhi_tAKVc5GXlx0U/edit?usp=sharing
+/_resume https://drive.google.com/file/d/1dq14lTC_3mH_J70ihw1TE0WCyIiyXG0z/view
