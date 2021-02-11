@@ -1,5 +1,16 @@
 const PROJECTS = [
   {
+    name: 'Learn Redux Course',
+    description: 'Learn the best practices for modern frontends using Redux.',
+    demo: 'https://www.codecademy.com/learn/learn-redux',
+  },
+  {
+    name: 'Frontend Engineering Course',
+    description: 'Learn everything you need to become a frontend engineer.',
+    demo:
+      'https://www.codecademy.com/learn/paths/front-end-engineer-career-path',
+  },
+  {
     name: 'No Mouse Challenge Browser Extension',
     description:
       'A browser extension that hides the mouse cursor on web pages. This is a tool used to build empathy towards accessibility tool users.',

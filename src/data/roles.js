@@ -5,13 +5,8 @@ const ROLES = [
     location: 'Smartsheet',
   },
   {
-    class: 'new',
-    role: 'Consultant, Redux Curriculum',
-    location: 'Codecademy',
-  },
-  {
-    class: 'old',
-    role: 'Consultant, Frontend Engineering Curriculum',
+    class: '',
+    role: 'Consultant',
     location: 'Codecademy',
   },
   {

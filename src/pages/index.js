@@ -24,7 +24,7 @@ const IndexPage = () => (
     />
     <Biography />
     <Section title="Experience" data={ROLES} />
-    <ProjectSection title="Projects" data={PROJECTS} />
+    <ProjectSection title="Ships" data={PROJECTS} />
   </Layout>
 )
 
