@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import Typist from 'react-typist'
 import '../../node_modules/react-typist/dist/Typist.css'
 import { linkHover, link, textAccent, textBold } from '../colors'
+import { H } from 'highlight.run'
 
 const HeaderContainer = styled.header`
   margin-bottom: 0px;
@@ -20,6 +21,8 @@ const LinksContainer = styled.div`
     }
   }
 `
+
+H.init('wneyvxe4')
 
 const Title = styled(Link)`
   all: unset;
