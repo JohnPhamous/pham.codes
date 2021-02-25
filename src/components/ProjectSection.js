@@ -49,14 +49,21 @@ const ListItem = styled.li`
 
 const ProjectName = styled.a``
 
-export const SectionHeader = styled.div`
+export const SectionHeader = styled.button`
   margin-top: 25px;
   padding: 10px 0px;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  background: none;
+  border: none;
+  display: flex;
+  width: 100%;
+  color: white;
+  outline: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: ${backgroundOnHover};
   }
 `
@@ -101,7 +108,10 @@ export default class ProjectSection extends Component {
 
     return (
       <section>
-        <SectionHeader onClick={this.toggleSection}>
+        <SectionHeader
+          onClick={this.toggleSection}
+          aria-label="Toggle the expansion of this section."
+        >
           <SectionTitle>{title}</SectionTitle>
           <SectionToggle>{showDetails ? '[-]' : '[+]'}</SectionToggle>
         </SectionHeader>
