@@ -3,6 +3,7 @@ const ROLES = [
     class: 'new',
     role: 'Founding Engineer',
     location: 'Highlight',
+    link: 'https://www.highlight.run',
   },
   {
     class: '',

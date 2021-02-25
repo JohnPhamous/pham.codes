@@ -61,7 +61,11 @@ const Role = styled.span`
 `
 
 const Location = styled.span`
-  color: ${textAccent};
+  color: ${textAccent} !important;
+
+  &:visited {
+    color: ${textAccent} !important;
+  }
 `
 
 export const SectionHeader = styled.div`
@@ -127,7 +131,13 @@ export default class Section extends Component {
             }}
           >
             <Role>{role.role}</Role> <span>at</span>{' '}
-            <Location>{role.location}</Location>
+            {role.link ? (
+              <Location as="a" href={role.link}>
+                {role.location}
+              </Location>
+            ) : (
+              <Location>{role.location}</Location>
+            )}
           </ListItem>
         ))}
       </ListContainer>
