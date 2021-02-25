@@ -53,7 +53,7 @@ const Biography = () => (
         </span>{' '}
         Freelance web dev'ing, need some help? Let's{' '}
         <a
-          href="https://calendly.com/johnpham/chat"
+          href="https://pham.codes/chat"
           target="_blank"
           rel="noreferrer"
         >
