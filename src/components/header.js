@@ -84,11 +84,11 @@ const NavItems = [
     url: 'mailto:john@pham.codes',
     classNames: '',
   },
-  {
-    name: 'github',
-    url: 'https://github.com/JohnPhamous',
-    classNames: 'hide-on-mobile',
-  },
+//   {
+//     name: 'github',
+//     url: 'https://github.com/JohnPhamous',
+//     classNames: 'hide-on-mobile',
+//   },
   {
     name: 'linkedin',
     url: 'https://www.linkedin.com/in/johnphamous/',
