@@ -1,5 +1,10 @@
 const PROJECTS = [
   {
+    name: 'React and Redux Course',
+    description: 'Create an advanced web app with React and Redux.',
+    demo: 'https://www.codecademy.com/learn/learn-redux',
+  },
+  {
     name: 'Learn Redux Course',
     description: 'Learn the best practices for state mangement using Redux.',
     demo: 'https://www.codecademy.com/learn/learn-redux',
