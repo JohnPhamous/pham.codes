@@ -36,7 +36,7 @@ const Biography = () => (
       <span role="img" aria-label="Hand waving hello">
         👋
       </span>{' '}
-      I'm John, a frontend engineer passionate about accessibility,
+      I'm John, an engineer passionate about accessibility,
       metacognition, and building delighters for the web.
     </p>
 
@@ -47,20 +47,20 @@ const Biography = () => (
         </span>{' '}
         Learning Mandarin, 你好!
       </li>
-      <li>
-        <span role="img" aria-label="Laptop">
-          💻
-        </span>{' '}
-        Freelance web dev'ing, need some help? Let's{' '}
-        <a
-          href="https://pham.codes/chat"
-          target="_blank"
-          rel="noreferrer"
-        >
-          chat
-        </a>
-        .
-      </li>
+//       <li>
+//         <span role="img" aria-label="Laptop">
+//           💻
+//         </span>{' '}
+//         Freelance web dev'ing, need some help? Let's{' '}
+//         <a
+//           href="https://pham.codes/chat"
+//           target="_blank"
+//           rel="noreferrer"
+//         >
+//           chat
+//         </a>
+//         .
+//       </li>
       <li>
         <span role="img" aria-label="Running">
           🏋️‍♀️
