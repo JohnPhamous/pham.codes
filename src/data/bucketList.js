@@ -18,7 +18,7 @@ export default [
   },
   {
     name: 'Join the 1000 Pound Club',
-    progress: '630/1000',
+    progress: '686/1000',
     url:
       'https://www.oswego.edu/fitness-centers/sites/www.oswego.edu.fitness-centers/files/1000_-_500_lb_rules.pdf',
     _html: null,
@@ -41,7 +41,7 @@ export default [
   },
   {
     name: 'Pass the Test of Chinese as a Foreign Language (TOCFL)',
-    progress: '840 words learned',
+    progress: '1380 words learned',
     url: null,
     _html: null,
     isDone: false,
@@ -55,7 +55,7 @@ export default [
   },
   {
     name: 'Read 1000 books',
-    progress: '57/1000',
+    progress: '79/1000',
     url: null,
     _html: null,
     isDone: false,
@@ -76,20 +76,6 @@ export default [
   },
   {
     name: 'Be vegan for a month',
-    progress: null,
-    url: null,
-    _html: null,
-    isDone: false,
-  },
-  {
-    name: 'Buy a house',
-    progress: null,
-    url: null,
-    _html: null,
-    isDone: false,
-  },
-  {
-    name: 'Speak at an international conference',
     progress: null,
     url: null,
     _html: null,
