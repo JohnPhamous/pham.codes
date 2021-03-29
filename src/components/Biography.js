@@ -47,20 +47,6 @@ const Biography = () => (
         </span>{' '}
         Learning Mandarin, 你好!
       </li>
-//       <li>
-//         <span role="img" aria-label="Laptop">
-//           💻
-//         </span>{' '}
-//         Freelance web dev'ing, need some help? Let's{' '}
-//         <a
-//           href="https://pham.codes/chat"
-//           target="_blank"
-//           rel="noreferrer"
-//         >
-//           chat
-//         </a>
-//         .
-//       </li>
       <li>
         <span role="img" aria-label="Running">
           🏋️‍♀️
