@@ -18,7 +18,7 @@ export default [
   },
   {
     name: 'Join the 1000 Pound Club',
-    progress: '686/1000',
+    progress: '701/1000',
     url:
       'https://www.oswego.edu/fitness-centers/sites/www.oswego.edu.fitness-centers/files/1000_-_500_lb_rules.pdf',
     _html: null,
@@ -41,7 +41,7 @@ export default [
   },
   {
     name: 'Pass the Test of Chinese as a Foreign Language (TOCFL)',
-    progress: '1380 words learned',
+    progress: '1580 words learned',
     url: null,
     _html: null,
     isDone: false,
