@@ -18,9 +18,16 @@ export default [
   },
   {
     name: 'Join the 1000 Pound Club',
-    progress: '701/1000',
+    progress: '721/1000',
     url:
       'https://www.oswego.edu/fitness-centers/sites/www.oswego.edu.fitness-centers/files/1000_-_500_lb_rules.pdf',
+    _html: null,
+    isDone: false,
+  },
+  {
+    name: 'Read 1000 books',
+    progress: '82/1000',
+    url: null,
     _html: null,
     isDone: false,
   },
@@ -52,13 +59,6 @@ export default [
     url: null,
     _html: null,
     isDone: true,
-  },
-  {
-    name: 'Read 1000 books',
-    progress: '79/1000',
-    url: null,
-    _html: null,
-    isDone: false,
   },
   {
     name: 'Hike Mt. Rainier',
