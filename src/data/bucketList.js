@@ -18,7 +18,7 @@ export default [
   },
   {
     name: 'Join the 1000 Pound Club',
-    progress: '721/1000',
+    progress: '751/1,000',
     url:
       'https://www.oswego.edu/fitness-centers/sites/www.oswego.edu.fitness-centers/files/1000_-_500_lb_rules.pdf',
     _html: null,
@@ -26,7 +26,14 @@ export default [
   },
   {
     name: 'Read 1000 books',
-    progress: '82/1000',
+    progress: '85/1,000',
+    url: null,
+    _html: null,
+    isDone: false,
+  },
+   {
+    name: 'Walk 4,000,000 steps in a year',
+    progress: '1,324,754/4,000,000',
     url: null,
     _html: null,
     isDone: false,
@@ -48,7 +55,7 @@ export default [
   },
   {
     name: 'Pass the Test of Chinese as a Foreign Language (TOCFL)',
-    progress: '1580 words learned',
+    progress: '1,712/13,856 mature Anki cards',
     url: null,
     _html: null,
     isDone: false,
@@ -59,6 +66,20 @@ export default [
     url: null,
     _html: null,
     isDone: true,
+  },
+  {
+    name: 'Learn to draw',
+    progress: null,
+    url: null,
+    _html: null,
+    isDone: false,
+  },
+  {
+    name: 'Do the splits',
+    progress: null,
+    url: null,
+    _html: null,
+    isDone: false,
   },
   {
     name: 'Hike Mt. Rainier',
