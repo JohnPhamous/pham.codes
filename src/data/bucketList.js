@@ -26,14 +26,14 @@ export default [
   },
   {
     name: 'Read 1000 books',
-    progress: '85/1,000',
+    progress: '87/1,000',
     url: null,
     _html: null,
     isDone: false,
   },
    {
     name: 'Walk 4,000,000 steps in a year',
-    progress: '1,324,754/4,000,000',
+    progress: '1,495,681/4,000,000',
     url: null,
     _html: null,
     isDone: false,
