@@ -31,6 +31,13 @@ export default [
     _html: null,
     isDone: false,
   },
+  {
+    name: 'Go 30 days without coffee',
+    progress: '0/30',
+    url: null,
+    _html: null,
+    isDone: false,
+  },
    {
     name: 'Walk 4,000,000 steps in a year',
     progress: '1,495,681/4,000,000',
