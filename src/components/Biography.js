@@ -36,7 +36,7 @@ const Biography = () => (
       <span role="img" aria-label="Hand waving hello">
         👋
       </span>{' '}
-      I'm John, an engineer passionate about accessibility,
+      I'm John, an engineer interested in accessibility,
       metacognition, and building delighters for the web.
     </p>
 
