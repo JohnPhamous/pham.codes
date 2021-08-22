@@ -18,7 +18,7 @@ export default [
   },
   {
     name: 'Join the 1000 Pound Club',
-    progress: '751/1,000',
+    progress: '761/1,000',
     url:
       'https://www.oswego.edu/fitness-centers/sites/www.oswego.edu.fitness-centers/files/1000_-_500_lb_rules.pdf',
     _html: null,
@@ -26,7 +26,7 @@ export default [
   },
   {
     name: 'Read 1000 books',
-    progress: '87/1,000',
+    progress: '99/1,000',
     url: null,
     _html: null,
     isDone: false,
@@ -40,7 +40,7 @@ export default [
   },
    {
     name: 'Walk 4,000,000 steps in a year',
-    progress: '1,495,681/4,000,000',
+    progress: '2,640,422/4,000,000',
     url: null,
     _html: null,
     isDone: false,
@@ -55,7 +55,7 @@ export default [
   },
   {
     name: 'Solve a 3x3 Rubiks cube in under 1 minute',
-    progress: '1:05',
+    progress: '0:51',
     url: null,
     _html: null,
     isDone: false,
@@ -76,7 +76,7 @@ export default [
   },
   {
     name: 'Learn to draw',
-    progress: null,
+    progress: true,
     url: null,
     _html: null,
     isDone: false,
@@ -103,7 +103,7 @@ export default [
     isDone: false,
   },
   {
-    name: 'Be vegan for a month',
+    name: 'Try a vegan diet for 30 days',
     progress: null,
     url: null,
     _html: null,
