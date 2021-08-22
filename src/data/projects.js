@@ -1,4 +1,9 @@
 const PROJECTS = [
+   {
+    name: 'React Testing Course',
+    description: 'Learn how to test a React app from unit to integration tests.',
+    demo: 'https://www.codecademy.com/learn/learn-react-testing',
+  },
   {
     name: 'React and Redux Course',
     description: 'Create an advanced web app with React and Redux.',
