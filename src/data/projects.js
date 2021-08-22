@@ -1,4 +1,9 @@
 const PROJECTS = [
+    {
+    name: 'How we create animated product stories',
+    description: 'A tutorial on how to create animated product gifs.',
+    demo: 'https://dev.to/highlight/how-to-create-animated-product-stories-2bcd',
+   },
    {
     name: 'React Testing Course',
     description: 'Learn how to test a React app from unit to integration tests.',
