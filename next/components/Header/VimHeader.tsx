@@ -54,6 +54,7 @@ export default VimHeader;
 const Header = styled('header', {});
 
 const Brand = styled('h1', {
+  paddingTop: '$s32',
   margin: 0,
   width: 'fit-content',
   fontSize: '$h1',
