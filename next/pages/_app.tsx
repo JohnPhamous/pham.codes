@@ -4,7 +4,7 @@ import VimLayout from '../components/layouts/vim/VimLayout';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <VimLayout>
+    <VimLayout title="John Pham">
       <Component {...pageProps} />
     </VimLayout>
   );

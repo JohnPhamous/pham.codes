@@ -3,7 +3,11 @@ import { styled } from '../../../styles/stitches.config';
 import VimFooter from '../../Footer/VimFooter';
 import VimHeader from '../../Header/VimHeader';
 
-const VimLayout: React.FC = (props) => (
+interface Props {
+  title: string;
+}
+
+const VimLayout: React.FC<Props> = ({ title, children }) => (
   <Layout>
     <Head>
       <link
@@ -12,10 +16,11 @@ const VimLayout: React.FC = (props) => (
         as="font"
         crossOrigin=""
       />
+      <title>{title}</title>
     </Head>
     <div>
       <VimHeader />
-      <main>{props.children}</main>
+      <main>{children}</main>
     </div>
 
     <VimFooter />
@@ -28,8 +33,10 @@ const Layout = styled('div', {
   background: '$background',
   color: '$textPrimary',
   height: '100%',
+  minHeight: '100vh',
   fontFamily: 'Roboto Mono',
   fontSize: '$body',
+
   '& main, & header': {
     maxWidth: 'calc(90ch + $s64)',
     margin: '0 auto',
@@ -37,5 +44,9 @@ const Layout = styled('div', {
   },
   '& main': {
     paddingTop: '$s32',
+    paddingBottom: 'calc($s32 + $s16)',
+  },
+  '& > div': {
+    height: 'inherit',
   },
 });
