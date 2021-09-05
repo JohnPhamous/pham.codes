@@ -76,20 +76,15 @@ const LinksContainer = styled('ul', {
   display: 'flex',
   flexWrap: 'wrap',
   columnGap: '$s24',
-  rowGap: '0',
+  rowGap: '$s8',
   listStyle: 'none',
 });
 
 const StyledLink = styled('a', {
-  color: '$link',
   position: 'relative',
   //   2ch to account for the ::before and ::after contents
   paddingRight: '3ch',
   display: 'inline-block',
-
-  '&:focus, &:hover': {
-    textDecoration: 'underline',
-  },
 
   '&::before': {
     content: `()`,

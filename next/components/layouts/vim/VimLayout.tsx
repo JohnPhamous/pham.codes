@@ -67,13 +67,13 @@ const Layout = styled('div', {
   fontSize: '$body',
 
   '& main, & header': {
-    maxWidth: 'calc(80ch + $s12)',
+    maxWidth: 'calc(80ch + $s24)',
     margin: '0 auto',
-    padding: '0 $s12',
+    padding: '0 $s24',
   },
   '& main': {
-    paddingTop: '$s12',
-    paddingBottom: 'calc($s12 + $s16)',
+    paddingTop: '$s40',
+    paddingBottom: 'calc($s12 + $s64)',
   },
   '& > div': {
     height: 'inherit',

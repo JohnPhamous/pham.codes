@@ -37,7 +37,7 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
       },
       fontSizes: {
         body: '1rem',
-        h2: '1.25rem',
+        h2: '1.5rem',
         h1: '1.75rem',
       },
       sizes: {
