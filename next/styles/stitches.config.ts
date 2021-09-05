@@ -16,6 +16,7 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
         alert: '#FF5555',
       },
       media: {
+        bp0: '(min-width: 1px)',
         bp1: '(min-width: 640px)',
         bp2: '(min-width: 768px)',
         bp3: '(min-width: 1024px)',
