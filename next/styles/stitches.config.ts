@@ -9,7 +9,7 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
         textPrimary: '#FFFFFF',
         link: '#8BE9FD',
         accent: '#ff79c6',
-        secondaryAccent: '#9579bd',
+        secondaryAccent: '#bd93f9',
         comment: '#5c6c9b',
         string: '#5c6c9b',
         success: '#50FA7B',
@@ -28,6 +28,11 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
         s80: '80px',
         s96: '96px',
         s160: '160px',
+      },
+      fontSizes: {
+        body: '1rem',
+        h2: '1.25rem',
+        h1: '1.75rem',
       },
       sizes: {
         s4: '4px',

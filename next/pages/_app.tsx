@@ -1,7 +1,12 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
+import VimLayout from '../components/layouts/vim/VimLayout';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <VimLayout>
+      <Component {...pageProps} />
+    </VimLayout>
+  );
 }
 export default MyApp;

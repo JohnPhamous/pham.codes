@@ -29,4 +29,13 @@ const Layout = styled('div', {
   color: '$textPrimary',
   height: '100%',
   fontFamily: 'Roboto Mono',
+  fontSize: '$body',
+  '& main, & header': {
+    maxWidth: 'calc(90ch + $s64)',
+    margin: '0 auto',
+    padding: '0 $s64',
+  },
+  '& main': {
+    paddingTop: '$s32',
+  },
 });
