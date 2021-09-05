@@ -17,6 +17,29 @@ const VimLayout: React.FC<Props> = ({ title = 'John Pham', children }) => (
         crossOrigin=""
       />
       <link rel="icon" href="/favicon.ico" />
+      <meta name="title" content={title} />
+      <meta
+        name="description"
+        content="John Pham's personal website. John Pham is a software engineer with experience in full stack web development."
+      />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://pham.codes/" />
+      <meta property="og:title" content={title} />
+      <meta
+        property="og:description"
+        content="John Pham's personal website. John Pham is a software engineer with experience in full stack web development."
+      />
+      <meta property="og:image" content="" />
+
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="https://pham.codes/" />
+      <meta property="twitter:title" content={title} />
+      <meta
+        property="twitter:description"
+        content="John Pham's personal website. John Pham is a software engineer with experience in full stack web development."
+      />
+      <meta property="twitter:image" content="" />
       <title>{title}</title>
     </Head>
     <div>
