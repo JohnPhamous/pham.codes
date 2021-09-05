@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import React from 'react';
+import Projects from '../components/Projects/Projects';
 import Roles from '../components/Roles/Roles';
 import { styled } from '../styles/stitches.config';
 
@@ -35,21 +36,7 @@ const Home: NextPage = () => {
       <Section>
         <SectionHeader>Ships</SectionHeader>
 
-        <ParagraphWithIcon>
-          <span role="img" aria-label="Hello!">
-            👋
-          </span>{' '}
-          <span>
-            I'm John, an engineer interested in accessibility, metacognition, and building
-            delighters for the web.
-          </span>
-        </ParagraphWithIcon>
-        <ParagraphWithIcon>
-          <span role="img">🇨🇳</span> <span>Learning Mandarin, 你好!</span>
-        </ParagraphWithIcon>
-        <ParagraphWithIcon>
-          <span role="img">🏋️‍♀️</span> <span>Training to join the 1000 pound club.</span>
-        </ParagraphWithIcon>
+        <Projects />
       </Section>
     </>
   );

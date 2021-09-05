@@ -1,6 +1,8 @@
-import { resolveHref } from 'next/dist/shared/lib/router/router';
+import React from 'react';
 import roles from '../../content/roles.content.json';
 import { styled } from '../../styles/stitches.config';
+import List from '../List/List';
+import Comment from '../../components/Comment/Comment';
 
 /**
  * Number of roles to show with full details.
@@ -39,6 +41,8 @@ const Roles = () => {
   const uniqueOrganizations = Array.from(
     new Set([...truncatedRoleOrganizations].filter((x) => !fullDetailRoleOrganizations.has(x)))
   ).sort();
+  // @ts-expect-error
+  const listFormatter = new Intl.ListFormat('en');
 
   return (
     <List>
@@ -51,21 +55,14 @@ const Roles = () => {
         </Role>
       ))}
 
-      <Comment>// I've also done some stuff at {uniqueOrganizations.join(', ')}.</Comment>
+      <Comment>
+        // I've also done some stuff at {listFormatter.format(uniqueOrganizations)}.
+      </Comment>
     </List>
   );
 };
 
 export default Roles;
-
-const List = styled('ul', {
-  listStyle: 'none',
-  padding: 0,
-
-  '& li:not(:last-child)': {
-    marginBottom: '$s12',
-  },
-});
 
 const Role = styled('li', {
   variants: {
@@ -105,9 +102,4 @@ const Title = styled('span', {
 
 const Organization = styled('a', {
   color: '$link',
-});
-
-const Comment = styled('p', {
-  color: '$comment',
-  fontStyle: 'italic',
 });
