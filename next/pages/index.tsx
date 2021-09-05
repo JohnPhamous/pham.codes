@@ -19,7 +19,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
-Home.getLayout = function getLayout(page: ReactElement) {
-  return <VimLayout>{page}</VimLayout>;
-};
