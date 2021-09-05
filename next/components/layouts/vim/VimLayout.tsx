@@ -4,10 +4,10 @@ import VimFooter from '../../Footer/VimFooter';
 import VimHeader from '../../Header/VimHeader';
 
 interface Props {
-  title: string;
+  title?: string;
 }
 
-const VimLayout: React.FC<Props> = ({ title, children }) => (
+const VimLayout: React.FC<Props> = ({ title = 'John Pham', children }) => (
   <Layout>
     <Head>
       <link
@@ -16,6 +16,7 @@ const VimLayout: React.FC<Props> = ({ title, children }) => (
         as="font"
         crossOrigin=""
       />
+      <link rel="icon" href="/favicon.ico" />
       <title>{title}</title>
     </Head>
     <div>
