@@ -19,7 +19,7 @@ const VimFooter = () => {
             <ModeText>{!isEditing ? 'NORMAL' : 'INSERT'}</ModeText>
           </ModeLabel>
         </Mode>
-        <Text>pham.html</Text>
+        <OptionalText>pham.html</OptionalText>
       </Section>
       <EndSection>
         <Text>Last Updated: 09/05/2021</Text>
@@ -77,6 +77,7 @@ const ModeInput = styled('input', {
 const Text = styled('p', {
   margin: 0,
   padding: '$s8 $s24',
+  whiteSpace: 'nowrap',
 });
 
 const ModeText = styled(Text, {
@@ -87,6 +88,15 @@ const ModeText = styled(Text, {
   left: 0,
   textAlign: 'center',
   top: '5px',
+  whiteSpace: 'normal',
+});
+
+const OptionalText = styled(Text, {
+  display: 'none',
+
+  '@bp1': {
+    display: 'block',
+  },
 });
 
 const Section = styled('section', {

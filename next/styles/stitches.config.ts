@@ -15,6 +15,11 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
         success: '#50FA7B',
         alert: '#FF5555',
       },
+      media: {
+        bp1: '(min-width: 640px)',
+        bp2: '(min-width: 768px)',
+        bp3: '(min-width: 1024px)',
+      },
       space: {
         s4: '4px',
         s8: '8px',
