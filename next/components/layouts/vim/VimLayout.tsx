@@ -67,9 +67,9 @@ const Layout = styled('div', {
   fontSize: '$body',
 
   '& main, & header': {
-    maxWidth: 'calc(80ch + $s24)',
+    maxWidth: 'calc(80ch + $s32)',
     margin: '0 auto',
-    padding: '0 $s24',
+    padding: '0 $s32',
   },
   '& main': {
     paddingTop: '$s40',

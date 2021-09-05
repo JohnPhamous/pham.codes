@@ -60,6 +60,12 @@ export default Home;
 const ParagraphWithIcon = styled('p', {
   display: 'flex',
   columnGap: '$s12',
+  position: 'relative',
+
+  '& > span[role="img"]': {
+    position: 'absolute',
+    left: 'calc(-1 * (1ch + $s16))',
+  },
 });
 
 const Section = styled('section', {
