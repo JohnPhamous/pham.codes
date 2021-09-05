@@ -22,7 +22,7 @@ const VimFooter = () => {
         <Text>pham.html</Text>
       </Section>
       <EndSection>
-        <Text>Last Updated: 8/12/2332</Text>
+        <Text>Last Updated: 09/05/2021</Text>
       </EndSection>
     </Footer>
   );
@@ -86,7 +86,7 @@ const ModeText = styled(Text, {
   position: 'absolute',
   left: 0,
   textAlign: 'center',
-  top: '7px',
+  top: '5px',
 });
 
 const Section = styled('section', {
