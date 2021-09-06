@@ -15,15 +15,21 @@ const Home: NextPage = () => {
             👋
           </span>{' '}
           <span>
-            I'm John, an engineer interested in accessibility, metacognition, and building
+            I&apos;m John, an engineer interested in accessibility, metacognition, and building
             delighters for the web.
           </span>
         </ParagraphWithIcon>
         <ParagraphWithIcon>
-          <span role="img">🇨🇳</span> <span>Learning Mandarin, 你好!</span>
+          <span role="img" aria-label="">
+            🇨🇳
+          </span>{' '}
+          <span>Learning Mandarin, 你好!</span>
         </ParagraphWithIcon>
         <ParagraphWithIcon>
-          <span role="img">🏋️‍♀️</span> <span>Training to join the 1000 pound club.</span>
+          <span role="img" aria-label="">
+            🏋️‍♀️
+          </span>{' '}
+          <span>Training to join the 1000 pound club.</span>
         </ParagraphWithIcon>
       </Section>
 

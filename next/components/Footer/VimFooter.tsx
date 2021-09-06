@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { styled } from '../../styles/stitches.config';
 
 const VimFooter = () => {
   const [isEditing, setIsEditing] = useState(false);
+
+  useEffect(() => {
+    if (!isEditing) {
+      document.body.contentEditable = 'false';
+      document.designMode = 'off';
+    } else {
+      document.body.contentEditable = 'true';
+      document.designMode = 'on';
+    }
+  }, [isEditing]);
 
   return (
     <Footer>

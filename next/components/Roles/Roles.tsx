@@ -59,8 +59,9 @@ const Roles = () => {
         </Role>
       ))}
 
+      {/*  eslint-disable-next-line react/jsx-no-comment-textnodes */}
       <Comment>
-        // I've also done some stuff at {listFormatter.format(uniqueOrganizations)}.
+        // I&apos;ve also done some stuff at {listFormatter.format(uniqueOrganizations)}.
       </Comment>
     </List>
   );

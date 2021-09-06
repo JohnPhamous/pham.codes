@@ -1,4 +1,3 @@
-import { styled } from '../../styles/stitches.config';
 import NextLink from 'next/link';
 import Typewriter from '../Typewriter/Typewriter';
 

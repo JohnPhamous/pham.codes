@@ -1,15 +1,15 @@
 {
 	"plugins": [
 		"@typescript-eslint",
-		"plugin-import",
 		"jsx-a11y",
 		"react",
 		"react-hooks"
 	],
 	"extends": [
 		"next/core-web-vitals",
-		"airbnb-typescript",
-		"plugin:jsx-a11y/strict"
+		"plugin:jsx-a11y/strict",
+		"plugin:import/recommended",
+		"plugin:react-hooks/recommended"
 	],
 	"parserOptions": {
 		"project": "./tsconfig.json"
@@ -18,31 +18,6 @@
 		"react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
 		"jsx-a11y/anchor-is-valid": "off", // Next.js use his own internal link system
 		"react/require-default-props": "off", // Allow non-defined react props as undefined
-		"import/order": [
-			"error",
-			{
-				"groups": [
-					"builtin",
-					"external",
-					"internal"
-				],
-				"pathGroups": [
-					{
-						"pattern": "react",
-						"group": "external",
-						"position": "before"
-					}
-				],
-				"pathGroupsExcludedImportTypes": [
-					"react"
-				],
-				"newlines-between": "always",
-				"alphabetize": {
-					"order": "asc",
-					"caseInsensitive": true
-				}
-			}
-		],
 		"import/prefer-default-export": "off",
 		"@typescript-eslint/no-unused-vars": [
 			"error",

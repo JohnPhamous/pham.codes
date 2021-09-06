@@ -1,7 +1,5 @@
 import type { NextPage } from 'next';
-import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
-import Comment from '../components/Comment/Comment';
 import { styled } from '../styles/stitches.config';
 
 const Home: NextPage = () => {
@@ -16,7 +14,7 @@ const Home: NextPage = () => {
       <HTTPCode>404: Segmentation Fault!</HTTPCode>
       <p>
         <Method>
-          website.at(<String>'{pathname}'</String>)
+          website.at(<String>&lsquo;{pathname}&rsquo;</String>)
         </Method>{' '}
         is out of bounds.
       </p>

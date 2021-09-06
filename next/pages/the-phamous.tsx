@@ -15,9 +15,9 @@ const ThePhamousPage: NextPage = () => {
       </Head>
 
       <h2>The Phamous People (My Hall of Fame)</h2>
-      <p>Pronounced as "The Famous".</p>
+      <p>Pronounced as &ldquo;The Famous&rdquo;.</p>
       <p>
-        Throughout my life, I've had the fortune of meeting some amazing folks. These folks have
+        Throughout my life, I&aposve had the fortune of meeting some amazing folks. These folks have
         taught me technical skills and life lessons, given me opportunities, and been there when I
         needed help.
       </p>
@@ -25,6 +25,7 @@ const ThePhamousPage: NextPage = () => {
 
       <Image src={BePhamousImage} alt="" placeholder="blur" />
 
+      {/*  eslint-disable-next-line react/jsx-no-comment-textnodes */}
       <Comment>// The ordering of names is random.</Comment>
 
       <List>

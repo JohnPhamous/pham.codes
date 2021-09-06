@@ -9,9 +9,11 @@ const Projects = () => {
     <List>
       {projects.map((project) => (
         <Item key={project.name}>
+          {/*  eslint-disable-next-line react/jsx-no-target-blank */}
           <a href={project.demo} target="_blank">
             {project.name}
           </a>
+          {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
           <Comment>// {project.description}</Comment>
         </Item>
       ))}
