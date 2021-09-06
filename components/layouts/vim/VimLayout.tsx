@@ -1,3 +1,4 @@
+import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
 import VimFooter from '../../Footer/VimFooter';
 import VimHeader from '../../Header/VimHeader';
@@ -8,6 +9,10 @@ interface Props {
 }
 
 const VimLayout: React.FC<Props> = ({ title = 'John Pham', children }) => {
+  const router = useRouter();
+
+  const isBlogPage = router.pathname === '/blog/[slug]';
+
   return (
     <div className={styles.layout}>
       <Head>
@@ -18,7 +23,7 @@ const VimLayout: React.FC<Props> = ({ title = 'John Pham', children }) => {
         <main>{children}</main>
       </div>
 
-      <VimFooter />
+      {!isBlogPage && <VimFooter />}
     </div>
   );
 };

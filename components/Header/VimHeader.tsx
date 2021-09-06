@@ -17,6 +17,27 @@ const VimHeader = () => {
 
       <ul className={styles.linksContainer}>
         <li>
+          <NextLink href="/blog" passHref>
+            <a className={styles.link} aria-label="Blog">
+              _blog
+            </a>
+          </NextLink>
+        </li>
+        <li>
+          <NextLink href="/bucket-list" passHref>
+            <a className={styles.link} aria-label="Bucket List">
+              _bucketList
+            </a>
+          </NextLink>
+        </li>
+        <li>
+          <NextLink href="/the-phamous" passHref>
+            <a className={styles.link} aria-label="The Phamous">
+              _thePhamous
+            </a>
+          </NextLink>
+        </li>
+        <li>
           <a className={styles.link} href="mailto:john@pham.codes">
             email
           </a>
@@ -40,25 +61,6 @@ const VimHeader = () => {
           >
             tweet
           </a>
-        </li>
-        {/* <li>
-          <NextLink href="/blog" passHref>
-            <a className={styles.link} aria-label="Blog">_blog</a>
-          </NextLink>
-        </li> */}
-        <li>
-          <NextLink href="/bucket-list" passHref>
-            <a className={styles.link} aria-label="Bucket List">
-              _bucketList
-            </a>
-          </NextLink>
-        </li>
-        <li>
-          <NextLink href="/the-phamous" passHref>
-            <a className={styles.link} aria-label="The Phamous">
-              _thePhamous
-            </a>
-          </NextLink>
         </li>
       </ul>
     </header>
