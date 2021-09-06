@@ -75,4 +75,5 @@
 
 .endSection {
   margin-left: auto;
+  padding-right: var(--s24);
 }
