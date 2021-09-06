@@ -1,4 +1,5 @@
 import NextLink from 'next/link';
+import { styled } from '../../styles/stitches.config';
 import Typewriter from '../Typewriter/Typewriter';
 
 const VimHeader = () => {
