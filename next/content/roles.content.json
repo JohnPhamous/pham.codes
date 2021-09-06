@@ -1,0 +1,92 @@
+[
+  {
+    "class": "new",
+    "role": "Rockstar Wizard",
+    "location": "Highlight",
+    "link": "https://www.highlight.run"
+  },
+  {
+    "class": "",
+    "role": "Consultant",
+    "location": "Codecademy",
+    "link": "https://www.codecademy.com/"
+  },
+  {
+    "class": "old",
+    "role": "Senior Software Engineer",
+    "location": "Smartsheet",
+    "link": "https://www.codecademy.com/"
+  },
+  {
+    "class": "old",
+    "role": "Software Engineer",
+    "location": "Microsoft",
+    "link": "https://www.microsoft.com/en-us/edge"
+  },
+  {
+    "class": "old",
+    "role": "Software Engineer",
+    "location": "NASA JPL",
+    "link": "https://www.jpl.nasa.gov/"
+  },
+  {
+    "class": "old",
+    "role": "Web Developer",
+    "location": "UC Riverside",
+    "link": "https://www.engr.ucr.edu/"
+  },
+  {
+    "class": "old",
+    "role": "Data Scientist Intern",
+    "location": "AT&T",
+    "link": "https://www.att.com/"
+  },
+  {
+    "class": "old",
+    "role": "Supplemental Instructor of Computer Science",
+    "location": "UC Riverside",
+    "link": "https://www.ucr.edu/"
+  },
+  {
+    "class": "old",
+    "role": "Software Engineer (Contractor)",
+    "location": "SpaceX",
+    "link": "https://www.spacex.com/"
+  },
+  {
+    "class": "old",
+    "role": "Software Engineer Intern",
+    "location": "The Aerospace Corporation",
+    "link": "https://aerospace.org/"
+  },
+  {
+    "class": "old",
+    "role": "Software Engineer Intern",
+    "location": "NASA JPL",
+    "link": "https://www.jpl.nasa.gov/"
+  },
+  {
+    "class": "old",
+    "role": "Data Scientist Intern",
+    "location": "NASA JPL",
+    "link": "https://www.jpl.nasa.gov/"
+  },
+  {
+    "class": "old",
+    "role": "User Experience Designer Intern",
+    "location": "Amazon",
+    "link": "https://www.amazon.com/Prime-Video"
+  },
+  {
+    "class": "old",
+    "role": "Graphic Designer",
+    "location": "American Advertising Agency",
+    "link": "https://www.aaaa.org/"
+  },
+  {
+    "class": "old",
+    "role": "Design Apprentice",
+    "location": "Burberry Group",
+    "link": "https://www.burberryplc.com/"
+  }
+]
