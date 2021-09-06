@@ -20,7 +20,7 @@ const Blog: NextPage = ({ posts }: BlogPageProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllPosts(['date', 'description', 'slug', 'title', 'image']);
+  const posts = getAllPosts(['date', 'description', 'slug', 'title', 'image', 'imageHeight']);
 
   return {
     props: { posts },

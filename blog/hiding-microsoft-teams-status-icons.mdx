@@ -1,0 +1,35 @@
+---
+title: Hiding Microsoft Teams status icons
+description: To promote more async-work behaviors, learn how to disable the status/precense icons in Microsoft Teams.
+date: '2020-06-22'
+image: '/images/blog/microsoft-teams-presence.jpeg'
+imageHeight: 348
+---
+
+Microsoft Teams shows your coworkers current status from available, busy, to away. I can see the utility in knowing this but for myself, I'd rather not know.
+
+![Microsoft Teams status icon](https://i.imgur.com/SRXTt8f.png)
+
+From working remotely, I've found asynchronous communication to be the best way to do most of my communication. The status icons changes the way I chat. For example, if I send a message to someone that is available I could sit there waiting for an instant response. Take the status away and my expectation that the person will respond soon goes away.
+
+# Removing the status icons
+
+Teams makes an API call to get the status of your coworkers. The URL that it hits is `http://presence.teams.microsoft.com`. If we can block those requests, we'll stop seeing the status icons.
+
+We can use [Fiddler](https://www.telerik.com/fiddler) to block requests to a specific URL. Because Fiddler works on all OS', we can do the following steps across all the devices we use.
+
+1. [Install Fiddler](https://www.telerik.com/download/fiddler)
+1. Open the AutoResponder tab
+1. Check "Enable rules"
+1. Check "Unmatched requests passthrough"
+1. Click "Add rule"
+1. In the "Request URL Pattern" input, enter `http://presence.teams.microsoft.com`
+1. In the "Local file to return or *Action to execute" input, choose "*drop"
+
+With that done, Teams will no longer show the status icons.
+
+![Microsoft Teams with disabled status icons](https://i.imgur.com/K12aX7b.png)
+
+# Extending this to other applications
+
+If you'd like to do this for other applications, you can use Fiddler to see all the network requests an application makes. Once you find the API endpoint the application makes, you can make a rule to drop the request.

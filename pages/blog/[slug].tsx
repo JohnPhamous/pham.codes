@@ -1,7 +1,5 @@
-import { format, parseISO } from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
-import mdxPrism from 'mdx-prism';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
@@ -32,7 +30,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [require('remark-code-titles')],
-      rehypePlugins: [mdxPrism, rehypeSlug, rehypeAutolinkHeadings],
+      rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
     },
     scope: data,
   });

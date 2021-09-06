@@ -9,7 +9,6 @@ interface Props {
 }
 
 const BlogPreview = ({ post }: Props) => {
-  console.log(post);
   return (
     <article key={post.slug} className={styles.article}>
       <h1>
@@ -17,7 +16,9 @@ const BlogPreview = ({ post }: Props) => {
           <a>{post.title}</a>
         </Link>
       </h1>
-      {post.image && <Image src={post.image} alt="" width="800px" height="250px" />}
+      {post.image && (
+        <Image src={post.image} alt="" width="800px" height={post.imageHeight || '250px'} />
+      )}
       <p>{post.description}</p>
       <p>
         <Link as={`/blog/${post.slug}`} href={`/blog/[slug]`}>

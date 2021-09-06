@@ -32,6 +32,7 @@ const Blog = ({ frontMatter, source }: Props) => {
     title: `${frontMatter.title}`,
     description: frontMatter.description,
     image: `${WEBSITE_HOST_URL}${frontMatter.image}`,
+    imageHeight: frontMatter.imageHeight,
     date: frontMatter.date,
     type: 'article',
   };
@@ -39,7 +40,14 @@ const Blog = ({ frontMatter, source }: Props) => {
   return (
     <BlogLayout customMeta={customMeta}>
       <article className={styles.blog}>
-        {customMeta.image && <Image src={customMeta.image} alt="" width="800px" height="250px" />}
+        {customMeta.image && (
+          <Image
+            src={customMeta.image}
+            alt=""
+            width="800px"
+            height={customMeta.imageHeight || '250px'}
+          />
+        )}
         <h1 className={styles.title}>{frontMatter.title}</h1>
         <p className={styles.date}>
           Last Updated: {format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}
