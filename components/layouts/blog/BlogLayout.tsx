@@ -17,6 +17,8 @@ const BlogLayout: React.FC<Props> = ({ children, customMeta }) => {
     ...customMeta,
   };
 
+  meta.image = `${WEBSITE_HOST_URL}${meta.image}`;
+
   return (
     <div className={styles.layout}>
       <Head>
