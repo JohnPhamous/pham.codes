@@ -26,7 +26,7 @@ const VimHeader = () => {
             className={styles.link}
             href="https://www.linkedin.com/in/johnphamous/"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             linkedin
           </a>
@@ -36,7 +36,7 @@ const VimHeader = () => {
             className={styles.link}
             href="https://twitter.com/JohnPhamous"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             tweet
           </a>

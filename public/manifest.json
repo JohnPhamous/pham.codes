@@ -1,0 +1,23 @@
+{
+  "name": "John Pham",
+  "short_name": "John Pham",
+  "description": "John Pham's personal website. John is a software engineer, rookie lifter, and plant parent based in Seattle.",
+  "icons": [
+    {
+      "src": "/images/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#bd93f9",
+  "background_color": "#282a36",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "orientation": "portrait"
+}

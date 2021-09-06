@@ -55,7 +55,12 @@ const Roles = () => {
             }`}
           >
             <span className={styles.title}>{role.role}</span> at{' '}
-            <a className={styles.organization} target="_blank" href={role.link} rel="noopener">
+            <a
+              className={styles.organization}
+              target="_blank"
+              href={role.link}
+              rel="noopener noreferrer"
+            >
               {role.location}
             </a>
           </li>
