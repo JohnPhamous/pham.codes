@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
-import { styled } from '../styles/stitches.config';
+import React from 'react';
+import C404 from '../components/C404/C404';
 
 const Home: NextPage = () => {
   let pathname = '';
@@ -9,31 +9,7 @@ const Home: NextPage = () => {
     pathname = window.location.pathname;
   }
 
-  return (
-    <div>
-      <HTTPCode>404: Segmentation Fault!</HTTPCode>
-      <p>
-        <Method>
-          website.at(<String>&lsquo;{pathname}&rsquo;</String>)
-        </Method>{' '}
-        is out of bounds.
-      </p>
-      <Link href="/">&gt; Go To Home Page</Link>
-    </div>
-  );
+  return <C404 pathname={pathname} />;
 };
 
 export default Home;
-
-const HTTPCode = styled('h2', {
-  color: '$alert',
-  fontWeight: 'bold',
-});
-
-const Method = styled('span', {
-  color: '$warning',
-});
-
-const String = styled('span', {
-  color: '$success',
-});

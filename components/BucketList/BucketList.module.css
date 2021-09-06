@@ -1,0 +1,14 @@
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.progress {
+  color: var(--comment);
+  font-style: italic;
+  margin-top: var(--s4);
+}

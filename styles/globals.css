@@ -1,3 +1,30 @@
+:root {
+  --background: #282a36;
+  --background-secondary: #353f5c;
+  --text-primary: #ffffff;
+  --link: #8be9fd;
+  --accent: #ff79c6;
+  --accent-secondary: #bd93f9;
+  --comment: #5c6c9b;
+  --string: #5c6c9b;
+  --success: #50fa7b;
+  --alert: #ff5555;
+  --warning: #f1fa8c;
+
+  --s4: 4px;
+  --s8: 8px;
+  --s12: 12px;
+  --s16: 16px;
+  --s24: 24px;
+  --s32: 32px;
+  --s40: 40px;
+  --s48: 48px;
+  --s64: 64px;
+  --s80: 80px;
+  --s96: 96px;
+  --s160: 160px;
+}
+
 html,
 body {
   padding: 0;
@@ -6,6 +33,29 @@ body {
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   height: fit-content;
   min-height: 100vh;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+a {
+  cursor: pointer;
+  color: var(--link);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  caret-color: var(--accent-secondary);
 }
 
 #__next {
@@ -14,7 +64,6 @@ body {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 

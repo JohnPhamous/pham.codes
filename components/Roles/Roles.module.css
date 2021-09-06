@@ -1,0 +1,29 @@
+.new::before {
+  content: '+';
+  left: calc(-1 * var(--s8));
+  position: relative;
+  margin-left: calc(1ch * -1);
+  color: var(--success);
+}
+
+.old,
+.old a,
+.old span {
+  color: var(--comment) !important;
+}
+
+.old::before {
+  content: '-';
+  left: calc(-1 * var(--s8));
+  position: relative;
+  margin-left: calc(1ch * -1);
+  color: var(--alert);
+}
+
+.title {
+  color: var(--accent-secondary);
+}
+
+.organization {
+  color: var(--link);
+}

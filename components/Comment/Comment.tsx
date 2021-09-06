@@ -1,13 +1,8 @@
 import React from 'react';
-import { styled } from '../../styles/stitches.config';
+import styles from './Comment.module.css';
 
 const Comment: React.FC = ({ children }) => {
-  return <StyledComment>{children}</StyledComment>;
+  return <p className={styles.comment}>{children}</p>;
 };
 
 export default Comment;
-
-const StyledComment = styled('p', {
-  color: '$comment',
-  fontStyle: 'italic',
-});

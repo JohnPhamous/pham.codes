@@ -1,0 +1,12 @@
+.httpCode {
+  color: var(--alert);
+  font-weight: bold;
+}
+
+.method {
+  color: var(--warning);
+}
+
+.string {
+  color: var(--success);
+}

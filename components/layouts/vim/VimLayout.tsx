@@ -1,18 +1,15 @@
 import Head from 'next/head';
-import { styled } from '../../../styles/stitches.config';
-import globalStyles from '../../../styles/stitches.global';
 import VimFooter from '../../Footer/VimFooter';
 import VimHeader from '../../Header/VimHeader';
+import styles from './VimLayout.module.css';
 
 interface Props {
   title?: string;
 }
 
 const VimLayout: React.FC<Props> = ({ title = 'John Pham', children }) => {
-  globalStyles();
-
   return (
-    <Layout>
+    <div className={styles.layout}>
       <Head>
         <link
           href="/fonts/roboto-mono-v13-latin/roboto-mono-v13-latin-regular.woff2"
@@ -52,30 +49,8 @@ const VimLayout: React.FC<Props> = ({ title = 'John Pham', children }) => {
       </div>
 
       <VimFooter />
-    </Layout>
+    </div>
   );
 };
 
 export default VimLayout;
-
-const Layout = styled('div', {
-  background: '$background',
-  color: '$textPrimary',
-  height: '100%',
-  minHeight: '100vh',
-  fontFamily: 'Roboto Mono',
-  fontSize: '$body',
-
-  '& main, & header': {
-    maxWidth: 'calc(80ch + $s32)',
-    margin: '0 auto',
-    padding: '0 $s32',
-  },
-  '& main': {
-    paddingTop: '$s40',
-    paddingBottom: 'calc($s12 + $s64)',
-  },
-  '& > div': {
-    height: 'inherit',
-  },
-});

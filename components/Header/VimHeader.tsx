@@ -1,101 +1,62 @@
 import NextLink from 'next/link';
-import { styled } from '../../styles/stitches.config';
 import Typewriter from '../Typewriter/Typewriter';
+import styles from './VimHeader.module.css';
 
 const VimHeader = () => {
   return (
-    <Header>
+    <header>
       <NextLink href="/">
         <a>
-          <Brand aria-label="John Pham at Seattle">
+          <h1 aria-label="John Pham at Seattle" className={styles.brand}>
             <Typewriter>
-              <BrandName>JohnPham</BrandName>@Seattle
+              <span className={styles.brandName}>JohnPham</span>@Seattle
             </Typewriter>
-          </Brand>
+          </h1>
         </a>
       </NextLink>
 
-      <LinksContainer>
+      <ul className={styles.linksContainer}>
         <li>
-          <StyledLink href="mailto:john@pham.codes">email</StyledLink>
+          <a className={styles.link} href="mailto:john@pham.codes">
+            email
+          </a>
         </li>
         <li>
-          <StyledLink href="https://www.linkedin.com/in/johnphamous/" target="_blank">
+          <a
+            className={styles.link}
+            href="https://www.linkedin.com/in/johnphamous/"
+            target="_blank"
+          >
             linkedin
-          </StyledLink>
+          </a>
         </li>
         <li>
-          <StyledLink href="https://twitter.com/JohnPhamous" target="_blank">
+          <a className={styles.link} href="https://twitter.com/JohnPhamous" target="_blank">
             tweet
-          </StyledLink>
+          </a>
         </li>
         {/* <li>
           <NextLink href="/blog" passHref>
-            <StyledLink aria-label="Blog">_blog</StyledLink>
+            <a className={styles.link} aria-label="Blog">_blog</a>
           </NextLink>
         </li> */}
         <li>
           <NextLink href="/bucket-list" passHref>
-            <StyledLink aria-label="Bucket List">_bucketList</StyledLink>
+            <a className={styles.link} aria-label="Bucket List">
+              _bucketList
+            </a>
           </NextLink>
         </li>
         <li>
           <NextLink href="/the-phamous" passHref>
-            <StyledLink aria-label="The Phamous">_thePhamous</StyledLink>
+            <a className={styles.link} aria-label="The Phamous">
+              _thePhamous
+            </a>
           </NextLink>
         </li>
-      </LinksContainer>
-    </Header>
+      </ul>
+    </header>
   );
 };
 
 export default VimHeader;
-
-const Header = styled('header', {});
-
-const Brand = styled('h1', {
-  paddingTop: '$s32',
-  margin: 0,
-  width: 'fit-content',
-  fontSize: '$h1',
-  color: '$secondaryAccent',
-  cursor: 'pointer',
-});
-
-const BrandName = styled('span', {
-  color: '$link',
-
-  '&:focus, &:hover': {
-    textDecoration: 'underline',
-  },
-});
-
-const LinksContainer = styled('ul', {
-  margin: 0,
-  padding: 0,
-  display: 'flex',
-  flexWrap: 'wrap',
-  columnGap: '$s24',
-  rowGap: '$s8',
-  listStyle: 'none',
-});
-
-const StyledLink = styled('a', {
-  position: 'relative',
-  //   2ch to account for the ::before and ::after contents
-  paddingRight: '3ch',
-  display: 'inline-block',
-
-  '&::before': {
-    content: `()`,
-    position: 'absolute',
-    right: '1ch',
-    color: '$accent',
-  },
-  '&::after': {
-    content: `;`,
-    position: 'absolute',
-    right: '0ch',
-    color: '$textPrimary',
-  },
-});

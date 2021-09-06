@@ -1,8 +1,8 @@
 import React from 'react';
 import roles from '../../content/roles.content.json';
-import { styled } from '../../styles/stitches.config';
 import List from '../List/List';
 import Comment from '../../components/Comment/Comment';
+import styles from './Roles.module.css';
 
 /**
  * Number of roles to show with full details.
@@ -47,16 +47,17 @@ const Roles = () => {
   return (
     <List>
       {fullDetailRoles.map((role) => (
-        <Role
+        <li
           key={`${role.role}-${role.location}`}
-          old={role.class === 'old'}
-          new={role.class === 'new'}
+          className={`${role.class === 'old' ? styles.old : ''} ${
+            role.class === 'new' ? styles.new : ''
+          }`}
         >
-          <Title>{role.role}</Title> at{' '}
-          <Organization target="_blank" href={role.link}>
+          <span className={styles.title}>{role.role}</span> at{' '}
+          <a className={styles.organization} target="_blank" href={role.link}>
             {role.location}
-          </Organization>
-        </Role>
+          </a>
+        </li>
       ))}
 
       {/*  eslint-disable-next-line react/jsx-no-comment-textnodes */}
@@ -68,43 +69,3 @@ const Roles = () => {
 };
 
 export default Roles;
-
-const Role = styled('li', {
-  variants: {
-    new: {
-      true: {
-        '&::before': {
-          content: '+',
-          left: 'calc(-1 * $s8)',
-          position: 'relative',
-          marginLeft: 'calc(1ch * -1)',
-          color: '$success',
-        },
-      },
-    },
-    old: {
-      true: {
-        color: '$comment !important',
-        '&::before': {
-          content: '-',
-          left: 'calc(-1 * $s8)',
-          position: 'relative',
-          marginLeft: 'calc(1ch * -1)',
-          color: '$alert',
-        },
-
-        '& a, & span': {
-          color: '$comment !important',
-        },
-      },
-    },
-  },
-});
-
-const Title = styled('span', {
-  color: '$secondaryAccent',
-});
-
-const Organization = styled('a', {
-  color: '$link',
-});

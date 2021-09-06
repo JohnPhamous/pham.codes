@@ -1,0 +1,78 @@
+.footer {
+  height: var(--s32);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: var(--background-secondary);
+  color: var(--text-primary);
+}
+
+.mode {
+  height: var(--s32);
+  width: 100px;
+}
+
+.modeLabel {
+  cursor: pointer;
+  position: relative;
+  padding: var(--s8) var(--s24);
+  color: var(--text-primary);
+  display: grid;
+  height: inherit;
+  width: 100px;
+}
+
+.modeInput {
+  background: var(--accent-secondary);
+  cursor: inherit;
+  position: absolute;
+  margin: 0;
+  height: 100%;
+  width: 100px;
+  appearance: none;
+  z-index: -1;
+}
+
+.modeInput.isEditing {
+  background: var(--alert);
+}
+
+.text {
+  margin: 0;
+  padding: var(--s8) var(--s24);
+  white-space: nowrap;
+}
+
+.modeText {
+  width: 100px;
+  margin: 0;
+  padding: unset;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  top: 5px;
+  white-space: normal;
+}
+
+.optionalText {
+  display: none;
+}
+
+@media only screen and (min-width: 640px) {
+  .optionalText {
+    display: block;
+  }
+}
+
+.section {
+  margin: 0;
+  height: var(--s32);
+  display: flex;
+  align-items: center;
+}
+
+.endSection {
+  margin-left: auto;
+}

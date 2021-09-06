@@ -1,0 +1,22 @@
+.paragraphWithIcon {
+  display: flex;
+  column-gap: var(--s12);
+  position: relative;
+}
+
+.paragraphWithIcon span[role='img'] {
+  position: absolute;
+  left: calc(-1 * (1ch + var(--s16)));
+}
+
+.section:not(:last-of-type) {
+  margin-bottom: var(--s64);
+}
+
+.sectionHeader::before {
+  content: '#';
+  color: var(--comment);
+  position: relative;
+  left: calc(-1 * var(--s4));
+  margin-left: calc(1ch * -1);
+}

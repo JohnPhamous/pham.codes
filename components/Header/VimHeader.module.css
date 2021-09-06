@@ -1,0 +1,48 @@
+.brand {
+  padding-top: var(--s32);
+  margin: 0;
+  width: fit-content;
+  font-size: 1.75rem;
+  color: var(--accent-secondary);
+  cursor: pointer;
+}
+
+.brandName {
+  color: var(--link);
+}
+
+.brandName:focus,
+.brandName:hover {
+  text-decoration: underline;
+}
+
+.linksContainer {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--s24);
+  row-gap: var(--s8);
+  list-style: none;
+}
+
+.link {
+  position: relative;
+  /* 2ch to account for the ::before and ::after contents */
+  padding-right: 3ch;
+  display: inline-block;
+}
+
+.link::before {
+  content: '()';
+  position: absolute;
+  right: 1ch;
+  color: var(--accent);
+}
+
+.link::after {
+  content: ';';
+  position: absolute;
+  right: 0ch;
+  color: var(--text-primary);
+}

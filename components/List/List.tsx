@@ -1,17 +1,8 @@
 import React from 'react';
-import { styled } from '../../styles/stitches.config';
+import styles from './List.module.css';
 
 const List: React.FC = ({ children }) => {
-  return <UL>{children}</UL>;
+  return <ul className={styles.list}>{children}</ul>;
 };
 
 export default List;
-
-const UL = styled('ul', {
-  listStyle: 'none',
-  padding: 0,
-
-  '& li:not(:last-child)': {
-    marginBottom: '1em',
-  },
-});

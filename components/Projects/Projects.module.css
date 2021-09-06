@@ -1,0 +1,9 @@
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.item > p {
+  margin: 0;
+  margin-top: var(--s8);
+}

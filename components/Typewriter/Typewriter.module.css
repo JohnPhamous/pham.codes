@@ -1,0 +1,32 @@
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes cursor {
+  0% {
+    border-right: 0.15em solid transparent;
+  }
+  50% {
+    border-right: 0.15em solid var(--accent);
+  }
+  100% {
+    border-right: 0.15em solid transparent;
+  }
+}
+
+.typewriterContainer {
+  overflow: hidden;
+  display: inline-block;
+  border-right: 0.15em solid var(--accent);
+  white-space: nowrap;
+  margin: 0 auto;
+  font-weight: 400;
+  transition: border 0.75s;
+  width: fit-content;
+  animation: typewriter 1s steps(40, end) 0.5s both, cursor 1s step-end infinite;
+}
