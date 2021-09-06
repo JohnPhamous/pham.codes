@@ -26,12 +26,18 @@ const VimHeader = () => {
             className={styles.link}
             href="https://www.linkedin.com/in/johnphamous/"
             target="_blank"
+            rel="noopener"
           >
             linkedin
           </a>
         </li>
         <li>
-          <a className={styles.link} href="https://twitter.com/JohnPhamous" target="_blank">
+          <a
+            className={styles.link}
+            href="https://twitter.com/JohnPhamous"
+            target="_blank"
+            rel="noopener"
+          >
             tweet
           </a>
         </li>

@@ -9,8 +9,7 @@ const Projects = () => {
     <List>
       {projects.map((project) => (
         <li className={styles.item} key={project.name}>
-          {/*  eslint-disable-next-line react/jsx-no-target-blank */}
-          <a href={project.demo} target="_blank">
+          <a href={project.demo} target="_blank" rel="noopener noreferrer">
             {project.name}
           </a>
           {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}

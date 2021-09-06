@@ -45,26 +45,27 @@ const Roles = () => {
   const listFormatter = new Intl.ListFormat('en');
 
   return (
-    <List>
-      {fullDetailRoles.map((role) => (
-        <li
-          key={`${role.role}-${role.location}`}
-          className={`${role.class === 'old' ? styles.old : ''} ${
-            role.class === 'new' ? styles.new : ''
-          }`}
-        >
-          <span className={styles.title}>{role.role}</span> at{' '}
-          <a className={styles.organization} target="_blank" href={role.link}>
-            {role.location}
-          </a>
-        </li>
-      ))}
-
+    <>
+      <List>
+        {fullDetailRoles.map((role) => (
+          <li
+            key={`${role.role}-${role.location}`}
+            className={`${role.class === 'old' ? styles.old : ''} ${
+              role.class === 'new' ? styles.new : ''
+            }`}
+          >
+            <span className={styles.title}>{role.role}</span> at{' '}
+            <a className={styles.organization} target="_blank" href={role.link} rel="noopener">
+              {role.location}
+            </a>
+          </li>
+        ))}
+      </List>
       {/*  eslint-disable-next-line react/jsx-no-comment-textnodes */}
       <Comment>
         // I&apos;ve also done some stuff at {listFormatter.format(uniqueOrganizations)}.
       </Comment>
-    </List>
+    </>
   );
 };
 
