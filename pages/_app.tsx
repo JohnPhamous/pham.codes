@@ -1,6 +1,11 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import VimLayout from '../components/layouts/vim/VimLayout';
+import { H } from 'highlight.run';
+
+if (process.env.NODE_ENV !== 'development') {
+  H.init('wneyvxe4');
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
