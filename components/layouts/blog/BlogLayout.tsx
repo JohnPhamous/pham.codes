@@ -1,5 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
+import { useEffect } from 'react';
+import supabase from '../../../lib/supabase/supabase';
 import { MetaProps } from '../../../types/blog';
 import styles from './BlogLayout.module.css';
 
@@ -18,6 +20,21 @@ const BlogLayout: React.FC<Props> = ({ children, customMeta }) => {
   };
 
   meta.image = `${WEBSITE_HOST_URL}${meta.image}`;
+
+  useEffect(() => {
+    if (process.env.NODE_ENV !== 'development') {
+      saveView();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const saveView = async () => {
+    await supabase.from('blog-post-view').insert([
+      {
+        slug: router.asPath,
+      },
+    ]);
+  };
 
   return (
     <div className={styles.layout}>
