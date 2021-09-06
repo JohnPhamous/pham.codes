@@ -8,6 +8,15 @@ module.exports = withPWA(
   withMDX({
     reactStrictMode: true,
     pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+    async redirects() {
+      return [
+        {
+          source: '/chat',
+          destination: 'https://calendly.com/johnphamous/chat',
+          permanent: false,
+        },
+      ];
+    },
     async rewrites() {
       return [
         {
