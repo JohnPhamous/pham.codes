@@ -1,0 +1,163 @@
+:root {
+  --backgroundColor: #27343b;
+  --foregroundColor: #0da6e0;
+  --foregroundHoverColor: #ff4c4c;
+  --textColor: #ffffff;
+  --strokeWidth: 3px;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+  background: var(--backgroundColor);
+  color: var(--textColor);
+  overflow-x: hidden;
+}
+
+main {
+  display: grid;
+  grid-template-rows: 100px 2fr 100px;
+  height: 100vh;
+}
+
+#header {
+  display: flex;
+}
+
+.arc {
+  fill: none;
+  stroke-width: var(--strokeWidth);
+  stroke-linecap: round;
+
+  stroke: var(--foregroundColor);
+  transition: ease-in all 0.15s;
+}
+
+#runs-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(min-content, 0));
+  grid-row-gap: 50px;
+}
+
+section {
+  padding: 0px 40px;
+}
+
+text {
+  font-size: 1.8em;
+}
+
+h1 {
+  font-size: 5em;
+  margin: 0 0 0px;
+}
+
+h2 {
+  text-align: left;
+  font-size: 6em;
+  line-height: 100%;
+  margin: 0;
+}
+
+h3 {
+  text-align: left;
+  font-size: 2.1em;
+  line-height: 135%;
+  margin: 0 0 15px;
+  text-transform: uppercase;
+}
+
+.statsHolder:last-child h3 {
+  margin-bottom: 20px;
+}
+
+.statsHolder {
+  display: inline-block;
+  margin: 0 70px 0 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.statsHolder:last-child {
+  margin: 0;
+}
+
+svg.run-stats {
+  width: 701px;
+  display: inline-block;
+  height: 44px;
+  padding: 1px 0 0;
+}
+
+.run-stats text {
+  font-style: normal;
+  font-size: 2em;
+}
+
+p {
+  margin: 0 0 5px;
+  line-height: 135%;
+}
+
+#footer {
+  display: flex;
+  font-size: 0.5em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#footer h3 {
+  margin: 0;
+}
+
+.run {
+  display: flex;
+  justify-content: center;
+}
+
+.run-distance {
+  opacity: 0;
+  font-size: 1em;
+  fill: var(--foregroundColor);
+  transition: ease-in all 0.15s;
+}
+
+.run:hover > svg > path {
+  stroke: var(--foregroundHoverColor);
+}
+
+.run:hover .run-distance {
+  opacity: 1;
+}
+
+#menu-button {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2em;
+  opacity: 0.2;
+  transition: all ease-in 0.15s;
+}
+
+#menu-button:hover {
+  opacity: 1;
+}
+
+#menu {
+  display: none;
+  z-index: 5;
+}
+
+#menu ul {
+  list-style: none;
+}
+
+#uploading-prompt {
+  display: none;
+}

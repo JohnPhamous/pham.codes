@@ -1,0 +1,3 @@
+# Netlify redirects: https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file
+/chat https://calendly.com/johnphamous/chat
+/user-guide https://docs.google.com/document/d/1K1gXpR_gZjYvkZ_DI-6259BVhmCOhi_tAKVc5GXlx0U/edit?usp=sharing
