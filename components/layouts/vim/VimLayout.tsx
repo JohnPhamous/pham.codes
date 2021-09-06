@@ -8,39 +8,28 @@ interface Props {
 }
 
 const VimLayout: React.FC<Props> = ({ title = 'John Pham', children }) => {
+  const description =
+    "John Pham's personal website. John is a software engineer, rookie lifter, and plant parent based in Seattle.";
+  const heroPath = '/images/hero.png';
+
   return (
     <div className={styles.layout}>
       <Head>
-        <link
-          href="/fonts/roboto-mono-v13-latin/roboto-mono-v13-latin-regular.woff2"
-          rel="preload"
-          as="font"
-          crossOrigin=""
-        />
         <link rel="icon" href="/favicon.ico" />
         <meta name="title" content={title} />
-        <meta
-          name="description"
-          content="John Pham's personal website. John Pham is a software engineer with experience in full stack web development."
-        />
+        <meta name="description" content={description} />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://pham.codes/" />
         <meta property="og:title" content={title} />
-        <meta
-          property="og:description"
-          content="John Pham's personal website. John Pham is a software engineer with experience in full stack web development."
-        />
-        <meta property="og:image" content="" />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={heroPath} />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://pham.codes/" />
         <meta property="twitter:title" content={title} />
-        <meta
-          property="twitter:description"
-          content="John Pham's personal website. John Pham is a software engineer with experience in full stack web development."
-        />
-        <meta property="twitter:image" content="" />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={heroPath} />
         <title>{title}</title>
       </Head>
       <div>
