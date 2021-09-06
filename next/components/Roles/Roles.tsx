@@ -47,7 +47,11 @@ const Roles = () => {
   return (
     <List>
       {fullDetailRoles.map((role) => (
-        <Role old={role.class === 'old'} new={role.class === 'new'}>
+        <Role
+          key={`${role.role}-${role.location}`}
+          old={role.class === 'old'}
+          new={role.class === 'new'}
+        >
           <Title>{role.role}</Title> at{' '}
           <Organization target="_blank" href={role.link}>
             {role.location}

@@ -29,11 +29,11 @@ const VimHeader = () => {
             tweet
           </StyledLink>
         </li>
-        <li>
+        {/* <li>
           <NextLink href="/blog" passHref>
             <StyledLink aria-label="Blog">_blog</StyledLink>
           </NextLink>
-        </li>
+        </li> */}
         <li>
           <NextLink href="/bucket-list" passHref>
             <StyledLink aria-label="Bucket List">_bucketList</StyledLink>

@@ -1,6 +1,7 @@
 import React from 'react';
 import bucketList from '../../content/bucketList.content.json';
 import { styled } from '../../styles/stitches.config';
+import List from '../List/List';
 
 const BucketList = () => {
   return (
@@ -17,15 +18,6 @@ const BucketList = () => {
 };
 
 export default BucketList;
-
-const List = styled('ul', {
-  listStyle: 'none',
-  padding: 0,
-
-  '& li:not(:last-child)': {
-    marginBottom: '$s24',
-  },
-});
 
 const Item = styled('li', {
   display: 'flex',
