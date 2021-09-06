@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { styled } from '../../styles/stitches.config';
 
 const VimFooter = () => {
@@ -6,13 +6,30 @@ const VimFooter = () => {
 
   useEffect(() => {
     if (!isEditing) {
-      document.body.contentEditable = 'false';
       document.designMode = 'off';
     } else {
-      document.body.contentEditable = 'true';
       document.designMode = 'on';
     }
   }, [isEditing]);
+
+  const handleKeydown = useCallback(
+    (e: KeyboardEvent) => {
+      if (isEditing) {
+        if (e.code === 'Escape') {
+          setIsEditing(false);
+        }
+      } else {
+        if (e.code === 'KeyI') {
+          setIsEditing(true);
+        }
+      }
+    },
+    [isEditing]
+  );
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeydown);
+  }, [handleKeydown]);
 
   return (
     <Footer>

@@ -9,6 +9,9 @@ const globalStyles = globalCss({
     cursor: 'pointer',
     color: '$link',
   },
+  body: {
+    caretColor: '$secondaryAccent',
+  },
 });
 
 export default globalStyles;
