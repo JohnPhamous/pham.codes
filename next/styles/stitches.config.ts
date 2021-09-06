@@ -14,6 +14,7 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
         string: '#5c6c9b',
         success: '#50FA7B',
         alert: '#FF5555',
+        warning: '#f1fa8c',
       },
       media: {
         bp0: '(min-width: 1px)',
