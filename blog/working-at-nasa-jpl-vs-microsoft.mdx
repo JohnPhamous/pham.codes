@@ -1,0 +1,107 @@
+---
+title: Notes on working at NASA JPL vs. Microsoft
+description: I wanted to sum up what it's like working at a research facility vs. a big tech company. Note that my experience isn't the same for everyone at both organizations. There will always be nuances based on factors such as team, role, and seniority.
+date: '2019-10-30'
+---
+
+I wanted to sum up what it's like working at a research facility vs. a big tech company. Note that my experience isn't the same for everyone at both organizations. There will always be nuances based on factors such as team, role, and seniority.
+
+Happy to talk about other areas folks would like to hear about!
+
+## The Development Workflow
+
+Some questions to answer:
+
+1. How does the team function?
+1. How are requirements formed? Who does it?
+1. How is the tech stack decided?
+1. How is testing done?
+1. What's the scope of your job?
+
+### At NASA JPL
+
+#### Team
+
+The way I define team here are the people I worked with on a daily basis for the project I was on. The team I was only had about 9 people:
+
+- 2 front-end focused software engineers
+- 4 back-end focused software engineers
+- 1 program manager
+- 3 testers
+
+#### Requirements
+
+The program manager converts conversations with our end users (scientists, operations, and engineers) to requirements. Requirements manifest as tickets in Jira. The tickets would be assigned to a person based on the type of work (frontend/backend). We'd then have a 2 week sprint to finish the work. Work was measured with points based on the Fibonacci sequence.
+
+#### Tech Stack
+
+- Backend mostly Java with some in Node with Typescript
+- Frontend is Angular
+- Data contracts were written in [JSON Schema](https://json-schema.org/) which allowed us to export type definitions for Java and Typescript
+- Database was MongoDB
+- Code is versioned with GitHub
+
+#### Testing
+
+Engineers were not expected to write their own tests. Once developers felt their code was ready to be tested, a ticket would be created and assigned to a tester to test the code. Testers would write their test cases and if cases failed, they would let the developer know. The developer would then fix their code and pass it along to the tester again. This loop would continue until no more bugs were found.
+
+This was a pattern I saw more among the senior engineers. It's a pattern that didn't really sit well with many and would cause headaches for engineers, testers, and program managers. Engineers could work on their feature for a month+ before handing it off to a tester for a first pass and the tester could be given little context on what it's suppose to do.
+
+Other engineers were open to writing their own tests to supplement those written by testers.
+
+The testing requirements were mandated by the US Government but the implementation was up to the testers. Some groups were fine with just unit tests and others required a bigger test suite that included integration, smoke, and E2E tests.
+
+#### Job Scope
+
+- When you join JPL, you join a team that focuses on a specific area
+- You join project(s) which compose of people across teams
+- Your time is split between projects based on a %
+
+Because of these 2 points, the type of work you do can either be narrowly or widely scoped.
+
+Say you join a frontend team. You would then be assigned to projects that need frontend help. If you wanted to get experience with backend, you could start working on backend tasks for that project. Down the line you could join a project as a backend dev or switch to a backend focused team.
+
+## Now off to Washington
+
+![Person on a plane](http://giphygifs.s3.amazonaws.com/media/Btn42lfKKrOzS/giphy.gif)
+
+## At Microsoft
+
+### Team
+
+The way I define team here are the people that are in the same organization.
+
+- 61 software engineers
+- 26 program managers
+
+The difference here is that software engineers are expected to work across the stack. Individuals do pick up preferences for frontend/backend/infrastructure.
+
+#### Requirements
+
+Our organization works on a breath of products/services (projects) used internally and externally. Program managers are assigned project(s) and create requirements from market research, customer engagements, and logs. Requirements manifest themselves as features in Azure DevOps.
+
+Software engineers also join projects and can be on multiple projects.
+
+Big picture goals are decided on a quarterly basis. At the start of each sprint, engineering managers, engineers, and program managers go through the backlog together and pull features in. Features are weighted based on how many engineering hours.
+
+#### Tech Stack
+
+- Backend is .NET
+- Frontend is Angular (maintaining) and React (new development)
+- Databases are Azure managed databases (MySQL, Cosmos, etc.)
+- Code is versioned and deployed with Azure DevOps
+
+#### Testing
+
+Software engineers are expected to test their own code. Tests are ran locally and also as part of the CI/CD process on Azure DevOps.
+
+#### Job Scope
+
+- When you join Microsoft, you join a team that focuses on a specific area
+- Your team works on different projects, you're expected to be able to move between all of them
+
+Most teams are full stack. They also manage the operations, telemetry, and support for their projects.
+
+If you prefer to have a specialization, you can communicate that with your manager and they'll be happy to get you work in your area of choice.
+
+A lot of work leverages work done by other teams. For example, the platform that ingests application logs is managed by a different team. Our team doesn't have to standup our own instance or recreate the wheel.

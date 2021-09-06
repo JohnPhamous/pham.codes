@@ -31,7 +31,7 @@ const Blog = ({ frontMatter, source }: Props) => {
   const customMeta: MetaProps = {
     title: `${frontMatter.title}`,
     description: frontMatter.description,
-    image: `${WEBSITE_HOST_URL}${frontMatter.image}`,
+    image: frontMatter.image ? `${WEBSITE_HOST_URL}${frontMatter.image}` : undefined,
     imageHeight: frontMatter.imageHeight,
     date: frontMatter.date,
     type: 'article',

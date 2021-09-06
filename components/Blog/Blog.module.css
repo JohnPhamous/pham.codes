@@ -43,6 +43,11 @@
   color: var(--accent-secondary);
 }
 
+.blog h4 {
+  font-size: var(--s16);
+  color: var(--accent-secondary);
+}
+
 .date {
   color: var(--comment);
   font-style: italic;
@@ -73,4 +78,59 @@
 
 .blog ol ul {
   margin-left: initial;
+}
+
+.blog code[class*='language-'],
+.blog pre[class*='language-'] {
+  color: var(--text-primary);
+  background: inherit;
+  padding: initial;
+  font-size: inherit;
+  letter-spacing: inherit;
+  border-radius: inherit;
+}
+
+.blog code {
+  background: var(--background-secondary);
+  padding: var(--s4);
+  font-size: 0.9em;
+  letter-spacing: -0.5px;
+  border-radius: var(--s4);
+}
+
+.blog pre[class*='language-'] {
+  border: 1px solid var(--background-secondary);
+  background: var(--background-tertiary);
+  border-radius: var(--s8);
+  padding: var(--s24) var(--s12);
+  margin-left: calc(-1 * 16px);
+  margin-right: calc(-1 * 16px);
+  white-space: pre-wrap;
+}
+
+.blog pre::-webkit-scrollbar {
+  display: none;
+}
+
+.blog pre {
+  scrollbar-width: none;
+}
+
+.blog table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--s8);
+  margin-bottom: var(--s12);
+}
+
+.blog th {
+  color: var(--text-primary);
+  font-weight: bold;
+}
+
+.blog td,
+.blog th {
+  padding: var(--s12);
+  border: 1px solid var(--background-secondary);
+  text-align: left;
 }

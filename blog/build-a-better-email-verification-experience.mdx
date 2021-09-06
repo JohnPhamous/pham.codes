@@ -1,0 +1,124 @@
+---
+title: Build a better email verification experience
+description: You find a new application and you're excited to use it. You go through the account creation process but are blocked from using the application until you verify your email. This is a pain point in the user journey and can be the point where potential users stop using your application.
+date: '2019-12-26'
+---
+
+You find a new application and you're excited to use it. You go through the account creation process but are blocked from using the application until you verify your email. This is a pain point in the user journey and can be the point where potential users stop using your application.
+
+![Frustrated user](https://media.giphy.com/media/8hFJfKMGbbwCQ/giphy.gif)
+
+Let's avoid our user from doing that. In this article we'll be focusing on how we can change the experience around email verification in on-boarding experiences.
+
+## Interrupting the on-boarding experience
+
+The on-boarding experience is one of the most crucial experiences your users will have. If the experience is painful, then users are more likely to exit. Our goal as creators should be to create experiences that delights and brings value to the user.
+
+Most on-boarding experiences need you to verify your email before you use the application. You should consider allowing the user to use the smallest set of features that will entice and keep the user engaged. Requiring the user to step outside of your application, to their email client, find the email, and then verify their account adds friction. If the user isn't enticed during the previous experience then what's keeping them from moving forward?
+
+There are security and resource implications with allowing the user to use your application before verifying their account. This is where you need to come up with policies such as sandboxing, account cleanups, and rate limiting to protect you and your other users.
+
+## Reducing the friction
+
+So we need the user to verify their account at the end of the day. We can tell the user to go to their inbox and verify from there. That's a lot of steps and your competitors are most likely requiring the user to do the same thing. This is your chance to differentiate yourself from the competition.
+
+Here's the general experience:
+
+```diff
+1. Go through account creation journey
+2. Prompt to verify account by clicking link in email
+3. Open new tab
+4. Go to email provider
+5. Find email
+6. Click the verification link
+```
+
+Let's look at how we can improve the experience. From the initial account creation step, we know their email address. What if we can provide a link to their email provider from our experience? Here's how the new experience would look like:
+
+```diff
+1. Go through account creation journey
+2. Prompt to verify account by clicking link in email, provide a link to email provider
+-3. Open new tab
+-4. Go to email provider
+5. Find email
+6. Click the verification link
+```
+
+2 steps less may not seem like a lot but it could be the difference between successfully or unsuccessfully on-boarding a new user.
+
+### The technicals
+
+![Format of an email](https://thepracticaldev.s3.amazonaws.com/i/i6r68zbh4c24y9snr9y5.png)
+
+How can we achieve this? Let's look at a few scenarios.
+
+#### Scenario 1
+
+1. User signs up with ada@gmail.com
+1. We want to provide the user with a link to Gmail
+
+#### Scenario 2
+
+1. User signs up with turing@outlook.com
+1. We want to provide the user with a link to Outlook
+
+Okay, this problem looks pretty simple. We can look at the domain of an email to determine which email provider to link to. We'll end up with a mapping like this:
+
+| Domain      | Email Provider             |
+| ----------- | -------------------------- |
+| outlook.com | https://outlook.office.com |
+| gmail.com   | https://gmail.com          |
+
+But wait! What about edge cases?
+
+#### Scenario 3
+
+1. User signs up with grace@hopper.com
+1. We want to provide the user with a link to ???
+
+We haven't considered the case where the user is using a custom email domain. We can't determine which email provider the user is using from only looking at their email address' domain.
+
+For this example, let's assume hopper.com uses Gmail as their email provider. How can we determine that? We can use MX records!
+
+[Mail exchanger records (MX records)](https://en.wikipedia.org/wiki/MX_record) tell the internet which server handles sending and receiving emails for a domain. For our example, hopper.com would have a MX record telling the internet that Gmail handles it's emails.
+
+In our backend, we can leverage existing tools to look up the MX records for a domain. If you're on a Nix\* OS, you can test this out by using `host`.
+
+```bash
+[I] ➜ host hopper.com
+hopper.com has address 198.179.227.105
+hopper.com mail is handled by 5 aspmx.l.google.com.
+hopper.com mail is handled by 10 alt1.aspmx.l.google.com.
+hopper.com mail is handled by 15 alt2.aspmx.l.google.com.
+```
+
+By looking up the MX records, we now cover all cases. If you're looking to add this to your project, here are a few ways to do it: [Node](https://github.com/martyndavies/legit), [Ruby](https://gist.github.com/afair/2480159), and [Python](https://github.com/cisagov/trustymail).
+
+## Wrapping up
+
+We've learned that we can improve our email verification process by:
+
+1. Allowing users to use our application in a non-destructive way before they verify their email
+1. Reduce the friction for users going to their email to click on the verification link
+
+## A problem for you
+
+There's another pain point with email verifications. You are asking your user to go to their inbox and find an email from you.
+
+### Scenario 1
+
+1. User gets prompted to verify email
+1. User immediately goes to their inbox
+1. Your email is _most likely_ at the top of their inbox
+
+### Scenario 2
+
+1. User gets prompted to verify email
+1. User **doesn't** immediately go to their inbox
+1. Your email is most likely `n` emails down in their inbox
+
+![Unread emails](https://thepracticaldev.s3.amazonaws.com/i/87traccrw3aydmvhzlpc.jpg)
+
+In both scenarios, your user could get distracted by other emails and forget about verifying their account.
+
+Is there a way to solve this problem? Here's a hint: query parameters.

@@ -1,0 +1,76 @@
+---
+title: Fast track yourself through hackathons with APIs
+description: You're at a hackathon, have a stellar team, and a really cool idea but only 24-36 hours to work on it. Your team could implement everything from scratch. If your goal is to learn then do that! If you want to test an idea then you should leverage APIs and focus on building what makes your idea unique.
+date: '2019-12-24'
+---
+
+You're at a hackathon, have a stellar team, and a really cool idea but only 24-36 hours to work on it. Your team could implement everything from scratch. If your goal is to learn then do that! If you want to test an idea then you should leverage APIs and focus on building what makes your idea unique.
+
+## What's an API?
+
+An API is an Application Programming Interface. Think of this as a function you can call from your application to do work such as: identifying puppies in an image and storing the location of your favorite coffee shops in a database.
+
+It doesn't matter if you're building a web application, mobile app, or virtual reality game. APIs are platform agnostic so you can use them no matter what you're building.
+
+Most APIs are either completely free or paid once you past a certain usage. For most hackathon projects, you'll stay in the free tiers. If your project becomes an overnight success then you'll have to start looking at the paid tiers.
+
+There are pretty much APIs that do anything you could want! You can find APIs in [this list](https://github.com/public-apis/public-apis), the [GitHub Student Developer Pack](https://education.github.com/pack), and from your hackathon's sponsors.
+
+Here's a general workflow you can use during a hackathon:
+
+1. Identify a feature
+1. Find an API to help implement that feature
+1. Find documentation and code examples for the API
+1. Add the API to your application
+
+Now let's walk through an example:
+
+1. I want to build an application to show Pokemon
+1. I've found the [PokéAPI](https://pokeapi.co/) that can provide me the data
+1. Found the [documentation](https://pokeapi.co/docs/v2.html)
+1. I can add the API by creating my own client or using a wrapper library
+
+Let's take a deeper look at steps 3 and 4.
+
+## The documentation
+
+Before you choose to use an API, make sure it fulfills your requirements. Next you'll want to look at the documentation and ask:
+
+1. Are there a lot of code examples?
+1. Are all the parameters defined?
+1. How much can I use this API before I have to start paying?
+1. Is there a community around the API? Slack, Reddit, Twitter, StackOverflow, etc.
+
+These are all signs of a well-maintained API. A well-maintained API means that if you run into a problem, you can usually find someone to help.
+
+## Using the API
+
+If you don't know how REST and Request Methods works, please read [Understanding REST and REST APIs](https://code.tutsplus.com/tutorials/code-your-first-api-with-nodejs-and-express-understanding-rest-apis--cms-31697).
+
+Request Methods are how your application will communicate with APIs. Everyone programming language has it's own way of using Request Methods.
+
+Going back to our example, we want to get show Pokemons in our application. From reading the documentation, there is the [`/api/v2/pokemon`](https://pokeapi.co/docs/v2.html#pokemon) endpoint.
+
+The documentation shows which Request Method to use (`GET`), what parameters we can use (`{id or name}`), and what the expected response is.
+
+Before using this API directly in our application, let's test the API using a GUI tool. The benefits of using GUI tools includes iterating quickly without having to rebuild your application and having code exported from the GUI which you can use directly in your application.
+
+For this example we will be using [Postman](https://www.getpostman.com/), but you can also use [Insomia](https://insomnia.rest/) and [Postwoman](https://postwoman.io).
+
+With Postman, we want to make a `GET` request to `https://pokeapi.co/api/v2/pokemon` endpoint. Clicking send with make the request, we'll then see Pokemon data below.
+
+![Postman](https://i.imgur.com/EpqwWUE.jpg)
+
+What if we want to lookup a specific Pokemon? Say Charizard? From the documentation, all we have to do is add the name of the Pokemon we want to lookup to the endpoint: `/pokemon/charizard`.
+
+![Postman](https://imgur.com/adPQQs8.jpg)
+
+We've successfully made API calls to get all the Pokemon and a specific Pokemon! Let's add this to our application now. A handy feature of Postman is it allows you to export your request to code.
+
+You can access this feature by clicking Code then select the language you want to export to.
+
+![Postman](https://imgur.com/Aq6d7rJ.jpg)
+
+# Wrapping up
+
+You've learned how to leverage APIs during hackathons, how quickly iterate using a GUI tool, and export code. With this, you can focus on building what makes your project unique during the hackathon.

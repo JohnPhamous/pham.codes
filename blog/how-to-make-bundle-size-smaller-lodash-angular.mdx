@@ -1,0 +1,70 @@
+---
+title: How to make your bundle size smaller if you're using Lodash with Angular
+description: If you're using Lodash in your Angular project, you may be importing everything Lodash ships with. If you're only using a few methods from Lodash, then you're shipping to your users unused code.
+date: '2019-06-11'
+---
+
+If you're using Lodash in your Angular project, you may be importing everything Lodash ships with. If you're only using a few methods from Lodash, then you're shipping to your users unused code.
+
+```ts:component.ts
+import { keyBy, uniqueId } from 'lodash';
+```
+
+By using named imports, you would think that you're only importing the code for `keyBy` and `uniqueId`. Lodash as of this writing, isn't written using ES Modules so your bundler can't tree shake for you.
+
+## Expected Gains
+
+![Chart](https://i.imgur.com/UaW5shD.png)
+
+In our case, we reduced Lodash's footprint by 112.6%. This data was generated from generating a production build and looking at the Gzipped size.
+
+Your reduction will be different. It will depend on how many Lodash methods you are using in your application.
+
+## The Baseline
+
+Let's check our bundle size before making optimizations using `webpack-bundle-analyzer`.
+
+```bash
+ng build --stats-json
+npx webpack-bundle-analyzer dist/stats.json
+```
+
+The last command will start a webserver listening at `http://127.0.0.1:8888/`. There you can view stats for your bundles.
+
+## The Optimization
+
+Install `lodash-es` that exports Lodash functions as ES Modules.
+
+```
+npm i lodash-es
+npm i -D @types/lodash-es
+```
+
+We need to change our named imports to default imports.
+
+```diff:component.ts
+- import { keyBy, uniqueId } from 'lodash';
++ import keyBy from 'lodash/keyBy';
++ import uniqueId from 'lodash/uniqueId';
+```
+
+Making these changes will cause Typescript to yell at you because it can't find the typings and modules. To fix that, we can add the following options to out `tsconfig.json`.
+
+```json:tsconfig.json
+{
+  "allowSyntheticDefaultImports": true,
+  "baseUrl": "./",
+  "typeRoots": ["node_modules/@types", "manual_typings"],
+  "paths": {
+    "lodash/*": ["node_modules/@types/lodash-es/*"]
+  }
+}
+```
+
+Now you should run your tests to make sure nothing is broken.
+
+That's it! One extra step you can take to prevent you or anyone else from importing all of Lodash is by adding a TSLint rule that disallows named imports from Lodash.
+
+```json:tsconfig.json
+"import-blacklist": [true, "lodash"]
+```

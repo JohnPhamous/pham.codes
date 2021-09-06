@@ -3,6 +3,8 @@ import matter from 'gray-matter';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+// @ts-expect-error
+import mdxPrism from 'mdx-prism';
 import path from 'path';
 import React from 'react';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -30,7 +32,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [require('remark-code-titles')],
-      rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+      rehypePlugins: [mdxPrism, rehypeSlug, rehypeAutolinkHeadings],
     },
     scope: data,
   });

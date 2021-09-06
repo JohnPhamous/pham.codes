@@ -1,0 +1,46 @@
+---
+title: Toggling Comments for Custom CodeMirror Modes
+description: Adding the ability to toggle line/block comments for Custom-defined CodeMirror Modes isn't well documented.
+date: '2019-06-12'
+---
+
+Adding the ability to toggle line/block comments for Custom-defined CodeMirror Modes isn't well documented.
+
+For my use case, I defined a SimpleMode. I wanted to allow users to toggle line/block comments either through clicking a GUI button or using a keyboard shortcut. Here's how I did it.
+
+Below are the changes I made that differ from the documentation.
+
+## Your Mode File
+
+Describe what a comment looks like.
+
+```diff
+CodeMirror.defineSimpleMode('mode-name', {
+  arguments: [],
+  meta: {
++     lineComment: '#'
+   },
+  start: [
++    {
++      regex: /#.*/,
++      token: 'comment',
++    },
+  ]
+}
+```
+
+## Import the CodeMirror Comment Addon
+
+This file can be found in `node_modules/codemirror/addons/comment`
+
+## Instantiating the CodeMirror Instance
+
+Define a keyboard shortcut to trigger the comment toggle in the CodeMirror options object.
+
+```ts
+{
+  extraKeys: {
+    'Ctrl-/': editor.execCommand('toggleComment')
+  }
+}
+```

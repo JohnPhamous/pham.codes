@@ -1,0 +1,40 @@
+---
+title: Printing over ssh using lp
+description: If you’re in a university or at a workplace where your own device isn’t connected to printers, it can be pretty tedious to get something printed. The norm is to find a desktop connected to the printer, log in to the desktop, find the document you want to print (Google Drive, Email, Dropbox, etc), then print it. There is a better way to do it using ssh, scp, and lp.
+date: '2019-02-12'
+---
+
+If you’re in a university or at a workplace where your own device isn’t connected to printers, it can be pretty tedious to get something printed. The norm is to find a desktop connected to the printer, log in to the desktop, find the document you want to print (Google Drive, Email, Dropbox, etc), then print it. There is a better way to do it using ssh, scp, and lp.
+
+## What is SSH?
+
+**S** ecure **SH** ell (ssh) is a network protocol that allows you to create a remote shell. Every time you open a terminal on your computer, you’re creating a new instance of a shell. All of the commands and programs you run in that shell runs locally on your machine.
+
+What if you want to run a program on another machine? This is where SSH helps. SSH allows us to create a connection between your local machine and the remote machine (the other machine).
+
+![](https://cdn-images-1.medium.com/max/1024/1*6F0f9_Dwq9XTLoWZ5FnzCQ.png)
+
+A typical use of ssh is ssh `<remote username>@<remote ip address>`. After running that command, you’ll be prompted to enter in a password. The username and password are the same credentials you would use if you were to physically log into the machine. Once you’re logged in, you can do anything you would physically at the machine completely remotely on your own machine.
+
+## What is scp?
+
+![example of using scp](https://cdn-images-1.medium.com/max/1024/1*8CjFwOUCzUO8ifDyK4138A.png)
+
+**S** ecure **C** o **p** y (scp) is a Unix utility that allows you to copy files across machine. With scp you can move the documents from your own machine onto a machine that has access to a printer. A typical use of scp looks like scp `<file name> <remote username>@<remote ip address>:<path to save location>`. This command will copy `<file name>` from your local machine to the remote machine and store it at `<path to save location>`.
+
+## What is lp?
+
+![Example of using lp](https://cdn-images-1.medium.com/max/954/1*XzCgET_tYPL1D4sx7QXUrA.png)
+
+lp is a Unix utility that is installed on most operating systems by default. It allows you to submit print jobs directly from the command line. A typical use of `lp -d <printer name> -n <num of copies> <file name>`. This command will send a print job for `<file name> to <printer name> to be printed <num of copies>` times. `lp` has tons of flags you can pass in to modify your print job. To learn more about all of the available options, check out the man pages by typing in `man lp`.
+
+## The New Printing Process
+
+1. Prepare the documents you want to print
+2. Use scp to copy your local files to the remote machine
+3. Use ssh to create a remote shell on the remote machine
+4. Use lp to create and send the print job
+
+## Example
+
+![An example with printing a pdf](https://cdn-images-1.medium.com/max/1024/1*TIRucBS3opoh4HtJmJODog.png)
