@@ -9,7 +9,7 @@ class MyDocument extends Document {
   render() {
     const description =
       "John Pham's personal website. John is a software engineer, rookie lifter, and plant parent based in Seattle.";
-    const heroPath = '/images/hero.png';
+    const heroPath = 'https://pham.codes/images/hero.png';
     const title = 'John Pham';
 
     return (
