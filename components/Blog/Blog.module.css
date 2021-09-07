@@ -138,3 +138,20 @@
 .blog strong {
   color: var(--alert);
 }
+
+.blog nav {
+  background: var(--background-secondary);
+  border-radius: var(--s8);
+  padding: var(--s12);
+  margin-bottom: var(--s64);
+}
+
+.blog nav li {
+  margin-bottom: 0;
+}
+
+.blog nav ul,
+.blog nav ol {
+  margin-left: unset;
+  margin-bottom: 0;
+}

@@ -12,6 +12,7 @@ import rehypeSlug from 'rehype-slug';
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils';
 import { PostType } from '../../types/blog';
 import Blog from '../../components/Blog/Blog';
+import toc from '@jsdevtools/rehype-toc';
 
 type PostPageProps = {
   source: MDXRemoteSerializeResult;
@@ -32,12 +33,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [require('remark-code-titles')],
-      rehypePlugins: [mdxPrism, rehypeSlug, rehypeAutolinkHeadings],
+      rehypePlugins: [mdxPrism, rehypeSlug, rehypeAutolinkHeadings, toc],
     },
     scope: data,
   });
-
-  console.log(mdxSource, data);
 
   return {
     props: {
