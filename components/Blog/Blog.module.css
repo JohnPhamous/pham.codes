@@ -74,6 +74,11 @@
   opacity: 1;
 }
 
+.metadataContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
 .date {
   color: var(--comment);
   font-style: italic;

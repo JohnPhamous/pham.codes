@@ -12,6 +12,7 @@ import Youtube from '../Youtube/Youtube';
 interface Props {
   source: MDXRemoteSerializeResult;
   frontMatter: PostType;
+  readingTime: string;
 }
 
 // Custom components/renderers to pass to MDX.
@@ -25,7 +26,7 @@ const components = {
   Youtube,
 };
 
-const Blog = ({ frontMatter, source }: Props) => {
+const Blog = ({ frontMatter, source, readingTime }: Props) => {
   const WEBSITE_HOST_URL = '';
 
   const customMeta: MetaProps = {
@@ -49,9 +50,11 @@ const Blog = ({ frontMatter, source }: Props) => {
           />
         )}
         <h1 className={styles.title}>{frontMatter.title}</h1>
-        <p className={styles.date}>
-          Last Updated: {format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}
-        </p>
+
+        <div className={styles.metadataContainer}>
+          <p className={styles.date}>{format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}</p>
+          <p className={styles.date}>{readingTime}</p>
+        </div>
 
         <div className="">
           <MDXRemote {...source} components={components} />

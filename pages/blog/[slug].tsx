@@ -13,14 +13,16 @@ import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils';
 import { PostType } from '../../types/blog';
 import Blog from '../../components/Blog/Blog';
 import toc from '@jsdevtools/rehype-toc';
+import ReadingTime from 'reading-time';
 
 type PostPageProps = {
   source: MDXRemoteSerializeResult;
   frontMatter: PostType;
+  readingTime: string;
 };
 
-const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
-  return <Blog source={source} frontMatter={frontMatter} />;
+const PostPage = ({ source, frontMatter, readingTime }: PostPageProps): JSX.Element => {
+  return <Blog source={source} frontMatter={frontMatter} readingTime={readingTime} />;
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -28,6 +30,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const source = fs.readFileSync(postFilePath);
 
   const { content, data } = matter(source);
+
+  const readingTime = ReadingTime(content);
 
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
@@ -47,6 +51,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       source: mdxSource,
       frontMatter: data,
+      readingTime: readingTime.text,
     },
   };
 };
