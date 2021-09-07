@@ -30,22 +30,48 @@
   color: var(--comment);
 }
 
-.blog h2 {
-  color: var(--warning);
+.blog h2,
+.blog h2 > a {
+  color: var(--warning) !important;
   font-weight: bold;
   font-size: 32px;
   margin-top: var(--s64);
   margin-bottom: var(--s16);
 }
 
-.blog h3 {
+.blog h3,
+.blog h3 > a {
   font-size: var(--s24);
   color: var(--accent-secondary);
 }
 
-.blog h4 {
+.blog h4,
+.blog h4 > a {
   font-size: var(--s16);
   color: var(--accent-secondary);
+}
+
+.blog h2,
+.blog h3,
+.blog h4 {
+  position: relative;
+  width: fit-content;
+}
+
+.blog h2::before,
+.blog h3::before,
+.blog h4::before {
+  color: var(--comment);
+  content: '#';
+  left: calc(-1 * var(--s24));
+  position: absolute;
+  opacity: 0;
+}
+
+.blog h2:hover::before,
+.blog h3:hover::before,
+.blog h4:hover::before {
+  opacity: 1;
 }
 
 .date {

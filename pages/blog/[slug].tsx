@@ -33,7 +33,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [require('remark-code-titles')],
-      rehypePlugins: [mdxPrism, rehypeSlug, rehypeAutolinkHeadings, toc],
+      rehypePlugins: [
+        mdxPrism,
+        rehypeSlug,
+        () => rehypeAutolinkHeadings({ behavior: 'wrap' }),
+        toc,
+      ],
     },
     scope: data,
   });
