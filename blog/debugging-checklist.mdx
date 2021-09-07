@@ -8,38 +8,53 @@ We've all been there. You're working on fixing a bug and have been at it for hou
 
 Recently I read [Debugging: The 9 Indispensable Rules for Finding Even the Most Elusive Software and Hardware Problems](https://www.goodreads.com/book/show/3938178-debugging) by [Dave Agans](https://twitter.com/daveagans). The book is a short read that teaches you the rules through stories. The 9 rules are:
 
-1. Understand the system
-   - Does this function handle edge cases?
-   - Are dates suppose to be in a specific format or timezone?
-   - Will data ever be null?
-1. Make it fail
-   - Find reproduction steps to make it fail
-   - The shorter the reproduction steps are, the better
-   - Can you write a test case to cause the failure? If so add it to your test suite
-1. Quit thinking and look
-   - Don't just think/guess about what could be causing the bug, find it!
-   - Your guesses can help you focus your search
-1. Divide and conquer
-   - Just like in algorithms, divide and conquer algorithms are faster than linear algorithms
-   - Is the bug from the backend? Database? Frontend? A library?
-1. Change one thing at a time
-   - Don't change multiple things then observe if the bug persists
-1. Keep an audit trail
-   - Write down what changes you've tried and what the effects are if any
-   - This is helpful if you need to pull in other people because you can easily reference what you've already tried
-1. Check the plug
-   - Validate your assumptions
-   - Is there data in the database? Can it ever be null?
-   - 99.999% uptime is still not 100%
-   - Is your development/test environment the same as production?
-1. Get a fresh view
+## Understand the system
 
-   - Reach out for help
-   - Write/talk out loud your problem, [rubber duck debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging) helps
-   - Take a break and come back with fresh eyes
+- Does this function handle edge cases?
+- Are dates suppose to be in a specific format or timezone?
+- Will data ever be null?
 
-1. If you didn't fix it, it ain't fixed
-   - If the bug "disappears" without any fixes applied, it isn't fixed
-   - The bug can only occur when the stars are aligned
+## Make it fail
+
+- Find reproduction steps to make it fail
+- The shorter the reproduction steps are, the better
+- Can you write a test case to cause the failure? If so add it to your test suite
+
+## Quit thinking and look
+
+- Don't just think/guess about what could be causing the bug, find it!
+- Your guesses can help you focus your search
+
+## Divide and conquer
+
+- Just like in algorithms, divide and conquer algorithms are faster than linear algorithms
+- Is the bug from the backend? Database? Frontend? A library?
+
+## Change one thing at a time
+
+- Don't change multiple things then observe if the bug persists
+
+## Keep an audit trail
+
+- Write down what changes you've tried and what the effects are if any
+- This is helpful if you need to pull in other people because you can easily reference what you've already tried
+
+## Check the plug
+
+- Validate your assumptions
+- Is there data in the database? Can it ever be null?
+- 99.999% uptime is still not 100%
+- Is your development/test environment the same as production?
+
+## Get a fresh view
+
+- Reach out for help
+- Write/talk out loud your problem, [rubber duck debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging) helps
+- Take a break and come back with fresh eyes
+
+## If you didn't fix it, it ain't fixed
+
+- If the bug "disappears" without any fixes applied, it isn't fixed
+- The bug can only occur when the stars are aligned
 
 As you read through the rules, you might think they're obvious things you already do while debugging. The best things are often times obvious in retrospect.
