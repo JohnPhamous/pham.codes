@@ -19,7 +19,11 @@ const BlogLayout: React.FC<Props> = ({ children, customMeta }) => {
     ...customMeta,
   };
 
-  meta.image = `${WEBSITE_HOST_URL}${meta.image}`;
+  if (!customMeta.image) {
+    meta.image = `${WEBSITE_HOST_URL}/images/hero.png`;
+  } else {
+    meta.image = `${WEBSITE_HOST_URL}${meta.image}`;
+  }
 
   useEffect(() => {
     if (process.env.NODE_ENV !== 'development') {
@@ -47,13 +51,13 @@ const BlogLayout: React.FC<Props> = ({ children, customMeta }) => {
         <meta property="og:site_name" content="John Pham" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@johnphamous" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} />
         {meta.date && <meta property="article:published_time" content={meta.date} />}
+        <meta property="og:image" content={meta.image} />
+        <meta name="twitter:image" content={meta.image} />
       </Head>
       <div>
         <>{children}</>
