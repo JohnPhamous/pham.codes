@@ -1,0 +1,56 @@
+---
+title: Enabling brotli compression in Go and Chi
+description: Enabling brotli compression is an easy performance win. Enabling it in Go and Chi isn't well documented. This will show you how to enable it in your app.
+date: '2021-09-07'
+---
+
+## Why Brotli?
+
+Brotli is [supported on most modern browsers](https://caniuse.com/brotli). For browsers that don't support Brotli, the compression method will fall back to gzip or deflate based on the request's `Accept-Encoding` header. **Enabling Brotli compression is an easy performance win**.
+
+Brotli is usually more effective at compressing compared to gzip and deflate. When I enabled Brotli compression for [Highlight](https://highlight.run), I saw response sizes decrease around 40% with no latency increases (for the most part requests were faster!).
+
+## The Code Changes
+
+### Installing Dependencies
+
+```bash
+# Install the Chi, older versions of Chi don't support Brotli
+go get -u github.com/go-chi/chi
+
+# Install the package that will do the Brotli compression
+go get -u gopkg.in/kothar/brotli-go.v0
+```
+
+### Enabling Brotli Compression
+
+```go:main.go
+r := chi.NewMux()
+// /* means to compress all content types that can be compressed.
+compressor := middleware.NewCompressor(5, "/*")
+compressor.SetEncoder("br", func(w io.Writer, level int) io.Writer {
+	params := brotli_enc.NewBrotliParams()
+	params.SetQuality(level)
+	return brotli_enc.NewBrotliWriter(params, w)
+})
+r.Use(compressor.Handler)
+```
+
+The `"/*"` means to compress all content types that can be compressed. These are the supported types:
+
+```go
+var defaultCompressibleContentTypes = []string{
+	"text/html",
+	"text/css",
+	"text/plain",
+	"text/javascript",
+	"application/javascript",
+	"application/x-javascript",
+	"application/json",
+	"application/atom+xml",
+	"application/rss+xml",
+	"image/svg+xml",
+}
+```
+
+That's it, congrats on the easy performance win for you and your users!
