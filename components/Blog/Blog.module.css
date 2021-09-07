@@ -134,3 +134,7 @@
   border: 1px solid var(--background-secondary);
   text-align: left;
 }
+
+.blog strong {
+  color: var(--alert);
+}

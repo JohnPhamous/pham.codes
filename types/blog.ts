@@ -5,6 +5,7 @@ export type PostType = {
   imageHeight: number;
   slug: string;
   title: string;
+  draft?: boolean;
 };
 
 export interface MetaProps

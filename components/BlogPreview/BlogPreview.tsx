@@ -9,6 +9,10 @@ interface Props {
 }
 
 const BlogPreview = ({ post }: Props) => {
+  if (process.env.NODE_ENV !== 'development' && post.draft) {
+    return null;
+  }
+
   return (
     <article key={post.slug} className={styles.article}>
       <h1>

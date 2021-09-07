@@ -37,6 +37,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     scope: data,
   });
 
+  console.log(mdxSource, data);
+
   return {
     props: {
       source: mdxSource,
