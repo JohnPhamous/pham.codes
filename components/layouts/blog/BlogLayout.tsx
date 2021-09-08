@@ -58,6 +58,7 @@ const BlogLayout: React.FC<Props> = ({ children, customMeta }) => {
         {meta.date && <meta property="article:published_time" content={meta.date} />}
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:image" content={meta.image} />
+        <script defer src="/scripts/comments.js" />
       </Head>
       <div>
         <>{children}</>
