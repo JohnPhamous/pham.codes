@@ -4,7 +4,11 @@ import VimLayout from '../components/layouts/vim/VimLayout';
 import { H } from 'highlight.run';
 
 if (process.env.NODE_ENV !== 'development') {
-  H.init('wneyvxe4');
+  H.init('wneyvxe4', {
+    networkRecording: {
+      recordHeadersAndBody: true
+    }
+  });
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
