@@ -1,0 +1,73 @@
+---
+title: Highlight
+description:
+date: '2021-09-09'
+draft: true
+---
+
+## Background
+
+Hello! I'm super excited about the opportunity to work with you. I'm John and I graduated from UCR in 2019. I'm now working on a startup called [Highlight](https://highlight.run) to change how companies debug and understand their apps.
+
+For most companies, if an error or customer issue is raised, figuring out how it was even caused is a pain in the ass. Instead of guessing where relevant information is, Highlight gives you all the information you would need. The super cool thing we do is provide a video showing you what the user did that resulted in the error.
+
+Highlight was founded in December 2020. We're a team of 3 engineers (and growing!) that came from Facebook, Google, and Microsoft. We're funded by an awesome group of venture capital firms and angel investors.
+
+Here's a [demo](https://app.highlight.run/112/sessions/2756728) of what our app those.
+
+## Why work with us
+
+- You'll work on a real product that will be shipped to real users, not a pet project
+- The project will be open-sourced, you are encouraged to show it off on your resumes/portfolios
+- You want to build tools that you would want to use as an engineer
+
+## Why you shouldn't work with us
+
+- You need a lot of hand-holding: I'm committed to making sure you succeed but you shouldn't ask me things that are a Google search away. Use your judgment on whether you should spend another 5 minutes researching or asking for help.
+- You won't use the project: Ideally you are super excited about what you are building and will use it after you build it. You should pass on this project if you think of this project as only a project for senior design.
+- You have no experience building web apps. This is a tool for web apps. Having the empathy that comes from building web apps is important.
+
+## Your mission
+
+### Problem
+
+Providing feedback is hard. Let's look at an example; a designer wants to give feedback to an engineer on an implementation. Here's what a typical workflow looks like:
+
+1. Designer creates a new Google document
+1. Designer takes a screenshot of a button that is the wrong text size, pastes it into the document, and add some notes
+1. Designer sends the doc to an engineer
+1. Engineer reads the doc and doesn't know where this button is in the app, and back and forth with the designer
+1. Engineer makes the code change
+
+This process can take anywhere from a few hours to a few weeks. We can make this better.
+
+### Solution
+
+Let's provide a way to give feedback where context is retained. If we do this, we can remove steps 1, 2, 3, and 4. Here's what we're thinking of building:
+
+On any page, a user should be able to click on the page and create a comment. We have similar functionality in the Highlight app that allows users to add comments to videos by clicking anywhere on the video.
+
+![](/images/blog/comment.gif)
+
+This should give you an idea of what you're building.
+
+## Tech stack
+
+- Typescript
+- GraphQL
+
+## Deliverables
+
+1. An npm package that users can install to enable commenting
+1. Creating a comment
+    - A single point on the page, selecting a DOM element, drawing a shape (square, circle, etc.)
+1. Metadata should be saved along with the comment
+    - A screenshot
+    - The screen width and height
+    - The current URL
+    - Anything else you can think of
+1. Comments will be sent to an API using GraphQL
+    - You don't have to build the API, you can mock it for the senior project
+    - Once the project is finished, we will integrate it with the Highlight backend
+
+That's pretty much it. If you're excited about the above, [let's chat](https://john.highlight.run)!
