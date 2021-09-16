@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next';
 import React from 'react';
-import BlogPreview from '../components/BlogPreview/BlogPreview';
+import { BlogHome } from '../components/BlogHome/BlogHome';
 import { getAllPosts } from '../lib/api';
 import { PostType } from '../types/blog';
 
@@ -10,13 +10,7 @@ type BlogPageProps = {
 
 // @ts-expect-error
 const Blog: NextPage = ({ posts }: BlogPageProps) => {
-  return (
-    <div>
-      {posts.map((post) => (
-        <BlogPreview post={post} key={post.title} />
-      ))}
-    </div>
-  );
+  return <BlogHome posts={posts} />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {

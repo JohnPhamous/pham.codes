@@ -72,6 +72,10 @@ a {
   box-sizing: border-box;
 }
 
+p {
+  line-height: 1.6;
+}
+
 /* roboto-mono-200 - latin */
 @font-face {
   font-family: 'Roboto Mono';
