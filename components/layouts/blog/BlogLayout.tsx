@@ -33,11 +33,30 @@ const BlogLayout: React.FC<Props> = ({ children, customMeta }) => {
   }, []);
 
   const saveView = async () => {
-    await supabase.from('blog-post-view').insert([
-      {
-        slug: router.asPath,
-      },
-    ]);
+    const { body, error } = await supabase
+      .from('blog-post-view')
+      .select('count,id')
+      .eq('slug', `${location.pathname}`);
+
+    let count = null;
+
+    if (body?.length) {
+      count = body[0].count;
+    }
+
+    if (!error && !count) {
+      count = 0;
+    }
+
+    if (count !== null && body) {
+      await supabase.from('blog-post-view').upsert([
+        {
+          id: body[0]?.id,
+          slug: location.pathname,
+          count: count + 1,
+        },
+      ]);
+    }
   };
 
   return (
