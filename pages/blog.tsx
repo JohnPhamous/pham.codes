@@ -7,11 +7,12 @@ import { PostType } from '../types/blog';
 
 type BlogPageProps = {
   posts: PostType[];
+  mostPopularPosts: PostType[];
 };
 
 // @ts-expect-error
-const Blog: NextPage = ({ posts }: BlogPageProps) => {
-  return <BlogHome posts={posts} />;
+const Blog: NextPage = ({ posts, mostPopularPosts }: BlogPageProps) => {
+  return <BlogHome posts={posts} mostPopularPosts={mostPopularPosts} />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -39,8 +40,12 @@ export const getStaticProps: GetStaticProps = async () => {
     });
   }
 
+  const mostPopularPosts = [...postsWithViews]
+    .sort((post1, post2) => (post1.views > post2.views ? -1 : 1))
+    .slice(0, 3);
+
   return {
-    props: { posts: postsWithViews },
+    props: { posts: postsWithViews, mostPopularPosts },
   };
 };
 

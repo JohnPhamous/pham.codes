@@ -18,8 +18,9 @@
   opacity: 1;
 }
 
-.h1 {
+.header {
   font-size: 2.25rem;
+  font-weight: bold;
 }
 
 .noResults {

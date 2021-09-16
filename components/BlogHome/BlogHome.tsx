@@ -5,11 +5,12 @@ import styles from './BlogHome.module.css';
 
 interface Props {
   posts: PostType[];
+  mostPopularPosts: PostType[];
 }
 
-export const BlogHome = ({ posts }: Props) => {
+export const BlogHome = ({ posts, mostPopularPosts }: Props) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const filteredPosts =
+  const filteredAllPosts =
     searchTerm === ''
       ? posts
       : posts.filter(
@@ -41,11 +42,21 @@ export const BlogHome = ({ posts }: Props) => {
         />
       </section>
 
-      <h1 className={styles.h1}>All Posts</h1>
-      {filteredPosts.map((post) => (
+      {searchTerm === '' && (
+        <>
+          <h2 className={styles.header}>Most Popular</h2>
+          {mostPopularPosts.map((post) => (
+            <BlogPreview post={post} key={post.title} searchTerm={searchTerm} />
+          ))}
+          {filteredAllPosts.length === 0 && <p className={styles.noResults}>No posts found.</p>}
+        </>
+      )}
+
+      <h2 className={styles.header}>All Posts</h2>
+      {filteredAllPosts.map((post) => (
         <BlogPreview post={post} key={post.title} searchTerm={searchTerm} />
       ))}
-      {filteredPosts.length === 0 && <p className={styles.noResults}>No posts found.</p>}
+      {filteredAllPosts.length === 0 && <p className={styles.noResults}>No posts found.</p>}
     </div>
   );
 };
