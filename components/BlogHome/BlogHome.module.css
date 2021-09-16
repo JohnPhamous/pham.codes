@@ -1,0 +1,27 @@
+.preamble {
+  margin-bottom: var(--s40);
+}
+
+.search {
+  width: 100%;
+  padding: var(--s8) var(--s16);
+  outline: none;
+  font-size: 16px;
+  background: var(--background-secondary);
+  border: 0;
+  color: var(--text-primary);
+  border-radius: var(--s4);
+}
+
+.search::placeholder {
+  color: var(--comment);
+  opacity: 1;
+}
+
+.h1 {
+  font-size: 2.25rem;
+}
+
+.noResults {
+  color: var(--comment);
+}

@@ -19,3 +19,8 @@
   line-height: 1.6;
   font-weight: bold;
 }
+
+.highlight {
+  background: var(--accent);
+  border-radius: var(--s4);
+}
