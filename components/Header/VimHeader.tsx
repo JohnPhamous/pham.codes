@@ -7,11 +7,11 @@ const VimHeader = () => {
     <header>
       <NextLink href="/">
         <a>
-          <h1 aria-label="John Pham at Seattle" className={styles.brand}>
+          <span aria-label="John Pham at Seattle" className={styles.brand}>
             <Typewriter>
               <span className={styles.brandName}>JohnPham</span>@Seattle
             </Typewriter>
-          </h1>
+          </span>
         </a>
       </NextLink>
 

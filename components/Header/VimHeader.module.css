@@ -5,6 +5,7 @@
   font-size: 1.75rem;
   color: var(--accent-secondary);
   cursor: pointer;
+  display: block;
 }
 
 .brandName {
