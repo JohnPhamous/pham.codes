@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { PostType } from '../../types/blog';
 import BlogPreview from '../BlogPreview/BlogPreview';
 import styles from './BlogHome.module.css';
-import Highlighter from 'react-highlight-words';
 
 interface Props {
   posts: PostType[];
