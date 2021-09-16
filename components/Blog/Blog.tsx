@@ -13,6 +13,7 @@ interface Props {
   source: MDXRemoteSerializeResult;
   frontMatter: PostType;
   readingTime: string;
+  views: number;
 }
 
 // Custom components/renderers to pass to MDX.
@@ -26,7 +27,7 @@ const components = {
   Youtube,
 };
 
-const Blog = ({ frontMatter, source, readingTime }: Props) => {
+const Blog = ({ frontMatter, source, readingTime, views }: Props) => {
   const WEBSITE_HOST_URL = '';
 
   const customMeta: MetaProps = {
@@ -53,7 +54,9 @@ const Blog = ({ frontMatter, source, readingTime }: Props) => {
 
         <div className={styles.metadataContainer}>
           <p className={styles.date}>{format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}</p>
-          <p className={styles.date}>{readingTime}</p>
+          <p className={styles.date}>
+            {readingTime} • {views?.toLocaleString()} views
+          </p>
         </div>
 
         <div className="">

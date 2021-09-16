@@ -6,6 +6,7 @@ export type PostType = {
   slug: string;
   title: string;
   draft?: boolean;
+  views: number;
 };
 
 export interface MetaProps

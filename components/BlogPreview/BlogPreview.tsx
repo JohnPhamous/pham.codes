@@ -18,13 +18,15 @@ const BlogPreview = ({ post, searchTerm }: Props) => {
     <article key={post.slug} className={styles.article}>
       <Link as={`/blog/${post.slug}`} href={`/blog/[slug]`} passHref>
         <a className={styles.link}>
-          <h2>
+          <h2 className={styles.titleContainer}>
             <Highlighter
               highlightClassName={styles.highlight}
+              className={styles.title}
               searchWords={searchTerm.split(' ')}
               autoEscape={true}
               textToHighlight={post.title || ''}
             />
+            <span className={styles.viewCount}>{post.views.toLocaleString()} views</span>
           </h2>
           <p className={styles.description}>
             <Highlighter

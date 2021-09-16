@@ -14,15 +14,17 @@ import { PostType } from '../../types/blog';
 import Blog from '../../components/Blog/Blog';
 import toc from '@jsdevtools/rehype-toc';
 import ReadingTime from 'reading-time';
+import supabase from '../../lib/supabase/supabase';
 
 type PostPageProps = {
   source: MDXRemoteSerializeResult;
   frontMatter: PostType;
   readingTime: string;
+  views: number;
 };
 
-const PostPage = ({ source, frontMatter, readingTime }: PostPageProps): JSX.Element => {
-  return <Blog source={source} frontMatter={frontMatter} readingTime={readingTime} />;
+const PostPage = ({ source, frontMatter, readingTime, views }: PostPageProps): JSX.Element => {
+  return <Blog source={source} frontMatter={frontMatter} readingTime={readingTime} views={views} />;
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -47,11 +49,25 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     scope: data,
   });
 
+  let views = 0;
+
+  if (params?.slug) {
+    const { data } = await supabase
+      .from('blog-post-view')
+      .select('count')
+      .eq('slug', `/blog/${params.slug}`);
+
+    if (data) {
+      views = data[0]?.count || 0;
+    }
+  }
+
   return {
     props: {
       source: mdxSource,
       frontMatter: data,
       readingTime: readingTime.text,
+      views,
     },
   };
 };

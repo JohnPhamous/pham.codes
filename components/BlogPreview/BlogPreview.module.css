@@ -11,13 +11,35 @@
   text-decoration: none;
 }
 
-.link:hover h2 {
+.link:hover .title {
   text-decoration: underline;
 }
 
-.link h2 {
+.titleContainer {
   line-height: 1.6;
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  column-gap: var(--s16);
+}
+
+@media only screen and (max-width: 640px) {
+  .titleContainer {
+    flex-direction: column;
+    row-gap: var(--s4);
+  }
+}
+
+.title {
+}
+
+.viewCount {
+  color: var(--comment);
+  font-size: 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  font-weight: normal;
 }
 
 .highlight {

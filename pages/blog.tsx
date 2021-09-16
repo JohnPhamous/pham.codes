@@ -2,6 +2,7 @@ import type { GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import { BlogHome } from '../components/BlogHome/BlogHome';
 import { getAllPosts } from '../lib/api';
+import supabase from '../lib/supabase/supabase';
 import { PostType } from '../types/blog';
 
 type BlogPageProps = {
@@ -24,8 +25,22 @@ export const getStaticProps: GetStaticProps = async () => {
     'draft',
   ]);
 
+  const postsWithViews = [];
+  for (let post of posts) {
+    const { data } = await supabase
+      .from('blog-post-view')
+      .select('count')
+      .eq('slug', `/blog/${post.slug}`);
+
+    postsWithViews.push({
+      ...post,
+      // @ts-expect-error
+      views: data[0]?.count || 0,
+    });
+  }
+
   return {
-    props: { posts },
+    props: { posts: postsWithViews },
   };
 };
 
