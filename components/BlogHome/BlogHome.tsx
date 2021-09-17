@@ -18,14 +18,15 @@ export const BlogHome = ({ posts, mostPopularPosts }: Props) => {
             title.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
             description?.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
         );
+  const totalViews = posts.reduce((previousCount, post) => previousCount + post.views, 0);
 
   return (
     <div>
       <section className={styles.preamble}>
         <p>
           Welcome to my blog. I write about things that interest me, mostly about web development,
-          productivity, and being a life-long learner. I&apos;ve written {posts.length} posts so
-          far.
+          productivity, and being a life-long learner. I&apos;ve written {posts.length} posts so far
+          with a total of {totalViews.toLocaleString()} views.
         </p>
 
         <input
