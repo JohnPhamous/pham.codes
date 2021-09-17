@@ -1016,6 +1016,23 @@
   resolved "https://registry.yarnpkg.com/@jsdevtools/rehype-toc/-/rehype-toc-3.0.2.tgz#29c32e6b40cd4b5dafd96cb90d5057ac5dab4a51"
   integrity sha512-n5JEf16Wr4mdkRMZ8wMP/wN9/sHmTjRPbouXjJH371mZ2LEGDl72t8tEsMRNFerQN/QJtivOxqK1frdGa4QK5Q==
 
+"@liveblocks/client@^0.12.0-beta.2":
+  version "0.12.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@liveblocks/client/-/client-0.12.0-beta.2.tgz#76f713f71dee1a34a6700fd1d581618d4ead6dda"
+  integrity sha512-ub5UjJ6y5SfboYVRPCq/u6hgblDYnYIJRgABnQefjHmkZlVKDIWgsefFimp6TReJGknz8+TTMAmyjQJDEmLxdQ==
+
+"@liveblocks/node@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@liveblocks/node/-/node-0.3.0.tgz#f22ff0c3415502af2baf22250431852e198b12e0"
+  integrity sha512-3IJ6uN3QU71z6WXiDM97wW17fVVvrG9zMy4G4PY3zYzmeRfMnA+KBSBT1uPvlfgWm2D3d6/HNIXWxhwyv7bkfw==
+  dependencies:
+    node-fetch "^2.6.1"
+
+"@liveblocks/react@^0.12.0-beta.2":
+  version "0.12.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@liveblocks/react/-/react-0.12.0-beta.2.tgz#3f4bf505c8c020f5f7e9942bd084e8245ed86a5d"
+  integrity sha512-e28OJetFA7JerJkBwiXQr3/k7g8qmyufmP142ClK7W1zJNyWQnyMfZO9slALF6Q0ydGaRb445jqDhWT9YUAk5g==
+
 "@mdx-js/loader@^1.6.22":
   version "1.6.22"
   resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-1.6.22.tgz#d9e8fe7f8185ff13c9c8639c048b123e30d322c4"
@@ -4187,6 +4204,11 @@ node-fetch@2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
+
+node-fetch@^2.6.1:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.2.tgz#986996818b73785e47b1965cc34eb093a1d464d0"
+  integrity sha512-aLoxToI6RfZ+0NOjmWAgn9+LEd30YCkJKFSyWacNZdEKTit/ZMcKjGkTRo8uWEsnIb/hfKecNPEbln02PdWbcA==
 
 node-gyp-build@^4.2.0:
   version "4.2.3"

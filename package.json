@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@jsdevtools/rehype-toc": "^3.0.2",
+    "@liveblocks/client": "^0.12.0-beta.2",
+    "@liveblocks/node": "^0.3.0",
+    "@liveblocks/react": "^0.12.0-beta.2",
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^11.1.2",
     "@supabase/supabase-js": "^1.22.5",
