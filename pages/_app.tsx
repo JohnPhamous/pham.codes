@@ -19,6 +19,10 @@ if (process.env.NODE_ENV !== 'development') {
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
+  if (Component.getLayout) {
+    return Component.getLayout(<Component {...pageProps} />);
+  }
+
   return (
     <LiveblocksProvider client={client}>
       <RoomProvider
