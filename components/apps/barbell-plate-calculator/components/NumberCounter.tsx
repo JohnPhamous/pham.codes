@@ -38,7 +38,8 @@ const NumberCounter = ({ label, setValue, value }: Props) => {
             id={label}
             value={value}
             onChange={(e) => {
-              setValue(parseFloat(e.target.value).toFixed(1));
+              const newValue = parseFloat(e.target.value);
+              setValue(Number.isNaN(newValue) ? '0.0' : newValue.toFixed(1));
             }}
           />
           <div className={styles.controlsContainer}>
