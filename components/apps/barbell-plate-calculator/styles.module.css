@@ -1,0 +1,121 @@
+.app {
+  color: var(--primary-text-color);
+  --background-color: #f2f3f7;
+  --primary-text-color: #58627c;
+  --accent-color: #58cbe0;
+  --border-radius: var(--s12);
+  --shadow-background-color: white;
+  --red: #e43030;
+  --green: #19a187;
+  --shadow-shadow: rgba(0, 0, 0, 0.1);
+  --inactive-box-shadow: 6px 6px 10px var(--shadow-shadow),
+    -6px -6px 10px var(--shadow-background-color);
+  --active-box-shadow: 0 0 transparent, 0 0 transparent, inset 3px 3px 5px var(--shadow-shadow),
+    inset -3px -3px 5px var(--shadow-background-color);
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  background: var(--background-color);
+  height: 100vh;
+  padding: var(--s24) var(--s12);
+}
+
+.inputButton {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--s24);
+  margin-top: var(--s8);
+}
+
+.app h1 {
+  font-weight: 300;
+  font-size: 1rem;
+  margin-top: 0;
+  text-align: center;
+  margin-bottom: var(--s32);
+}
+
+.paper {
+  padding: var(--s16) var(--s24);
+  min-height: 100px;
+  font-size: 1.2em;
+  background: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--inactive-box-shadow);
+}
+
+.app button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  height: var(--s48);
+  width: var(--s48);
+  border-radius: 50%;
+  text-transform: capitalize;
+  padding: 10px 0;
+  text-align: center;
+  cursor: pointer;
+  color: inherit;
+  font-size: 1.1rem;
+  transition-property: background-color, box-shadow;
+  transition-delay: 0.2s;
+  transition-duration: 0.2s;
+  background: var(--background-color);
+  box-shadow: var(--inactive-box-shadow);
+}
+
+.app button:active {
+  transition-delay: 0s;
+  transition-duration: 0.1s;
+  border-radius: var(--border-radius);
+  box-shadow: var(--active-box-shadow);
+  background: var(--background-color);
+}
+
+.app input {
+  border-radius: var(--border-radius);
+  width: 6ch;
+  box-shadow: var(--active-box-shadow);
+  background: var(--background-color);
+  transition: box-shadow 0.2s;
+  color: var(--primary-text-color);
+  font-weight: normal;
+  padding: 0;
+  line-height: 1.25em;
+  height: 2.5em;
+  text-align: center;
+  margin: var(--s12) auto;
+  font-size: 2rem;
+  cursor: text;
+  border: 0;
+  outline: 0;
+}
+
+.app input:focus {
+  border-radius: var(--border-radius);
+  background: var(--background-color);
+  box-shadow: var(--inactive-box-shadow);
+}
+
+.controlsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app label {
+  text-align: center;
+}
+
+.inputContainer {
+  display: flex;
+  margin-top: 20px;
+  column-gap: var(--s12);
+  row-gap: var(--s24);
+  justify-content: center;
+  flex-wrap: wrap;
+}

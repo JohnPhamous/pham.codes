@@ -23,6 +23,13 @@ const BarbellPlateCalculatorLayout: React.FC = ({ children }) => {
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
         <meta property="twitter:image" content={heroPath} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        {/*  eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <div>
         <main>{children}</main>
