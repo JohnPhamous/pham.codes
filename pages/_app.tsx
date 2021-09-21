@@ -19,7 +19,9 @@ if (process.env.NODE_ENV !== 'development') {
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
+  // @ts-expect-error
   if (Component.getLayout) {
+    // @ts-expect-error
     return Component.getLayout(<Component {...pageProps} />);
   }
 

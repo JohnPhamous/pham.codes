@@ -18,6 +18,7 @@ const BarbellPlateCalculatorPage: NextPage = () => {
 
 export default BarbellPlateCalculatorPage;
 
+// @ts-expect-error
 BarbellPlateCalculatorPage.getLayout = function getLayout(page) {
   return <BarbellPlateCalculatorLayout>{page}</BarbellPlateCalculatorLayout>;
 };
