@@ -19,6 +19,5 @@ const BarbellPlateCalculatorPage: NextPage = () => {
 export default BarbellPlateCalculatorPage;
 
 BarbellPlateCalculatorPage.getLayout = function getLayout(page) {
-  console.log('hi');
   return <BarbellPlateCalculatorLayout>{page}</BarbellPlateCalculatorLayout>;
 };

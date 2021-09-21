@@ -1011,6 +1011,11 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.0.tgz#87de7af9c231826fdd68ac7258f77c429e0e5fcf"
   integrity sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==
 
+"@iconicicons/react@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@iconicicons/react/-/react-1.5.0.tgz#906c1c8d5114be2c6bd9e4b31be3eb1123801a7d"
+  integrity sha512-WEPtx5uYyz1zSpRSrdpBIY6Wdq2T46vHWedIJQDoSnFZ+BsL1Sk2Sggp0nShetUm7yImtINiPD3To5okGoDprQ==
+
 "@jsdevtools/rehype-toc@^3.0.2":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@jsdevtools/rehype-toc/-/rehype-toc-3.0.2.tgz#29c32e6b40cd4b5dafd96cb90d5057ac5dab4a51"
