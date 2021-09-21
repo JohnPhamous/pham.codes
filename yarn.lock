@@ -6009,6 +6009,11 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
+use-long-press@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/use-long-press/-/use-long-press-1.1.1.tgz#7a67b0bdf8d6f7a9183b6d662c5d57d164183574"
+  integrity sha512-tqf6zDZ06g/Rt8rw+/jaekrdBTmrFXxjHHd2QgMlOhvs1fwOb9VA9d+DmkTPeNtL/byaJ8YeHTOwmluwxhXRLA==
+
 use-subscription@1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/use-subscription/-/use-subscription-1.5.1.tgz#73501107f02fad84c6dd57965beb0b75c68c42d1"

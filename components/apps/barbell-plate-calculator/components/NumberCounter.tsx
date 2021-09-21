@@ -1,6 +1,7 @@
 import { MinusIcon, PlusIcon } from '@iconicicons/react';
 import React from 'react';
 import styles from '../styles.module.css';
+import { useLongPress } from 'use-long-press';
 
 interface Props {
   label: string;
@@ -21,6 +22,10 @@ const NumberCounter = ({ label, setValue, value }: Props) => {
     return newWeight.toFixed(1);
   };
 
+  const decrementHandler = useLongPress(() => {
+    setValue((currentWeight) => decrementWeight(currentWeight));
+  });
+
   return (
     <div className={styles.paper}>
       <label htmlFor={label} className={styles.inputButton}>
@@ -38,6 +43,7 @@ const NumberCounter = ({ label, setValue, value }: Props) => {
           />
           <div className={styles.controlsContainer}>
             <button
+              {...decrementHandler}
               onClick={() => {
                 setValue((currentWeight) => decrementWeight(currentWeight));
               }}
