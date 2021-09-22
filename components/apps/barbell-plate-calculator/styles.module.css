@@ -194,3 +194,23 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+.app .switchViewButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.app .viewHeader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--s12);
+}
+
+.app .viewHeader h3 {
+  margin-top: var(--s12);
+  margin-bottom: var(--s12);
+  font-weight: 400;
+}

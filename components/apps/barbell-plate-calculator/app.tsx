@@ -1,3 +1,4 @@
+import { RefreshIcon } from '@iconicicons/react';
 import React, { useState } from 'react';
 import NumberCounter from './components/NumberCounter';
 import PlateVisualization from './components/PlateVisualization';
@@ -6,6 +7,7 @@ import styles from './styles.module.css';
 const BarbellPlateCalculator = () => {
   const [targetWeight, setTargetWeight] = useState('200.0');
   const [barWeight, setBarWeight] = useState('45.0');
+  const [view, setView] = useState<'visualization' | 'table'>('visualization');
 
   const { plates } = getPlates(parseFloat(targetWeight), parseFloat(barWeight));
 
@@ -20,26 +22,37 @@ const BarbellPlateCalculator = () => {
         </section>
 
         <section className={styles.paper}>
-          <div className={styles.table}>
-            {Object.keys(plates).map((weight) => {
-              const numberOfPlates = plates[weight];
-
-              if (numberOfPlates === 0) {
-                return null;
-              }
-
-              return (
-                <div key={weight} className={styles.row}>
-                  <span className={styles.key}>{weight} lbs</span>
-                  <span className={styles.value}>{plates[weight]}</span>
-                </div>
-              );
-            })}
+          <div className={styles.viewHeader}>
+            <h3>{view === 'table' ? 'Plates' : 'Visualization'}</h3>
+            <button
+              className={styles.switchViewButton}
+              onClick={() => {
+                setView((previousView) => (previousView === 'table' ? 'visualization' : 'table'));
+              }}
+            >
+              <RefreshIcon />
+            </button>
           </div>
-        </section>
+          {view === 'table' ? (
+            <div className={styles.table}>
+              {Object.keys(plates).map((weight) => {
+                const numberOfPlates = plates[weight];
 
-        <section className={styles.paper}>
-          <PlateVisualization plates={plates} />
+                if (numberOfPlates === 0) {
+                  return null;
+                }
+
+                return (
+                  <div key={weight} className={styles.row}>
+                    <span className={styles.key}>{weight} lbs</span>
+                    <span className={styles.value}>{plates[weight]}</span>
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <PlateVisualization plates={plates} />
+          )}
         </section>
       </main>
     </div>
