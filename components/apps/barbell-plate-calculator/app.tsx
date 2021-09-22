@@ -5,7 +5,7 @@ import PlateVisualization from './components/PlateVisualization';
 import styles from './styles.module.css';
 
 const BarbellPlateCalculator = () => {
-  const [targetWeight, setTargetWeight] = useState('199.0');
+  const [targetWeight, setTargetWeight] = useState('200.0');
   const [barWeight, setBarWeight] = useState('45.0');
   const [view, setView] = useState<'visualization' | 'table'>('visualization');
 
