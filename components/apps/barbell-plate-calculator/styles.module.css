@@ -171,6 +171,23 @@
 
   box-shadow: -5px -5px 5px var(--accent-color-shadow-highlight-color),
     3px 3px 5px var(--accent-color-shadow-color);
+  animation-name: slidein;
+  animation-duration: 1s;
+  animation-direction: forwards;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }
 
 .plate .plateInner {

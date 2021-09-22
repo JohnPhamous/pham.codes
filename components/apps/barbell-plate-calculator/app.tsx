@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import NumberCounter from './components/NumberCounter';
 import PlateVisualization from './components/PlateVisualization';
 import styles from './styles.module.css';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const BarbellPlateCalculator = () => {
   const [targetWeight, setTargetWeight] = useState('200.0');
@@ -22,37 +23,39 @@ const BarbellPlateCalculator = () => {
         </section>
 
         <section className={styles.paper}>
-          <div className={styles.viewHeader}>
-            <h3>{view === 'table' ? 'Plates' : 'Visualization'}</h3>
-            <button
-              className={styles.switchViewButton}
-              onClick={() => {
-                setView((previousView) => (previousView === 'table' ? 'visualization' : 'table'));
-              }}
-            >
-              <RefreshIcon />
-            </button>
-          </div>
-          {view === 'table' ? (
-            <div className={styles.table}>
-              {Object.keys(plates).map((weight) => {
-                const numberOfPlates = plates[weight];
+          <AnimatePresence>
+            <motion.div className={styles.viewHeader} key="header">
+              <h3>{view === 'table' ? 'Plates' : 'Visualization'}</h3>
+              <button
+                className={styles.switchViewButton}
+                onClick={() => {
+                  setView((previousView) => (previousView === 'table' ? 'visualization' : 'table'));
+                }}
+              >
+                <RefreshIcon />
+              </button>
+            </motion.div>
+            {view === 'table' ? (
+              <div className={styles.table}>
+                {Object.keys(plates).map((weight) => {
+                  const numberOfPlates = plates[weight];
 
-                if (numberOfPlates === 0) {
-                  return null;
-                }
+                  if (numberOfPlates === 0) {
+                    return null;
+                  }
 
-                return (
-                  <div key={weight} className={styles.row}>
-                    <span className={styles.key}>{weight} lbs</span>
-                    <span className={styles.value}>{plates[weight]}</span>
-                  </div>
-                );
-              })}
-            </div>
-          ) : (
-            <PlateVisualization plates={plates} />
-          )}
+                  return (
+                    <div key={weight} className={styles.row}>
+                      <span className={styles.key}>{weight} lbs</span>
+                      <span className={styles.value}>{plates[weight]}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <PlateVisualization plates={plates} />
+            )}
+          </AnimatePresence>
         </section>
       </main>
     </div>
