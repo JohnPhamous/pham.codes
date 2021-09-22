@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import NumberCounter from './components/NumberCounter';
+import PlateVisualization from './components/PlateVisualization';
 import styles from './styles.module.css';
 
 const BarbellPlateCalculator = () => {
@@ -35,6 +36,10 @@ const BarbellPlateCalculator = () => {
               );
             })}
           </div>
+        </section>
+
+        <section className={styles.paper}>
+          <PlateVisualization plates={plates} />
         </section>
       </main>
     </div>

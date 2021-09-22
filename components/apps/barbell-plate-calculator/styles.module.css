@@ -2,7 +2,10 @@
   color: var(--primary-text-color);
   --background-color: #f2f3f7;
   --primary-text-color: #58627c;
-  --accent-color: #58cbe0;
+  --primary-inverted-text-color: white;
+  --accent-color: #25cede;
+  --accent-color-shadow-color: rgba(136, 160, 183, 0.35);
+  --accent-color-shadow-highlight-color: rgba(255, 255, 255, 0.55);
   --border-radius: var(--s12);
   --shadow-background-color: white;
   --red: #e43030;
@@ -156,4 +159,39 @@
 
 .app .value {
   font-weight: 700;
+}
+
+.plate {
+  border-radius: var(--border-radius);
+  text-align: center;
+  position: relative;
+  height: var(--s32);
+
+  color: var(--primary-inverted-text-color);
+  border-radius: 20px;
+
+  box-shadow: -5px -5px 5px var(--accent-color-shadow-highlight-color),
+    3px 3px 5px var(--accent-color-shadow-color);
+}
+
+.plate .plateInner {
+  background: var(--accent-color);
+  box-shadow: 1px 1px 2px var(--accent-color-shadow-color);
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+}
+
+.platesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: var(--s4);
+}
+
+.plate .label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
