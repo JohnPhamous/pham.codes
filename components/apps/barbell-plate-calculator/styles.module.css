@@ -114,7 +114,7 @@
 .inputContainer {
   display: flex;
   margin-top: 20px;
-  column-gap: var(--s12);
+  column-gap: var(--s24);
   row-gap: var(--s24);
   justify-content: center;
   flex-wrap: wrap;
