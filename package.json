@@ -20,7 +20,6 @@
     "@next/mdx": "^11.1.2",
     "@supabase/supabase-js": "^1.22.5",
     "date-fns": "^2.23.0",
-    "framer-motion": "^4.1.17",
     "gray-matter": "^4.0.3",
     "highlight.run": "^2.6.0",
     "mdx-prism": "^0.3.4",
