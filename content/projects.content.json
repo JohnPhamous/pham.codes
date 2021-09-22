@@ -1,5 +1,11 @@
 [
   {
+    "name": "Barbell Plate Calculator",
+    "description": "An app to help calculate how many plates you need for a target weight. This is useful for barbell lifters.",
+    "demo": "",
+    "link": "/apps/barbell"
+  },
+  {
     "name": "Intermediate Javascript Course",
     "description": "Learn about classes, modules, promises, currying, concurrency, and the event loop.",
     "demo": "https://www.codecademy.com/learn/learn-intermediate-javascript"
