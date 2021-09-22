@@ -19,7 +19,7 @@
   font-family: 'Rubik', sans-serif;
   background: var(--background-color);
   height: 100vh;
-  padding: var(--s24) var(--s12);
+  padding: var(--s24) 18px;
   padding-top: var(--s32);
 }
 
@@ -117,9 +117,8 @@
 .inputContainer {
   display: flex;
   margin-top: 20px;
-  column-gap: var(--s24);
   row-gap: var(--s24);
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -127,6 +126,8 @@
   display: flex;
   flex-direction: column;
   row-gap: var(--s32);
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .app .row:not(:last-of-type) {
