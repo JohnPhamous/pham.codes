@@ -16,7 +16,7 @@
   --active-box-shadow: 0 0 transparent, 0 0 transparent, inset 3px 3px 5px var(--shadow-shadow),
     inset -3px -3px 5px var(--shadow-background-color);
   font-size: 16px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Rubik', sans-serif;
   background: var(--background-color);
   height: 100vh;
   padding: var(--s24) var(--s12);
@@ -36,11 +36,10 @@
 }
 
 .app h1 {
-  font-weight: 300;
+  font-weight: 500;
   font-size: 1rem;
   margin-top: 0;
   text-align: center;
-  margin-bottom: var(--s24);
 }
 
 .paper {

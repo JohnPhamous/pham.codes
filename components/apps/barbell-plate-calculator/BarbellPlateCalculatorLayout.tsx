@@ -27,9 +27,9 @@ const BarbellPlateCalculatorLayout: React.FC = ({ children }) => {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         {/*  eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
           rel="stylesheet"
-        />
+        ></link>
       </Head>
       <div>
         <main>{children}</main>
