@@ -53,6 +53,7 @@
   align-items: center;
   justify-content: center;
   border: 0;
+  -webkit-tap-highlight-color: transparent;
   height: var(--s48);
   width: var(--s48);
   border-radius: 50%;
@@ -72,7 +73,6 @@
 .app button:active {
   transition-delay: 0s;
   transition-duration: 0.1s;
-  border-radius: var(--border-radius);
   box-shadow: var(--active-box-shadow);
   background: var(--background-color);
 }
