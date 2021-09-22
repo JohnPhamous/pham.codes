@@ -3,34 +3,40 @@ import NumberCounter from './components/NumberCounter';
 import styles from './styles.module.css';
 
 const BarbellPlateCalculator = () => {
-  const [targetWeight, setTargetWeight] = useState('135.0');
+  const [targetWeight, setTargetWeight] = useState('200.0');
   const [barWeight, setBarWeight] = useState('45.0');
 
-  // @ts-expect-error
-  const { plates, warning } = getPlates(parseFloat(targetWeight), parseFloat(barWeight));
+  const { plates } = getPlates(parseFloat(targetWeight), parseFloat(barWeight));
 
   return (
     <div className={styles.app}>
       <h1>Barbell Racking Calculator</h1>
 
-      <div className={styles.inputContainer}>
-        <NumberCounter label="Target Weight" value={targetWeight} setValue={setTargetWeight} />
-        <NumberCounter label="Bar Weight" value={barWeight} setValue={setBarWeight} />
-      </div>
-      {warning}
-      {Object.keys(plates).map((weight) => {
-        const numberOfPlates = plates[weight];
+      <main>
+        <section className={styles.inputContainer}>
+          <NumberCounter label="Target Weight" value={targetWeight} setValue={setTargetWeight} />
+          <NumberCounter label="Bar Weight" value={barWeight} setValue={setBarWeight} />
+        </section>
 
-        if (numberOfPlates === 0) {
-          return null;
-        }
+        <section className={styles.paper}>
+          <div className={styles.table}>
+            {Object.keys(plates).map((weight) => {
+              const numberOfPlates = plates[weight];
 
-        return (
-          <div key={weight}>
-            {weight}: {plates[weight]}
+              if (numberOfPlates === 0) {
+                return null;
+              }
+
+              return (
+                <div key={weight} className={styles.row}>
+                  <span className={styles.key}>{weight} lbs</span>
+                  <span className={styles.value}>{plates[weight]}</span>
+                </div>
+              );
+            })}
           </div>
-        );
-      })}
+        </section>
+      </main>
     </div>
   );
 };
@@ -46,7 +52,7 @@ const AVAILABLE_PLATES: { [key: string]: number } = {
   '45.0': 45.0,
 };
 
-type GetPlatesWarningType = 'TargetWeightLessThanBar' | 'ExactTargetWeightNotPossible';
+export type GetPlatesWarningType = 'TargetWeightLessThanBar' | 'ExactTargetWeightNotPossible';
 
 function getPlates(
   targetWeight: number,
@@ -64,14 +70,12 @@ function getPlates(
   );
 
   if (targetWeight <= barbellWeight) {
-    console.log('lifting the empty bar is enough for that weight');
     warning = 'TargetWeightLessThanBar';
   }
 
   let weightPerSide = (targetWeight - barbellWeight) / 2;
 
   if (weightPerSide % AVAILABLE_PLATES['2.5'] !== 0) {
-    console.log("The requested weight can't be exactly loaded with the standard weight plates");
     warning = 'ExactTargetWeightNotPossible';
   }
 

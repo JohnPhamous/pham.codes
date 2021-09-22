@@ -17,6 +17,7 @@
   background: var(--background-color);
   height: 100vh;
   padding: var(--s24) var(--s12);
+  padding-top: var(--s32);
 }
 
 .inputButton {
@@ -36,7 +37,7 @@
   font-size: 1rem;
   margin-top: 0;
   text-align: center;
-  margin-bottom: var(--s32);
+  margin-bottom: var(--s24);
 }
 
 .paper {
@@ -118,4 +119,41 @@
   row-gap: var(--s24);
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.app main {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--s32);
+}
+
+.app .row:not(:last-of-type) {
+  border-bottom: 1px solid var(--shadow-shadow);
+}
+
+.app .row {
+  padding: var(--s16) 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.app .row:first-of-type {
+  padding-top: 0;
+}
+
+.app .row:last-of-type {
+  padding-bottom: 0;
+}
+
+.app .table {
+  display: flex;
+  flex-direction: column;
+}
+
+.app .key {
+  font-weight: 300;
+}
+
+.app .value {
+  font-weight: 700;
 }
