@@ -1,0 +1,120 @@
+---
+title: Sending Slack Messages with Images using Go
+description: The Slack Go SDK isn't officially supported or documented. Here's how I figured out how to send Slack messages with images.
+date: '2021-09-24'
+---
+
+## Background
+
+I was building a feature on [Highlight](https://highlight.run) that allows you to create a comment on a video. This comment is special because it has not only the author and the text but also the video's x-coordinate, y-coordinate, and current time. You can create a comment by clicking anywhere on the video at any point during playback.
+
+When writing a comment, you can tag individuals or Slack channels. When you create a comment that has tags, then the things that are tagged will get a notification in Slack.
+
+The first version of notifications we shipped only showed the comment's author and text. This wasn't ideal because since the comment is related to the video's coordinates and time, any context in the comment text is lost. By adding a screenshot, we bring the whole context of the comment to the notification. Now the recipient doesn't have to go into Highlight to get the full context, they'll have all of it with the notification.
+
+Here's what I ended up with:
+
+![](/images/blog/slack-message-with-image.png)
+
+The [Slack Go SDK](https://github.com/slack-go/slack) is a community SDK and not officially maintained by Slack. This means it doesn't get the same care or attention in terms of documentation and code examples.
+
+It took me a bit to figure out how to send a Slack message with an image so I'm hoping this blog will save you time.
+
+## The Code
+
+From the browser, I'm sending the image as a base64 image. This isn't required. I'm using base64 instead of a file because of other reasons.
+
+Here's a simplified version of the code I ended up using:
+
+```go:SlackProvider.go
+import (
+	"os"
+	"encoding/base64"
+	"errors"
+	"github.com/slack-go/slack"
+)
+
+func SendSlackAlert(taggedSlackUsers []string, commentText string, base64Image string) error {
+	slackClient := slack.New(os.Getenv("SLACK_ACCESS_TOKEN"))
+
+	// For every tagged user, join the channel and send the message.
+	for _, slackUser := range taggedSlackUsers {
+		if slackUser.WebhookChannelID != nil {
+			// The Slack API handles:
+			// 1. Joining a channel the bot is already a member of
+			// 2. Joining a Slack user
+			// Because of this, we can skip checking for this in our application code.
+			_, _, _, err := slackClient.JoinConversation(*slackUser.WebhookChannelID)
+			if err != nil {
+				log.Error(e.Wrap(err, "failed to join slack channel"))
+			}
+
+			_, _, err = slackClient.PostMessage(*slackUser.WebhookChannelID, slack.MsgOptionBlocks())
+			if err != nil {
+				return e.Wrap(err, "error posting slack message via slack bot")
+			}
+		}
+	}
+
+	// We need to write the base64 image as a png on disk to upload to Slack.
+	// We create a unique file name for the image.
+	uploadedFileKey := fmt.Sprintf("slack-image-%d.png",time.Now().UnixNano())
+
+	dec, err := base64.StdEncoding.DecodeString(*base64Image)
+	if err != nil {
+		log.Error(e.Wrap(err, "Failed to decode base64 image"))
+	}
+	f, err := os.Create(uploadedFileKey)
+	if err != nil {
+		log.Error(e.Wrap(err, "Failed to create file on disk"))
+	}
+	defer f.Close()
+	if _, err := f.Write(dec); err != nil {
+		log.Error(e.Wrap(err, "Failed to write file on disk"))
+	}
+	if err := f.Sync(); err != nil {
+		log.Error("Failed to sync file on disk")
+	}
+
+	// We need to write the base64 image to disk, read the file, then upload it to Slack.
+	// We can't send Slack a base64 string.
+	fileUploadParams := slack.FileUploadParameters{
+		Filetype: "image/png",
+		Filename: "Upload.png",
+		// These are the channels that will have access to the uploaded file.
+		Channels: channels,
+		File:     uploadedFileKey,
+	}
+	_, err = slackClient.UploadFile(fileUploadParams)
+
+	if err != nil {
+		log.Error(e.Wrap(err, "failed to upload file to Slack"))
+	}
+
+	if uploadedFileKey != "" {
+		if err := os.Remove(uploadedFileKey); err != nil {
+			log.Error(e.Wrap(err, "Failed to remove temporary session screenshot"))
+		}
+	}
+}
+```
+
+## Considerations
+
+The above code will result in 2 messages being sent:
+
+1. For the comment text
+1. For the uploaded image
+
+Ideally, we only send 1 message with the image attached. The Slack API doesn't allow you to do this unless you are attaching the image with a URL. This means the image has to exist somewhere on the internet already.
+
+In the above code, we send the messages then we upload the images. What if we upload the images first then use the URLs for the uploaded images to attach to each message?
+
+That will work but will lead to this behavior:
+
+1. The image is posted in the channel
+1. The comment is posted in the channel with the attached image
+
+This isn't the experience I wanted. The code as-is is closer to the desired experience of showing the comment, then the image to provide context.
+
+The Slack API doesn't provide a way to upload a file "silently". Each upload to a channel will result in a message with a preview of the uploaded content.
