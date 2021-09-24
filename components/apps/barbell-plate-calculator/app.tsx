@@ -18,8 +18,8 @@ const BarbellPlateCalculator = () => {
 
       <main>
         <section className={styles.inputContainer}>
-          <NumberCounter label="Target Weight" value={targetWeight} setValue={setTargetWeight} />
           <NumberCounter label="Bar Weight" value={barWeight} setValue={setBarWeight} />
+          <NumberCounter label="Target Weight" value={targetWeight} setValue={setTargetWeight} />
         </section>
 
         <section className={styles.paper}>
