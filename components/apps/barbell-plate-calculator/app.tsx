@@ -1,12 +1,13 @@
 import { RefreshIcon } from '@iconicicons/react';
+import { useLocalStorage } from 'usehooks-ts';
 import React, { useState } from 'react';
 import NumberCounter from './components/NumberCounter';
 import PlateVisualization from './components/PlateVisualization';
 import styles from './styles.module.css';
 
 const BarbellPlateCalculator = () => {
-  const [targetWeight, setTargetWeight] = useState('200.0');
-  const [barWeight, setBarWeight] = useState('45.0');
+  const [targetWeight, setTargetWeight] = useLocalStorage('targetWeight', '200.0');
+  const [barWeight, setBarWeight] = useLocalStorage('barWeight', '45.0');
   const [view, setView] = useState<'visualization' | 'table'>('visualization');
 
   const { plates } = getPlates(parseFloat(targetWeight), parseFloat(barWeight));

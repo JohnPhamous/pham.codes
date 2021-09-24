@@ -1,12 +1,11 @@
 import { MinusIcon, PlusIcon } from '@iconicicons/react';
 import React from 'react';
 import styles from '../styles.module.css';
-import { useLongPress } from 'use-long-press';
 
 interface Props {
   label: string;
   value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  setValue: (newValue: string) => void;
 }
 
 const WEIGHT_INCREMENT = 0.5;
@@ -21,10 +20,6 @@ const NumberCounter = ({ label, setValue, value }: Props) => {
 
     return newWeight.toFixed(1);
   };
-
-  const decrementHandler = useLongPress(() => {
-    setValue((currentWeight) => decrementWeight(currentWeight));
-  });
 
   return (
     <div className={styles.paper}>
@@ -44,9 +39,8 @@ const NumberCounter = ({ label, setValue, value }: Props) => {
           />
           <div className={styles.controlsContainer}>
             <button
-              {...decrementHandler}
               onClick={() => {
-                setValue((currentWeight) => decrementWeight(currentWeight));
+                setValue(decrementWeight(value));
               }}
               aria-label={`Decrease weight by ${WEIGHT_INCREMENT}`}
             >
@@ -54,9 +48,7 @@ const NumberCounter = ({ label, setValue, value }: Props) => {
             </button>
             <button
               onClick={() => {
-                setValue((currentWeight) =>
-                  (parseFloat(currentWeight) + WEIGHT_INCREMENT).toFixed(1)
-                );
+                setValue((parseFloat(value) + WEIGHT_INCREMENT).toFixed(1));
               }}
               aria-label={`Increase weight by ${WEIGHT_INCREMENT}`}
             >
