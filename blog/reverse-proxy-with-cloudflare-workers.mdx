@@ -1,0 +1,86 @@
+---
+title: Building a Reverse Proxy with Cloudflare Workers
+description: Building a reverse proxy with Cloudflare Workers is super easy. I use a worker to bypass CORS restrictions when using html2image.
+date: '2021-11-08'
+draft: true
+---
+
+## Background
+
+One of the features we have on [Highlight](https://highlight.run) is the ability to [create a comment on a session](https://docs.highlight.run/comments). The cool thing about these comments is they have a spatial property. A comment is created at a specific location on the screen. This allows users to callout things in the session with the comment's location rather than writing something like "the blue button in the top right corner below the red button...".
+
+![](/images/blog/highlight-creating-comment.gif)
+
+While creating a comment, you can also tag your individual team members or Slack channels. When you do this, Highlight will send a preview of your comment's text along with a screenshot of the screen you commented on.
+
+![](https://archbee.imgix.net/XPwQFz8tul7ogqGkmtA0y/gsYvSrZkPZwf-M-P75jKp_brandbird-1.png?auto=format&ixlib=react-9.1.1&w=2400&h=1350&dpr=1&q=75)
+
+### The Problem
+
+Under the hood, we use [html2canvas](https://html2canvas.hertzen.com/) to get the screenshot. I go over more on why in the [Alternative Solutions](#alternative-solutions) section.
+
+At a high-level, `html2canvas` creates an image by recreating the DOM in a `<canvas>`. We then get a base64 representation of the `<canvas>` to use.
+
+If the screen we're creating a screenshot of has external resources like images, `html2canvas` might not be able to load them due to CORS restrictions. When external resources are blocked, the places where the external resources are on the screen are blank in the screenshot.
+
+For Highlight, this problem is pretty common because our customer's sessions are recorded off the Highlight origin. Most of the external resources Highlight tries loads will probably be blocked by the browser due to CORS.
+
+## Reverse Proxy to the Rescue
+
+So our problem is the CORS restrictions. We can use a reverse proxy to get around the problem.
+
+Instead of making a direct request from the Highlight app to the cross-origin resource, we'll make a request to a Highlight proxy which will make the request to the cross-origin resource, then return the response. To the browser, the requested resource is on the same origin so the cross-origin resource is loaded sucessfully!
+
+![](/images/blog/reverse-proxy.png)
+
+To implement the reverse proxy, we chose to go with Cloudflare Workers for the following reasons:
+
+1. Independent scaling from our main app API
+2. We don't have to worry about infrastructure
+3. Fun opportunity to try the new shiny toy on a non-mission critial code path
+
+## Code
+
+```js:worker.js
+// Boilerplate for workers.
+addEventListener("fetch", (event) => {
+  event.respondWith(
+    handleRequest(event.request).catch(
+      (err) => new Response(err.stack, { status: 500 })
+    )
+  );
+});
+
+async function handleRequest(request) {
+  const { pathname, searchParams } = new URL(request.url);
+  // Gets the URL that will be proxied from `url` search parameter.
+  const resourceToProxy = searchParams.get("url");
+
+  // Respond to the request caller with the response of the proxied resource.
+  return fetch(resourceToProxy);
+}
+```
+
+Now when you call `html2canvas`, you can pass the URL to the proxy server.
+
+```js:app.ts
+html2canvas(document.querySelector('#player'), {
+    proxy: "https://path_to_proxy.com", // This is the address to your Cloudflare Worker.
+}).then((canvas) => {
+  // Do stuff with the canvas.
+});
+```
+
+## Alternative Solutions
+
+### Using `<canvas>`'s `drawImage()` on a `<video>`
+
+For technical reasons, the video you see isn't actually a video. If you inspect the page on Highlight, you won't find a `<video>` tag. Instead you'll find an `<iframe>`.
+
+At a high level, the video you see is a reconstructed DOM that has changes applied to it as the video plays. Because the video isn't an actual `<video>`, we couldn't go with this approach.
+
+### Using a headless browser with `getDisplayMedia()`
+
+We could spin up a headless browser that takes the screenshot asynchronously. This would be a costlier project in terms of engineering effort and maintaining. In the long term, this will probably be what we end up doing.
+
+There are some performance implications when using `html2canvas` on deep DOM trees. In the ideal world we offload this work from the client to the server.
