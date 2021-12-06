@@ -17,7 +17,7 @@ const ThePhamousPage: NextPage = () => {
       <h2>The Phamous People (My Hall of Fame)</h2>
       <p>Pronounced as &ldquo;The Famous&rdquo;.</p>
       <p>
-        Throughout my life, I've had the fortune of meeting some amazing folks. These folks have
+        Throughout my life, I have had the fortune of meeting some amazing folks. These folks have
         taught me technical skills and life lessons, given me opportunities, and been there when I
         needed help.
       </p>
