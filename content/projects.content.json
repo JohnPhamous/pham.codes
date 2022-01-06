@@ -1,5 +1,15 @@
 [
   {
+    "name": "Learn CSS-in-JS Course",
+    "description": "Looking to advance your CSS styling strategies? CSS-in-JS is a popular technique that allows programmers to write CSS styling in JavaScript syntax.",
+    "demo": "https://www.codecademy.com/learn/learn-css-in-js",
+  },
+  {
+    "name": "Connecting Front-End to Back-End Course",
+    "description": "Joining the front-end and back-end in a full-stack application is essential in providing a seamless user experience and a smooth deployment process.",
+    "demo": "https://www.codecademy.com/learn/connecting-front-end-to-back-end",
+  },
+  {
     "name": "Barbell Plate Calculator",
     "description": "An app to help calculate how many plates you need for a target weight. This is useful for barbell lifters.",
     "demo": "",
