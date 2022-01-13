@@ -1,68 +1,73 @@
 [
   {
-    "name": "Learn CSS-in-JS Course",
-    "description": "Looking to advance your CSS styling strategies? CSS-in-JS is a popular technique that allows programmers to write CSS styling in JavaScript syntax.",
-    "demo": "https://www.codecademy.com/learn/learn-css-in-js",
-  },
-  {
-    "name": "Connecting Front-End to Back-End Course",
-    "description": "Joining the front-end and back-end in a full-stack application is essential in providing a seamless user experience and a smooth deployment process.",
-    "demo": "https://www.codecademy.com/learn/connecting-front-end-to-back-end",
-  },
-  {
-    "name": "Barbell Plate Calculator",
-    "description": "An app to help calculate how many plates you need for a target weight. This is useful for barbell lifters.",
-    "demo": "",
-    "link": "/apps/barbell"
-  },
-  {
-    "name": "Intermediate Javascript Course",
-    "description": "Learn about classes, modules, promises, currying, concurrency, and the event loop.",
-    "demo": "https://www.codecademy.com/learn/learn-intermediate-javascript"
-  },
-  {
-    "name": "React Testing Course",
-    "description": "Learn how to test a React app from unit to integration tests.",
-    "demo": "https://www.codecademy.com/learn/learn-react-testing"
-  },
-  {
-    "name": "React and Redux Course",
-    "description": "Create an advanced web app with React and Redux.",
-    "demo": "https://www.codecademy.com/learn/learn-redux"
-  },
-  {
-    "name": "Learn Redux Course",
-    "description": "Learn the best practices for state mangement using Redux.",
-    "demo": "https://www.codecademy.com/learn/learn-redux"
-  },
-  {
-    "name": "Frontend Engineering Course",
-    "description": "Learn everything you need to become a frontend engineer.",
-    "demo": "https://www.codecademy.com/learn/paths/front-end-engineer-career-path"
-  },
-  {
-    "name": "No Mouse Challenge Browser Extension",
-    "description": "A browser extension that hides the mouse cursor on web pages. This is a tool used to build empathy towards accessibility tool users.",
-    "demo": "https://github.com/JohnPhamous/no-mouse-challenge-extension"
-  },
-  {
-    "name": "Closed Captions Browser Extension",
-    "description": "A browser extension that provides closed captions for any audio content using machine learning.",
-    "demo": "https://microsoftedge.microsoft.com/addons/detail/live-captions/gicnjnjcgeklfnecoglpmgmnenkoeeip"
-  },
-  {
-    "name": "Tetris Meets Snake",
-    "description": "A modern twist on the classic games Tetris and Snake with over 200 daily active users.",
-    "demo": "https://pham.codes/tetris-meets-snake"
-  },
-  {
-    "name": "SignMeIn",
-    "description": "A classroom attendance solution with over 3000 daily active users.",
-    "demo": "https://signmein.online"
-  },
-  {
-    "name": "Snake Beat",
-    "description": "Play the classic game Snake along with the beat",
-    "demo": "https://johnphamous.github.io/snake-beat"
-  }
+      "name":"NFT Wiki",
+      "description":"A no-code website builder for NFTs. Build a website by drop and dragging. Myspace and Geocities vibes~~~",
+      "demo":"https://nftwiki.app"
+   },
+   {
+      "name":"Learn CSS-in-JS Course",
+      "description":"Looking to advance your CSS styling strategies? CSS-in-JS is a popular technique that allows programmers to write CSS styling in JavaScript syntax.",
+      "demo":"https://www.codecademy.com/learn/learn-css-in-js"
+   },
+   {
+      "name":"Connecting Front-End to Back-End Course",
+      "description":"Joining the front-end and back-end in a full-stack application is essential in providing a seamless user experience and a smooth deployment process.",
+      "demo":"https://www.codecademy.com/learn/connecting-front-end-to-back-end"
+   },
+   {
+      "name":"Barbell Plate Calculator",
+      "description":"An app to help calculate how many plates you need for a target weight. This is useful for barbell lifters.",
+      "demo":"",
+      "link":"/apps/barbell"
+   },
+   {
+      "name":"Intermediate Javascript Course",
+      "description":"Learn about classes, modules, promises, currying, concurrency, and the event loop.",
+      "demo":"https://www.codecademy.com/learn/learn-intermediate-javascript"
+   },
+   {
+      "name":"React Testing Course",
+      "description":"Learn how to test a React app from unit to integration tests.",
+      "demo":"https://www.codecademy.com/learn/learn-react-testing"
+   },
+   {
+      "name":"React and Redux Course",
+      "description":"Create an advanced web app with React and Redux.",
+      "demo":"https://www.codecademy.com/learn/learn-redux"
+   },
+   {
+      "name":"Learn Redux Course",
+      "description":"Learn the best practices for state mangement using Redux.",
+      "demo":"https://www.codecademy.com/learn/learn-redux"
+   },
+   {
+      "name":"Frontend Engineering Course",
+      "description":"Learn everything you need to become a frontend engineer.",
+      "demo":"https://www.codecademy.com/learn/paths/front-end-engineer-career-path"
+   },
+   {
+      "name":"No Mouse Challenge Browser Extension",
+      "description":"A browser extension that hides the mouse cursor on web pages. This is a tool used to build empathy towards accessibility tool users.",
+      "demo":"https://github.com/JohnPhamous/no-mouse-challenge-extension"
+   },
+   {
+      "name":"Closed Captions Browser Extension",
+      "description":"A browser extension that provides closed captions for any audio content using machine learning.",
+      "demo":"https://microsoftedge.microsoft.com/addons/detail/live-captions/gicnjnjcgeklfnecoglpmgmnenkoeeip"
+   },
+   {
+      "name":"Tetris Meets Snake",
+      "description":"A modern twist on the classic games Tetris and Snake with over 200 daily active users.",
+      "demo":"https://pham.codes/tetris-meets-snake"
+   },
+   {
+      "name":"SignMeIn",
+      "description":"A classroom attendance solution with over 3000 daily active users.",
+      "demo":"https://signmein.online"
+   },
+   {
+      "name":"Snake Beat",
+      "description":"Play the classic game Snake along with the beat",
+      "demo":"https://johnphamous.github.io/snake-beat"
+   }
 ]
