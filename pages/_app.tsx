@@ -15,7 +15,6 @@ if (process.env.NODE_ENV !== 'development') {
     networkRecording: {
       recordHeadersAndBody: true,
     },
-    backendUrl: 'https://hiig.pham.codes',
   });
 }
 
