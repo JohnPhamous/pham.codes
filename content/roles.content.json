@@ -1,15 +1,15 @@
 [
   {
-    "class": "new",
-    "role": "Rockstar Wizard",
-    "location": "Highlight",
-    "link": "https://www.highlight.run"
-  },
-  {
     "class": "",
     "role": "Consultant",
     "location": "Codecademy",
     "link": "https://www.codecademy.com/"
+  },
+   {
+    "class": "old",
+    "role": "Founding Engineer",
+    "location": "Highlight",
+    "link": "https://www.highlight.run"
   },
   {
     "class": "old",
