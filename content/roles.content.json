@@ -1,5 +1,11 @@
 [
   {
+    "class": "new",
+    "role": "✨ Engineer",
+    "location": "Vercel",
+    "link": "https://vercel.com"
+  },
+  {
     "class": "",
     "role": "Consultant",
     "location": "Codecademy",
