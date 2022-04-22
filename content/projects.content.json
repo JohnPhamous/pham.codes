@@ -1,9 +1,24 @@
 [
   {
+      "name":"Blergs NFT Website",
+      "description":"Gallery for the Blergs NFT website that allows holders to download high-resolution images of their token.",
+      "demo":"https://www.blerg.xyz"
+  },
+  {
+      "name":"Omakase Money Website",
+      "description":"Landing page with an animated hero of a sushi conveyor belt.",
+      "demo":"https://www.omakasemoney.com"
+  },
+  {
+      "name":"Backend Engineering Course",
+      "description":"Learn the fundamentals of being a backend engineer.",
+      "demo":"https://www.codecademy.com/learn/paths/back-end-engineer-career-path"
+   },
+  {
       "name":"NFT Wiki",
       "description":"A no-code website builder for NFTs. Build a website by drop and dragging. Myspace and Geocities vibes~~~",
       "demo":"https://nftwiki.app"
-   },
+  },
   {
       "name":"Party Parrot as a Service",
       "description":"Your one-stop-shop for all your party parrot needs.",
