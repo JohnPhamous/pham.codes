@@ -5,6 +5,11 @@
       "demo":"https://www.blerg.xyz"
   },
   {
+      "name":"OpenSauced Website",
+      "description":"The path to your next open source contribution.",
+      "demo":"https://opensauced.pizza"
+  },
+  {
       "name":"Omakase Money Website",
       "description":"Landing page with an animated hero of a sushi conveyor belt.",
       "demo":"https://www.omakasemoney.com"
