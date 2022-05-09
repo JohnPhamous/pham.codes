@@ -52,7 +52,7 @@ const VimFooter = () => {
         <p className={`${styles.text} ${styles.optionalText}`}>pham.html</p>
       </section>
       <section className={`${styles.section} ${styles.endSection}`}>
-        <p>Last Updated: 03/17/2022</p>
+        <p>Last Updated: 05/09/2022</p>
       </section>
     </footer>
   );
