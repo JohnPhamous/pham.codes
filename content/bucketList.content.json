@@ -1,20 +1,8 @@
 [
   {
-    "name": "Join the 500 Pound Club",
-    "progress": "500/500",
-    "url": "https://www.oswego.edu/fitness-centers/sites/www.oswego.edu.fitness-centers/files/1000_-_500_lb_rules.pdf",
-    "isDone": true
-  },
-  {
     "name": "Join the 1000 Pound Club",
-    "progress": "761/1,000",
+    "progress": "798/1,000",
     "url": "https://www.oswego.edu/fitness-centers/sites/www.oswego.edu.fitness-centers/files/1000_-_500_lb_rules.pdf",
-    "isDone": false
-  },
-  {
-    "name": "Become a training coach for bench, squat, deadlift, and overhead press",
-    "progress": null,
-    "url": null,
     "isDone": false
   },
   {
@@ -24,20 +12,8 @@
     "isDone": false
   },
   {
-    "name": "Go 30 days without coffee",
-    "progress": null,
-    "url": null,
-    "isDone": false
-  },
-  {
     "name": "Walk 4,000,000 steps in a year",
-    "progress": "2,640,422/4,000,000",
-    "url": null,
-    "isDone": false
-  },
-  {
-    "name": "Solve a 3x3 Rubiks cube in under 1 minute",
-    "progress": "0:51",
+    "progress": "4,640,422/4,000,000",
     "url": null,
     "isDone": true
   },
@@ -57,7 +33,7 @@
     "name": "Learn to draw",
     "progress": true,
     "url": null,
-    "isDone": false
+    "isDone": true
   },
   {
     "name": "Do the splits",
@@ -66,19 +42,7 @@
     "isDone": false
   },
   {
-    "name": "Hike Mt. Rainier",
-    "progress": null,
-    "url": null,
-    "isDone": false
-  },
-  {
     "name": "Run a marathon",
-    "progress": null,
-    "url": null,
-    "isDone": false
-  },
-  {
-    "name": "Try a vegan diet for 30 days",
     "progress": null,
     "url": null,
     "isDone": false
@@ -120,25 +84,25 @@
     "isDone": false
   },
   {
-    "name": "Start a crafts store",
-    "progress": null,
-    "url": null,
-    "isDone": false
-  },
-  {
-    "name": "Publish a cross-platform game",
-    "progress": null,
-    "url": null,
-    "isDone": false
-  },
-  {
-    "name": "Do a 30-day design challenge",
-    "progress": null,
-    "url": null,
-    "isDone": false
-  },
-  {
     "name": "Walk while doing a handstand",
+    "progress": null,
+    "url": null,
+    "isDone": false
+  },
+  {
+    "name": "Learn pottery to make bowls, plates, and plant pots",
+    "progress": null,
+    "url": null,
+    "isDone": false
+  },
+  {
+    "name": "Live abroad",
+    "progress": null,
+    "url": null,
+    "isDone": false
+  },
+  {
+    "name": "Get certified in sailing",
     "progress": null,
     "url": null,
     "isDone": false
