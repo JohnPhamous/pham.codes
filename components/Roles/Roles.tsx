@@ -8,7 +8,7 @@ import styles from './Roles.module.css';
  * Number of roles to show with full details.
  * Roles outside of this range will be truncated.
  */
-const NUMBER_OF_ROLES_TO_SHOW = 5;
+const NUMBER_OF_ROLES_TO_SHOW = 6;
 
 const Roles = () => {
   /**

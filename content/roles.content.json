@@ -1,9 +1,15 @@
 [
   {
     "class": "new",
-    "role": "✨ Engineer",
+    "role": "Engineer",
     "location": "Vercel",
     "link": "https://vercel.com"
+  },
+  {
+    "class": "",
+    "role": "Web3 Builder",
+    "location": "Omakase Money",
+    "link": "https://omakasemoney.com"
   },
   {
     "class": "",
@@ -11,9 +17,9 @@
     "location": "Codecademy",
     "link": "https://www.codecademy.com/"
   },
-   {
+  {
     "class": "old",
-    "role": "✨ Engineer",
+    "role": "Engineer",
     "location": "Highlight",
     "link": "https://www.highlight.run"
   },
