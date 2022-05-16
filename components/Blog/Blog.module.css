@@ -133,7 +133,7 @@
   border: 1px solid var(--background-secondary);
   background: var(--background-tertiary);
   border-radius: var(--s8);
-  padding: var(--s24) var(--s12);
+  padding: var(--s24) var(--s16);
   margin-left: calc(-1 * 16px);
   margin-right: calc(-1 * 16px);
   white-space: pre-wrap;
