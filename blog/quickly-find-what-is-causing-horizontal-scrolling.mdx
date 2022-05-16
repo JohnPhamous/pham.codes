@@ -1,0 +1,33 @@
+---
+title: Quickly Find the Element That Is Causing Horizontal Scrolling
+description: Enabling brotli compression is an easy performance win. Enabling it in Go and Chi isn't well documented. This will show you how to enable it in your app.
+date: '2022-05-16'
+---
+
+## Background
+
+I was fixing a bug on the [Next.js website](https://nextjs.org/). The bug was that on mobile-sized viewports, there was unexpected horizontal scrolling.
+
+![Recording of horizontal scrolling on the Next.js website](/images/blog/horizontal-scrolling.gif)
+
+### Quickly Finding the Cause
+
+I use this snippet to find the elements causing the horizontal scrolling. The snippet logs all elements that are wider than the document's width. These elements are usually the ones causing the horizontal scrolling.
+
+```javascript
+const documentWidth = document.documentElement.offsetWidth;
+
+document.querySelectorAll('*').forEach((node) => {
+  if (node.offsetWidth > documentWidth) {
+    console.log(node);
+  }
+});
+```
+
+### Bonus Tip
+
+#### Scroll Element into View
+
+If you're using a Chromium browser (Chrome, Brave, Edge, etc.), then you can tell the browser to scroll the page so the element is within view. You can do this by right clicking on the element in the console and click on "Scroll into view".
+
+![](/images/blog/element-scroll-into-view.gif)
