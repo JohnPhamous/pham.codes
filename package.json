@@ -21,7 +21,6 @@
     "@supabase/supabase-js": "^1.22.5",
     "date-fns": "^2.23.0",
     "gray-matter": "^4.0.3",
-    "highlight.run": "^2.6.0",
     "mdx-prism": "^0.3.4",
     "next": "^12.1.6",
     "next-mdx-remote": "^3.0.4",
