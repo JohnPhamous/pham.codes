@@ -60,18 +60,6 @@
     "isDone": false
   },
   {
-    "name": "Visit Alaska",
-    "progress": null,
-    "url": null,
-    "isDone": false
-  },
-  {
-    "name": "Visit Banff National Park",
-    "progress": null,
-    "url": null,
-    "isDone": false
-  },
-  {
     "name": "Work as a digital nomad",
     "progress": null,
     "url": null,
@@ -103,6 +91,12 @@
   },
   {
     "name": "Get certified in sailing",
+    "progress": null,
+    "url": null,
+    "isDone": false
+  },
+  {
+    "name": "Get NCCA accredited for strength training",
     "progress": null,
     "url": null,
     "isDone": false
