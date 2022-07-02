@@ -1,13 +1,13 @@
 [
   {
     "class": "new",
-    "role": "Engineer",
+    "role": "Level 99 Webmaster",
     "location": "Vercel",
     "link": "https://vercel.com"
   },
   {
     "class": "",
-    "role": "Web3 Builder",
+    "role": "web3 buildoor",
     "location": "Omakase Money",
     "link": "https://omakasemoney.com"
   },
@@ -19,7 +19,7 @@
   },
   {
     "class": "old",
-    "role": "Engineer",
+    "role": "Tech Guy",
     "location": "Highlight",
     "link": "https://www.highlight.run"
   },
