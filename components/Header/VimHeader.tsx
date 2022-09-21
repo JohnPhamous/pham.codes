@@ -6,8 +6,8 @@ const VimHeader = () => {
   return (
     <header>
       <NextLink href="/">
-        <a>
-          <span aria-label="John Pham at Seattle" className={styles.brand}>
+        <a aria-label="John Pham at Seattle">
+          <span className={styles.brand}>
             <Typewriter>
               <span className={styles.brandName}>JohnPham</span>@Seattle
             </Typewriter>

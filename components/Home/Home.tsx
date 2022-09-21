@@ -10,7 +10,7 @@ const Home = () => {
         <h2 className={styles.sectionHeader}>About</h2>
 
         <p className={styles.paragraphWithIcon}>
-          <span role="img" aria-label="Hello!">
+          <span role="img" aria-label="Hello!" className={styles.emoji}>
             👋
           </span>{' '}
           <span>
@@ -19,13 +19,15 @@ const Home = () => {
           </span>
         </p>
         <p className={styles.paragraphWithIcon}>
-          <span role="img" aria-label="">
+          {/* eslint-disable-next-line jsx-a11y/accessible-emoji */}
+          <span aria-hidden className={styles.emoji}>
             🇨🇳
           </span>{' '}
           <span>Learning Mandarin, 你好!</span>
         </p>
         <p className={styles.paragraphWithIcon}>
-          <span role="img" aria-label="">
+          {/* eslint-disable-next-line jsx-a11y/accessible-emoji */}
+          <span aria-hidden className={styles.emoji}>
             🏋️‍♀️
           </span>{' '}
           <span>Training to join the 1000 pound club.</span>

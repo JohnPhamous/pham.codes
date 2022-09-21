@@ -4,7 +4,7 @@
   position: relative;
 }
 
-.paragraphWithIcon span[role='img'] {
+.paragraphWithIcon .emoji {
   position: absolute;
   left: calc(-1 * (1ch + var(--s16)));
 }
