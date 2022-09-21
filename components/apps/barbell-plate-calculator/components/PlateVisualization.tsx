@@ -26,22 +26,26 @@ const PlateVisualization = ({ plates }: Props) => {
 
         const size = parseFloat(weight) / LARGEST_PLATE_WEIGHT;
 
-        return (
-          <div
-            key={weight}
-            className={styles.plate}
-            style={{
-              width: `${Math.min(size * 100 + EXAGGERATION_FACTOR, 100)}%`,
-              animationDelay: `${
-                BASE_ANIMATION_DELAY * ((nonZeroPlates - index + 1) / nonZeroPlates)
-              }s`,
-            }}
-          >
-            <div className={styles.plateInner}>
-              <span className={styles.label}>{weight}</span>
+        const platesArray = Array.from(Array(numberOfPlates).keys());
+
+        return platesArray.map((_, jIndex) => {
+          return (
+            <div
+              key={`${weight}-${jIndex}`}
+              className={styles.plate}
+              style={{
+                width: `${Math.min(size * 100 + EXAGGERATION_FACTOR, 100)}%`,
+                animationDelay: `${
+                  BASE_ANIMATION_DELAY * ((nonZeroPlates - (index + jIndex) + 1) / nonZeroPlates)
+                }s`,
+              }}
+            >
+              <div className={styles.plateInner}>
+                <span className={styles.label}>{weight}</span>
+              </div>
             </div>
-          </div>
-        );
+          );
+        });
       })}
     </div>
   );
