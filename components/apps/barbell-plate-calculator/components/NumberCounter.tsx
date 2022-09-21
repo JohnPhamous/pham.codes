@@ -8,7 +8,7 @@ interface Props {
   setValue: (newValue: string) => void;
 }
 
-const WEIGHT_INCREMENT = 0.5;
+const WEIGHT_INCREMENT = 5;
 
 const NumberCounter = ({ label, setValue, value }: Props) => {
   const decrementWeight = (currentWeight: string) => {
@@ -18,7 +18,7 @@ const NumberCounter = ({ label, setValue, value }: Props) => {
       newWeight = 0;
     }
 
-    return newWeight.toFixed(1);
+    return newWeight.toString();
   };
 
   return (
@@ -33,8 +33,8 @@ const NumberCounter = ({ label, setValue, value }: Props) => {
             id={label}
             value={value}
             onChange={(e) => {
-              const newValue = parseFloat(e.target.value);
-              setValue(Number.isNaN(newValue) ? '0.0' : newValue.toFixed(1));
+              const newValue = parseInt(e.target.value, 10);
+              setValue(newValue.toString());
             }}
           />
           <div className={styles.controlsContainer}>
@@ -48,7 +48,7 @@ const NumberCounter = ({ label, setValue, value }: Props) => {
             </button>
             <button
               onClick={() => {
-                setValue((parseFloat(value) + WEIGHT_INCREMENT).toFixed(1));
+                setValue((parseFloat(value) + WEIGHT_INCREMENT).toString());
               }}
               aria-label={`Increase weight by ${WEIGHT_INCREMENT}`}
             >
