@@ -27,6 +27,7 @@ const components = {
   Youtube,
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Blog = ({ frontMatter, source, readingTime, views }: Props) => {
   const WEBSITE_HOST_URL = '';
 

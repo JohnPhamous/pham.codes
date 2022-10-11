@@ -8,6 +8,7 @@ interface Props {
   mostPopularPosts: PostType[];
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const BlogHome = ({ posts, mostPopularPosts }: Props) => {
   const [searchTerm, setSearchTerm] = useState('');
   const filteredAllPosts =
