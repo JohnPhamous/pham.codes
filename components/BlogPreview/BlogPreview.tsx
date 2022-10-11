@@ -26,7 +26,7 @@ const BlogPreview = ({ post, searchTerm }: Props) => {
               autoEscape={true}
               textToHighlight={post.title || ''}
             />
-            <span className={styles.viewCount}>{post.views.toLocaleString()} views</span>
+            {/* <span className={styles.viewCount}>{post.views.toLocaleString()} views</span> */}
           </h2>
           <p className={styles.description}>
             <Highlighter

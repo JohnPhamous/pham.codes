@@ -54,9 +54,10 @@ const Blog = ({ frontMatter, source, readingTime, views }: Props) => {
 
         <div className={styles.metadataContainer}>
           <p className={styles.date}>{format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}</p>
-          <p className={styles.date}>
+          {/* <p className={styles.date}>
             {readingTime} • {views?.toLocaleString()} views
-          </p>
+          </p> */}
+          <p className={styles.date}>{readingTime}</p>
         </div>
 
         <div className="">

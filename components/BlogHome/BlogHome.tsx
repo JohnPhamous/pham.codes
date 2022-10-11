@@ -43,7 +43,7 @@ export const BlogHome = ({ posts, mostPopularPosts }: Props) => {
         />
       </section>
 
-      {searchTerm === '' && (
+      {/* {searchTerm === '' && (
         <>
           <h2 className={styles.header}>Most Popular</h2>
           {mostPopularPosts.map((post) => (
@@ -51,7 +51,7 @@ export const BlogHome = ({ posts, mostPopularPosts }: Props) => {
           ))}
           {filteredAllPosts.length === 0 && <p className={styles.noResults}>No posts found.</p>}
         </>
-      )}
+      )} */}
 
       <h2 className={styles.header}>All Posts</h2>
       {filteredAllPosts.map((post) => (
