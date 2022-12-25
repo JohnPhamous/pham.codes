@@ -1,16 +1,11 @@
 [
   {
     "name": "Join the 1000 Pound Club",
-    "progress": "798/1,000",
+    "progress": "892/1,000",
     "url": "https://www.oswego.edu/fitness-centers/sites/www.oswego.edu.fitness-centers/files/1000_-_500_lb_rules.pdf",
     "isDone": false
   },
-  {
-    "name": "Read 1000 books",
-    "progress": "99/1,000",
-    "url": null,
-    "isDone": false
-  },
+
   {
     "name": "Walk 4,000,000 steps in a year",
     "progress": "4,640,422/4,000,000",
@@ -19,15 +14,9 @@
   },
   {
     "name": "Pass the Test of Chinese as a Foreign Language (TOCFL)",
-    "progress": "1,712/13,856 mature Anki cards",
+    "progress": "8,712/13,856 mature Anki cards",
     "url": null,
     "isDone": false
-  },
-  {
-    "name": "Do yoga for 30 days",
-    "progress": "30/30",
-    "url": null,
-    "isDone": true
   },
   {
     "name": "Learn to draw",
@@ -37,6 +26,12 @@
   },
   {
     "name": "Do the splits",
+    "progress": null,
+    "url": null,
+    "isDone": false
+  },
+  {
+    "name": "Run a half marathon",
     "progress": null,
     "url": null,
     "isDone": false
@@ -60,18 +55,6 @@
     "isDone": false
   },
   {
-    "name": "Work as a digital nomad",
-    "progress": null,
-    "url": null,
-    "isDone": false
-  },
-  {
-    "name": "Teach high school students or college freshmen",
-    "progress": null,
-    "url": null,
-    "isDone": false
-  },
-  {
     "name": "Walk while doing a handstand",
     "progress": null,
     "url": null,
@@ -85,18 +68,6 @@
   },
   {
     "name": "Live abroad",
-    "progress": null,
-    "url": null,
-    "isDone": false
-  },
-  {
-    "name": "Get certified in sailing",
-    "progress": null,
-    "url": null,
-    "isDone": false
-  },
-  {
-    "name": "Get NCCA accredited for strength training",
     "progress": null,
     "url": null,
     "isDone": false
