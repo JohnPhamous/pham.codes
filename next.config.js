@@ -19,7 +19,15 @@ module.exports = withPWA(
         },
       ];
     },
-
+    async redirects() {
+    return [
+      {
+        source: '/meet',
+        destination: 'https://cal.com/johnphamous',
+        permanent: true,
+      },
+    ]
+  },
     pwa: {
       dest: 'public',
       register: true,
