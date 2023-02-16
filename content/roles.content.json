@@ -7,15 +7,15 @@
   },
   {
     "class": "",
-    "role": "web3 buildoor",
-    "location": "Omakase Money",
-    "link": "https://omakasemoney.com"
-  },
-  {
-    "class": "",
     "role": "Consultant",
     "location": "Codecademy",
     "link": "https://www.codecademy.com/"
+  },
+  {
+    "class": "old",
+    "role": "web3 buildoor",
+    "location": "Omakase Money",
+    "link": "https://omakasemoney.com"
   },
   {
     "class": "old",
