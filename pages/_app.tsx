@@ -2,7 +2,6 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import VimLayout from '../components/layouts/vim/VimLayout';
 import React from 'react';
-import { Analytics } from '@vercel/analytics/react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   // @ts-expect-error
@@ -14,7 +13,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <VimLayout title="John Pham">
       <Component {...pageProps} />
-      <Analytics />
     </VimLayout>
   );
 }
