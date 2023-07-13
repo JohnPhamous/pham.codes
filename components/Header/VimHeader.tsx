@@ -23,13 +23,13 @@ const VimHeader = () => {
             </a>
           </NextLink>
         </li>
-        <li>
+        {/* <li>
           <NextLink href="/bucket-list" passHref>
             <a className={styles.link} aria-label="Bucket List">
               _bucketList
             </a>
           </NextLink>
-        </li>
+        </li> */}
         <li>
           <NextLink href="/the-phamous" passHref>
             <a className={styles.link} aria-label="The Phamous">
@@ -40,16 +40,6 @@ const VimHeader = () => {
         <li>
           <a className={styles.link} href="mailto:john@pham.codes">
             email
-          </a>
-        </li>
-        <li>
-          <a
-            className={styles.link}
-            href="https://www.linkedin.com/in/johnphamous/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            linkedin
           </a>
         </li>
         <li>
