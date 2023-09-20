@@ -9,8 +9,8 @@ const DEFAULT_TARGET_WEIGHT = '200.0';
 const DEFAULT_BAR_WEIGHT = '45.0';
 
 const BarbellPlateCalculator = () => {
-  const [targetWeight, setTargetWeight] = useLocalStorage('targetWeight', '200.0');
-  const [barWeight, setBarWeight] = useLocalStorage('barWeight', '45.0');
+  const [targetWeight, setTargetWeight] = useLocalStorage('targetWeight', DEFAULT_TARGET_WEIGHT);
+  const [barWeight, setBarWeight] = useLocalStorage('barWeight', DEFAULT_BAR_WEIGHT);
   const [view, setView] = useState<'visualization' | 'table'>('visualization');
 
   const { plates } = getPlates(parseFloat(targetWeight), parseFloat(barWeight));
