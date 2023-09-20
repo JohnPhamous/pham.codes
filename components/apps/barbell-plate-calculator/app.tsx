@@ -1,9 +1,12 @@
 import { RefreshIcon } from '@iconicicons/react';
 import { useLocalStorage } from 'usehooks-ts';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NumberCounter from './components/NumberCounter';
 import PlateVisualization from './components/PlateVisualization';
 import styles from './styles.module.css';
+
+const DEFAULT_TARGET_WEIGHT = '200.0';
+const DEFAULT_BAR_WEIGHT = '45.0';
 
 const BarbellPlateCalculator = () => {
   const [targetWeight, setTargetWeight] = useLocalStorage('targetWeight', '200.0');
@@ -11,6 +14,16 @@ const BarbellPlateCalculator = () => {
   const [view, setView] = useState<'visualization' | 'table'>('visualization');
 
   const { plates } = getPlates(parseFloat(targetWeight), parseFloat(barWeight));
+
+  useEffect(() => {
+    if (targetWeight === "NaN") {
+      setTargetWeight(DEFAULT_TARGET_WEIGHT);
+    }
+
+    if (barWeight === "NaN") {
+      setBarWeight(DEFAULT_BAR_WEIGHT);
+    }
+  }, [targetWeight, barWeight]);
 
   return (
     <div className={styles.app}>

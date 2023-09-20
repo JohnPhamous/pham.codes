@@ -33,7 +33,10 @@ const NumberCounter = ({ label, setValue, value }: Props) => {
             id={label}
             value={value}
             onChange={(e) => {
-              const newValue = parseInt(e.target.value, 10);
+              let newValue = parseInt(e.target.value, 10);
+              if (Number.isNaN(newValue)) {
+                newValue = 0;
+              }
               setValue(newValue.toString());
             }}
           />
