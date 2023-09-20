@@ -5,8 +5,8 @@ import NumberCounter from './components/NumberCounter';
 import PlateVisualization from './components/PlateVisualization';
 import styles from './styles.module.css';
 
-const DEFAULT_TARGET_WEIGHT = '200.0';
-const DEFAULT_BAR_WEIGHT = '45.0';
+const DEFAULT_TARGET_WEIGHT = '200.0'; // lbs
+const DEFAULT_BAR_WEIGHT = '45.0'; // lbs
 
 const BarbellPlateCalculator = () => {
   const [targetWeight, setTargetWeight] = useLocalStorage('targetWeight', DEFAULT_TARGET_WEIGHT);
