@@ -4,11 +4,13 @@ import VimFooter from '../../Footer/VimFooter';
 import VimHeader from '../../Header/VimHeader';
 import styles from './VimLayout.module.css';
 
-interface Props {
+const VimLayout = ({
+  title = 'John Pham',
+  children,
+}: {
   title?: string;
-}
-
-const VimLayout: React.FC<Props> = ({ title = 'John Pham', children }) => {
+  children: React.ReactNode;
+}) => {
   const router = useRouter();
 
   const isBlogPage = router.pathname === '/blog/[slug]';

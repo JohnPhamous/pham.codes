@@ -5,13 +5,15 @@ import supabase from '../../../lib/supabase/supabase';
 import { MetaProps } from '../../../types/blog';
 import styles from './BlogLayout.module.css';
 
-interface Props {
-  customMeta: MetaProps;
-}
-
 export const WEBSITE_HOST_URL = 'https://pham.codes';
 
-const BlogLayout: React.FC<Props> = ({ children, customMeta }) => {
+const BlogLayout = ({
+  children,
+  customMeta,
+}: {
+  children: React.ReactNode;
+  customMeta: MetaProps;
+}) => {
   const router = useRouter();
   const meta: MetaProps = {
     image: `${WEBSITE_HOST_URL}/images/hero.png`,

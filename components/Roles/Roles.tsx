@@ -41,7 +41,6 @@ const Roles = () => {
   const uniqueOrganizations = Array.from(
     new Set([...truncatedRoleOrganizations].filter((x) => !fullDetailRoleOrganizations.has(x)))
   ).sort();
-  // @ts-expect-error
   const listFormatter = new Intl.ListFormat('en');
 
   return (

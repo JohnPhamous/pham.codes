@@ -44,12 +44,7 @@ const Blog = ({ frontMatter, source, readingTime, views }: Props) => {
     <BlogLayout customMeta={customMeta}>
       <article className={styles.blog}>
         {customMeta.image && (
-          <Image
-            src={customMeta.image}
-            alt=""
-            width="800px"
-            height={customMeta.imageHeight || '250px'}
-          />
+          <Image src={customMeta.image} alt="" width={800} height={customMeta.imageHeight || 250} />
         )}
         <h1 className={styles.title}>{frontMatter.title}</h1>
 

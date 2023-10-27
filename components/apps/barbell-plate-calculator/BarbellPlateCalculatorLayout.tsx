@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const BarbellPlateCalculatorLayout: React.FC = ({ children }) => {
+const BarbellPlateCalculatorLayout = ({ children }: { children: React.ReactNode }) => {
   const description =
     "John Pham's personal website. John is a software engineer, rookie lifter, and plant parent based in Seattle.";
   const heroPath = 'https://pham.codes/images/hero.png';
