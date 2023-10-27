@@ -1,5 +1,5 @@
 import { format, parseISO } from 'date-fns';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemote } from 'next-mdx-remote';
 import React from 'react';
 import { MetaProps, PostType } from '../../types/blog';
 import Head from 'next/head';
@@ -10,7 +10,7 @@ import styles from './Blog.module.css';
 import Youtube from '../Youtube/Youtube';
 
 interface Props {
-  source: MDXRemoteSerializeResult;
+  source: any;
   frontMatter: PostType;
   readingTime: string;
   views: number;

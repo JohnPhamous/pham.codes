@@ -2,7 +2,6 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 // @ts-expect-error
 import mdxPrism from 'mdx-prism';
 import path from 'path';
@@ -17,7 +16,7 @@ import ReadingTime from 'reading-time';
 import supabase from '../../lib/supabase/supabase';
 
 type PostPageProps = {
-  source: MDXRemoteSerializeResult;
+  source: any;
   frontMatter: PostType;
   readingTime: string;
   views: number;
