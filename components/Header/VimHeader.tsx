@@ -5,22 +5,18 @@ import styles from './VimHeader.module.css';
 const VimHeader = () => {
   return (
     <header>
-      <NextLink href="/">
-        <a aria-label="John Pham at Seattle">
-          <span className={styles.brand}>
-            <Typewriter>
-              <span className={styles.brandName}>JohnPham</span>@Seattle
-            </Typewriter>
-          </span>
-        </a>
+      <NextLink href="/" aria-label="John Pham at Seattle">
+        <span className={styles.brand}>
+          <Typewriter>
+            <span className={styles.brandName}>JohnPham</span>@Seattle
+          </Typewriter>
+        </span>
       </NextLink>
 
       <ul className={styles.linksContainer}>
         <li>
-          <NextLink href="/blog" passHref>
-            <a className={styles.link} aria-label="Blog">
-              _blog
-            </a>
+          <NextLink href="/blog" className={styles.link} aria-label="Blog">
+            _blog
           </NextLink>
         </li>
         {/* <li>
@@ -31,10 +27,8 @@ const VimHeader = () => {
           </NextLink>
         </li> */}
         <li>
-          <NextLink href="/the-phamous" passHref>
-            <a className={styles.link} aria-label="The Phamous">
-              _thePhamous
-            </a>
+          <NextLink href="/the-phamous" className={styles.link} aria-label="The Phamous">
+            _thePhamous
           </NextLink>
         </li>
         <li>
