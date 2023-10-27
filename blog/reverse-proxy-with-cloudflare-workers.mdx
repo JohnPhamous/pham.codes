@@ -40,20 +40,18 @@ To implement the reverse proxy, we chose to go with Cloudflare Workers for the f
 
 ## Code
 
-```js:worker.js
+```js
 // Boilerplate for workers.
-addEventListener("fetch", (event) => {
+addEventListener('fetch', (event) => {
   event.respondWith(
-    handleRequest(event.request).catch(
-      (err) => new Response(err.stack, { status: 500 })
-    )
+    handleRequest(event.request).catch((err) => new Response(err.stack, { status: 500 }))
   );
 });
 
 async function handleRequest(request) {
   const { pathname, searchParams } = new URL(request.url);
   // Gets the URL that will be proxied from `url` search parameter.
-  const resourceToProxy = searchParams.get("url");
+  const resourceToProxy = searchParams.get('url');
 
   // Respond to the requesting caller with the response of the proxied resource.
   return fetch(resourceToProxy);
@@ -62,9 +60,9 @@ async function handleRequest(request) {
 
 Now when you call `html2canvas`, you can pass the URL to the proxy server.
 
-```js:app.ts
+```js
 html2canvas(document.querySelector('#player'), {
-    proxy: "https://path_to_proxy.com", // This is the address to your Cloudflare Worker.
+  proxy: 'https://path_to_proxy.com', // This is the address to your Cloudflare Worker.
 }).then((canvas) => {
   // Do stuff with the canvas.
 });

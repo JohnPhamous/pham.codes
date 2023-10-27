@@ -6,7 +6,7 @@ date: '2019-06-11'
 
 If you're using Lodash in your Angular project, you may be importing everything Lodash ships with. If you're only using a few methods from Lodash, then you're shipping to your users unused code.
 
-```ts:component.ts
+```ts
 import { keyBy, uniqueId } from 'lodash';
 ```
 
@@ -42,7 +42,7 @@ npm i -D @types/lodash-es
 
 We need to change our named imports to default imports.
 
-```diff:component.ts
+```diff
 - import { keyBy, uniqueId } from 'lodash';
 + import keyBy from 'lodash/keyBy';
 + import uniqueId from 'lodash/uniqueId';
@@ -50,7 +50,7 @@ We need to change our named imports to default imports.
 
 Making these changes will cause Typescript to yell at you because it can't find the typings and modules. To fix that, we can add the following options to out `tsconfig.json`.
 
-```json:tsconfig.json
+```json
 {
   "allowSyntheticDefaultImports": true,
   "baseUrl": "./",
@@ -65,6 +65,6 @@ Now you should run your tests to make sure nothing is broken.
 
 That's it! One extra step you can take to prevent you or anyone else from importing all of Lodash is by adding a TSLint rule that disallows named imports from Lodash.
 
-```json:tsconfig.json
+```json
 "import-blacklist": [true, "lodash"]
 ```

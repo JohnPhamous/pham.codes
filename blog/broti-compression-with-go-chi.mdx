@@ -24,7 +24,7 @@ go get -u gopkg.in/kothar/brotli-go.v0
 
 ### Enabling Brotli Compression
 
-```go:main.go
+```go
 r := chi.NewMux()
 // /* means to compress all content types that can be compressed.
 compressor := middleware.NewCompressor(5, "/*")
