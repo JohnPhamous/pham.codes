@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Typewriter.module.css';
 
-const Typewriter: React.FC = ({ children }) => {
+const Typewriter = ({ children }: { children: React.ReactNode }) => {
   return <h1 className={styles.typewriterContainer}>{children}</h1>;
 };
 
