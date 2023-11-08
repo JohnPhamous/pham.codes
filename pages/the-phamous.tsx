@@ -23,7 +23,7 @@ const ThePhamousPage: NextPage = () => {
       </p>
       <p>To everyone here, thank you for everything and keep being awesome!</p>
 
-      <Image src={BePhamousImage} alt="" placeholder="blur" />
+      <Image src={BePhamousImage} alt="" placeholder="blur" style="width: 100%; height: auto;"/>
 
       {/*  eslint-disable-next-line react/jsx-no-comment-textnodes */}
       <Comment>// The ordering of names is random.</Comment>
