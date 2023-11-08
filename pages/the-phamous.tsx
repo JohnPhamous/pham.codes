@@ -6,7 +6,10 @@ import Comment from '../components/Comment/Comment';
 import List from '../components/List/List';
 import BePhamousImage from '../public/be-phamous.png';
 import hallOfFame from '../content/hallOfFame.content.json';
-
+const imageStyle = {
+  width: "100%",
+  height: "auto",
+}
 const ThePhamousPage: NextPage = () => {
   return (
     <>
@@ -23,7 +26,7 @@ const ThePhamousPage: NextPage = () => {
       </p>
       <p>To everyone here, thank you for everything and keep being awesome!</p>
 
-      <Image src={BePhamousImage} alt="" placeholder="blur" style="width: 100%; height: auto;"/>
+      <Image src={BePhamousImage} alt="" placeholder="blur" style={imageStyle}/>
 
       {/*  eslint-disable-next-line react/jsx-no-comment-textnodes */}
       <Comment>// The ordering of names is random.</Comment>
