@@ -41,7 +41,7 @@ const VimLayout = ({
           </>
         )}
       </Head>
-      <div>
+      <div style={isHomePage ? { minHeight: '100dvh' } : {}}>
         {!isHomePage && (
           <>
             <VimHeader />

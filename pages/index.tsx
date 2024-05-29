@@ -12,11 +12,11 @@ type HomeProps = {
 const Home: NextPage<HomeProps> = ({ backgroundCharacters }) => {
   return (
     <main
-      className={`${styles.container} relative leading-normal pl-[2ch] pt-[2lh] pr-[2ch] sm:pt-[2lh] sm:pl-[7ch]`}
+      className={`${styles.container} relative leading-normal pl-[2ch] pt-[2lh] pr-[2ch] sm:pt-[2lh] sm:pl-[7ch] min-h-[100dvh]`}
       id="new"
     >
       <div
-        className="text-[#F2F2F2] absolute inset-0 break-words select-none animate-fade font-normal opacity-0"
+        className="text-[#F2F2F2] absolute inset-0 break-words select-none animate-fade font-normal opacity-0 contain-strict"
         aria-hidden
         id="background"
         style={{
@@ -100,7 +100,7 @@ const Character = ({ value }: { value: string }) => {
 
   return (
     <span
-      className="hover:bg-[#FFB200] hover:text-black hover:duration-0 duration-[0.8s] transition-colors"
+      className="hover:bg-[#FFB200] hover:text-black hover:duration-0 duration-[0.8s] transition-[background-color,color]"
       ref={ref}
     >
       {value}
