@@ -15,7 +15,7 @@ const VimLayout = ({
 
   const isHomePage = router.pathname === '/';
   const isBlogPage = router.pathname === '/blog/[slug]';
-  const description = "john phamous' personal website.";
+  const description = 'personal website.';
   const heroPath = 'https://pham.codes/images/hero.png';
 
   return (
