@@ -91,6 +91,7 @@ const Home: NextPage<HomeProps> = ({ backgroundCharacters }) => {
           <Link href="/blog">blog</Link>
         </li>
       </ul>
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <audio src="/bg.mp3"></audio>
     </main>
   );
