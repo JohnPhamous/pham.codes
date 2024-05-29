@@ -15,8 +15,7 @@ const VimLayout = ({
 
   const isHomePage = router.pathname === '/';
   const isBlogPage = router.pathname === '/blog/[slug]';
-  const description =
-    "John Pham's personal website. John is a software engineer, rookie lifter, and plant parent based in Seattle.";
+  const description = "John Phamous' personal website.";
   const heroPath = 'https://pham.codes/images/hero.png';
 
   return (
