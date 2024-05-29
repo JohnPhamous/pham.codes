@@ -104,11 +104,11 @@ body {
 }
 
 #new p:not(#background):not(#background *),
-h2:not(#background):not(#background *),
-ul:not(#background):not(#background *),
-h1:not(#background):not(#background *),
-li:not(#background):not(#background *),
-button:not(#background):not(#background *) {
+#new h2:not(#background):not(#background *),
+#new ul:not(#background):not(#background *),
+#new h1:not(#background):not(#background *),
+#new li:not(#background):not(#background *),
+#new button:not(#background):not(#background *) {
   position: relative;
   max-width: 70ch;
   color: #171717;
