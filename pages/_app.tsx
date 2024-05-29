@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <VimLayout title="John Pham">
+    <VimLayout title="John Phamous">
       <Component {...pageProps} />
     </VimLayout>
   );

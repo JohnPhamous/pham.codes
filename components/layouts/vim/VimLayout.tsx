@@ -5,7 +5,7 @@ import VimHeader from '../../Header/VimHeader';
 import styles from './VimLayout.module.css';
 
 const VimLayout = ({
-  title = 'John Pham',
+  title = 'John Phamous',
   children,
 }: {
   title?: string;
