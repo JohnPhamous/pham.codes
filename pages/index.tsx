@@ -61,7 +61,7 @@ const Home: NextPage<HomeProps> = ({ backgroundCharacters }) => {
         </span>
       </button>
 
-      <h2 className="font-medium mt-[3lh]">now</h2>
+      <h2 className="font-bold mt-[3lh]">today</h2>
       <p className="mt-[0lh]">
         i work as a lead design engineer at <a href="https://vercel.com">vercel</a> designing and
         building interfaces. currently obsessed with weightlifting, pickelball, and learning 中文.
@@ -75,14 +75,14 @@ const Home: NextPage<HomeProps> = ({ backgroundCharacters }) => {
         , and <a href="https://www.spacex.com/">spacex</a>.
       </p>
 
-      <h2 className="font-medium mt-[2lh]">angel investments</h2>
+      <h2 className="font-bold mt-[2lh]">angel investments</h2>
       <p>
         <a href="https://scalar.com/">scalar</a>, <a href="https://replit.com/">replit</a>,{' '}
         <a href="https://www.wander.com/">wander</a> and{' '}
         <a href="https://detangle.ai/">detangle.ai</a>.
       </p>
 
-      <h2 className="font-medium mt-[2lh]">links</h2>
+      <h2 className="font-bold mt-[2lh]">links</h2>
       <ul>
         <li>
           <a href="https://x.com/johnphamous">twitter/x</a>
