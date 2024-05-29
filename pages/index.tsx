@@ -2,7 +2,7 @@ import type { GetStaticProps, NextPage } from 'next';
 import styles from './index.module.css';
 import Link from 'next/link';
 
-const BACKGROUND_CHARACTERS = ' *,    ./0#SF';
+const BACKGROUND_CHARACTERS = ' *,    ./0#X~;$\\}%';
 const NUMBER_OF_BACKGROUND_CHARACTERS = 10000;
 
 type HomeProps = {
@@ -23,7 +23,7 @@ const Home: NextPage<HomeProps> = ({ backgroundCharacters }) => {
         {backgroundCharacters.map((char, index) => (
           <span
             key={index}
-            className="hover:bg-red-700 hover:duration-0 duration-[0.8s] transition-colors"
+            className="hover:bg-[#FFB200] hover:text-black hover:duration-0 duration-[0.8s] transition-colors"
           >
             {char}
           </span>

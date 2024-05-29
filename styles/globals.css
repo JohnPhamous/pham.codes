@@ -84,17 +84,26 @@ body {
   text-decoration: underline;
 }
 
+#new a:focus-visible {
+  outline: 2px solid #006aff;
+}
+
+#new ::selection {
+  background: black;
+  color: white;
+}
+
 #new *:not(#background):not(#background *) {
   position: relative;
   max-width: 70ch;
   color: #171717;
   width: fit-content;
 
-  text-decoration: underline;
+  /* text-decoration: underline;
   text-decoration-thickness: 1lh;
   text-underline-offset: -18px;
   text-decoration-color: white;
-  text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none; */
 }
 
 #new *:not(#background):not(#background *) ::selection {
