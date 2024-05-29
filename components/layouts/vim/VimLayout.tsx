@@ -5,7 +5,7 @@ import VimHeader from '../../Header/VimHeader';
 import styles from './VimLayout.module.css';
 
 const VimLayout = ({
-  title = 'John Phamous',
+  title = 'john phamous',
   children,
 }: {
   title?: string;
@@ -15,7 +15,7 @@ const VimLayout = ({
 
   const isHomePage = router.pathname === '/';
   const isBlogPage = router.pathname === '/blog/[slug]';
-  const description = "John Phamous' personal website.";
+  const description = "john phamous' personal website.";
   const heroPath = 'https://pham.codes/images/hero.png';
 
   return (

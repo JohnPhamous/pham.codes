@@ -88,9 +88,9 @@ class MyDocument extends Document {
 
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-          <meta name="apple-mobile-web-app-title" content="John Phamous" />
+          <meta name="apple-mobile-web-app-title" content="john phamous" />
 
-          <meta name="application-name" content="John Phamous" />
+          <meta name="application-name" content="john phamous" />
           <meta name="msapplication-TileColor" content="#bd93f9" />
           <meta name="msapplication-TileImage" content="/images/favicon/mstile-144x144.png" />
           <meta name="msapplication-square70x70logo" content="/images/favicon/mstile-70x70.png" />
