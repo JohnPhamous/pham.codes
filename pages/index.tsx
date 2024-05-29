@@ -2,8 +2,8 @@ import type { GetStaticProps, NextPage } from 'next';
 import styles from './index.module.css';
 import Link from 'next/link';
 
-const BACKGROUND_CHARACTERS = ' *,    ./0#X~;$\\}%';
-const NUMBER_OF_BACKGROUND_CHARACTERS = 10000;
+const BACKGROUND_CHARACTERS = ' *,    ./0!8#X~;$\\}%'.replaceAll(' ', '\u00A0');
+const NUMBER_OF_BACKGROUND_CHARACTERS = 15_000;
 
 type HomeProps = {
   backgroundCharacters: string[];
@@ -16,17 +16,15 @@ const Home: NextPage<HomeProps> = ({ backgroundCharacters }) => {
       id="new"
     >
       <div
-        className="text-[#F2F2F2] absolute inset-0 break-words select-none"
+        className="text-[#F2F2F2] absolute inset-0 break-words select-none animate-fade font-normal opacity-0"
         aria-hidden
         id="background"
+        style={{
+          animationDelay: '1s',
+        }}
       >
         {backgroundCharacters.map((char, index) => (
-          <span
-            key={index}
-            className="hover:bg-[#FFB200] hover:text-black hover:duration-0 duration-[0.8s] transition-colors"
-          >
-            {char}
-          </span>
+          <Character value={char} key={index} />
         ))}
       </div>
 
@@ -80,3 +78,62 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 export default Home;
+
+const Character = ({ value }: { value: string }) => {
+  const noise = useRef(Math.floor(Math.random() * 1500) + 500);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useInterval(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    if (Math.random() < 0.01) {
+      if (ref.current) {
+        ref.current.animate([{ color: '#F2F2F2' }, { color: '#C9C9C9' }, { color: '#F2F2F2' }], {
+          duration: 1000,
+          easing: 'linear',
+        });
+      }
+    }
+  }, noise.current);
+
+  return (
+    <span
+      className="hover:bg-[#FFB200] hover:text-black hover:duration-0 duration-[0.8s] transition-colors"
+      ref={ref}
+    >
+      {value}
+    </span>
+  );
+};
+
+import { useEffect, useLayoutEffect, useRef } from 'react';
+
+export function useInterval(callback: () => void, delay: number | null) {
+  const savedCallback = useRef(callback);
+
+  // Remember the latest callback if it changes.
+  useIsomorphicLayoutEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // Set up the interval.
+  useEffect(() => {
+    // Don't schedule if no delay is specified.
+    // Note: 0 is a valid value for delay.
+    if (delay === null) {
+      return;
+    }
+
+    const id = setInterval(() => {
+      savedCallback.current();
+    }, delay);
+
+    return () => {
+      clearInterval(id);
+    };
+  }, [delay]);
+}
+
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
