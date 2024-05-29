@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --background: #282a36;
   --background-secondary: #353f5c;
@@ -37,25 +41,25 @@ body {
   font-size: 1rem;
 }
 
-h1 {
+#old h1 {
   font-size: 1.75rem;
 }
 
-h2 {
+#old h2 {
   font-size: 1.5rem;
   font-weight: normal;
 }
 
-a {
+#old a {
   cursor: pointer;
   color: var(--link);
 }
 
-a:hover {
+#old a:hover {
   text-decoration: underline;
 }
 
-body {
+#old body {
   caret-color: var(--accent-secondary);
 }
 
@@ -64,7 +68,7 @@ body {
   min-height: 100vh;
 }
 
-a {
+#old a {
   text-decoration: none;
 }
 
@@ -72,8 +76,31 @@ a {
   box-sizing: border-box;
 }
 
-p {
+#old p {
   line-height: 1.6;
+}
+
+#new a {
+  text-decoration: underline;
+}
+
+#new *:not(#background):not(#background *) {
+  position: relative;
+  max-width: 70ch;
+  color: #171717;
+  width: fit-content;
+
+  text-decoration: underline;
+  text-decoration-thickness: 1lh;
+  text-underline-offset: -18px;
+  text-decoration-color: white;
+  text-decoration-skip-ink: none;
+}
+
+#new *:not(#background):not(#background *) ::selection {
+  background: black;
+  color: white;
+  text-decoration: none;
 }
 
 @font-face {

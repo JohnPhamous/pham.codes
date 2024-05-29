@@ -13,13 +13,14 @@ const VimLayout = ({
 }) => {
   const router = useRouter();
 
+  const isHomePage = router.pathname === '/';
   const isBlogPage = router.pathname === '/blog/[slug]';
   const description =
     "John Pham's personal website. John is a software engineer, rookie lifter, and plant parent based in Seattle.";
   const heroPath = 'https://pham.codes/images/hero.png';
 
   return (
-    <div className={styles.layout}>
+    <div className={!isHomePage ? styles.layout : styles.newLayout}>
       <Head>
         <title>{title}</title>
         {!isBlogPage && (
@@ -41,11 +42,16 @@ const VimLayout = ({
         )}
       </Head>
       <div>
-        <VimHeader />
-        <main>{children}</main>
+        {!isHomePage && (
+          <>
+            <VimHeader />
+            <main id="old">{children}</main>
+          </>
+        )}
+        {isHomePage && children}
       </div>
 
-      {!isBlogPage && <VimFooter />}
+      {!isBlogPage && !isHomePage && <VimFooter />}
     </div>
   );
 };

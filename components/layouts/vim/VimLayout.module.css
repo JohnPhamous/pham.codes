@@ -6,6 +6,13 @@
   font-family: 'Geist Mono';
 }
 
+.newLayout {
+  height: 100%;
+  min-height: 100vh;
+  font-family: 'Geist Mono';
+  overflow: hidden;
+}
+
 .layout main,
 .layout header {
   max-width: calc(80ch + var(--s32));
