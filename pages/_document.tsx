@@ -104,7 +104,7 @@ class MyDocument extends Document {
             content="/images/favicon/mstile-310x310.png"
           />
 
-          <meta name="theme-color" content="#bd93f9" />
+          <meta name="theme-color" content="white" />
           <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>

@@ -82,6 +82,16 @@ body {
 
 #new a {
   text-decoration: underline;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#new button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#new a:hover {
+  background: black;
+  color: white;
 }
 
 #new a:focus-visible {
@@ -97,7 +107,8 @@ body {
 h2:not(#background):not(#background *),
 ul:not(#background):not(#background *),
 h1:not(#background):not(#background *),
-li:not(#background):not(#background *) {
+li:not(#background):not(#background *),
+button:not(#background):not(#background *) {
   position: relative;
   max-width: 70ch;
   color: #171717;

@@ -10,9 +10,21 @@ type HomeProps = {
 };
 
 const Home: NextPage<HomeProps> = ({ backgroundCharacters }) => {
+  const [audioPlaying, setAudioPlaying] = useState(true);
+  useEffect(() => {
+    const audio = document.querySelector('audio');
+    try {
+      audio?.play()?.catch(() => {
+        setAudioPlaying(false);
+      });
+    } catch {
+      setAudioPlaying(false);
+    }
+  }, []);
+
   return (
     <main
-      className={`${styles.container} relative leading-normal pl-[2ch] pt-[2lh] pr-[2ch] sm:pt-[2lh] sm:pl-[7ch] min-h-[100dvh]`}
+      className={`${styles.container} relative leading-normal pl-[2ch] pt-[2lh] pr-[2ch] sm:pt-[2lh] sm:pl-[7ch] min-h-[100dvh] pb-[2lh]`}
       id="new"
     >
       <div
@@ -30,6 +42,24 @@ const Home: NextPage<HomeProps> = ({ backgroundCharacters }) => {
 
       <h1>john phamous</h1>
       <p>seattle, wa</p>
+
+      <button
+        className="!absolute top-[2lh] right-[2ch] sm:right-[7ch] hover:bg-black h-[1lh] transition-colors !w-[3ch] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#006aff] rounded-none hover:!text-white font-medium"
+        aria-label={audioPlaying ? 'Pause Audio' : 'Play Audio'}
+        onClick={() => {
+          const audio = document.querySelector('audio');
+          if (audioPlaying) {
+            audio?.pause();
+          } else {
+            audio?.play();
+          }
+          setAudioPlaying((prev) => !prev);
+        }}
+      >
+        <span className={audioPlaying ? 'rotate-90 block' : 'translate-x-[2px] inline-block'}>
+          {audioPlaying ? '=' : '▶'}
+        </span>
+      </button>
 
       <h2 className="font-medium mt-[3lh]">now</h2>
       <p className="mt-[0lh]">
@@ -61,6 +91,7 @@ const Home: NextPage<HomeProps> = ({ backgroundCharacters }) => {
           <Link href="/blog">blog</Link>
         </li>
       </ul>
+      <audio src="/bg.mp3"></audio>
     </main>
   );
 };
@@ -108,7 +139,7 @@ const Character = ({ value }: { value: string }) => {
   );
 };
 
-import { useEffect, useLayoutEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 export function useInterval(callback: () => void, delay: number | null) {
   const savedCallback = useRef(callback);
