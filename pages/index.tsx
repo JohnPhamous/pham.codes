@@ -154,6 +154,16 @@ const Home: NextPage<HomeProps> = () => {
             animationDelay: `calc(10 * var(--animation-delay-step))`,
           }}
         >
+          <a href="mailto:johnphamous@pre.hi.new" className="bg-white">
+            email
+          </a>
+        </li>
+        <li
+          className="animate-textFade"
+          style={{
+            animationDelay: `calc(11 * var(--animation-delay-step))`,
+          }}
+        >
           <Link href="/blog" className="bg-white">
             blog
           </Link>
