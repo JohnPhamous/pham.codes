@@ -28,14 +28,36 @@ const Home: NextPage<HomeProps> = () => {
     <main
       className={`${styles.container} relative leading-normal pl-[2ch] pt-[2lh] pr-[2ch] sm:pt-[2lh] sm:pl-[7ch] min-h-[100dvh] pb-[2lh]`}
       id="new"
+      style={
+        {
+          '--animation-delay-step': '90ms',
+        } as CSSProperties
+      }
     >
       <Background />
 
-      <h1 className="bg-white">john phamous</h1>
-      <p className="bg-white">seattle, wa</p>
+      <h1
+        className="bg-white animate-textFade"
+        style={{
+          animationDelay: `calc(1 * var(--animation-delay-step))`,
+        }}
+      >
+        john phamous
+      </h1>
+      <p
+        className="block bg-white animate-textFade"
+        style={{
+          animationDelay: `calc(2 * var(--animation-delay-step))`,
+        }}
+      >
+        seattle, wa
+      </p>
 
       <button
-        className="!absolute top-[2lh] right-[2ch] sm:right-[7ch] hover:bg-black h-[1lh] transition-colors !w-[3ch] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#006aff] rounded-none hover:!text-white font-medium bg-white"
+        className="!absolute top-[2lh] right-[2ch] sm:right-[7ch] hover:bg-black h-[1lh] transition-colors !w-[3ch] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#006aff] rounded-none hover:!text-white font-medium bg-white animate-textFade"
+        style={{
+          animationDelay: `calc(1 * var(--animation-delay-step))`,
+        }}
         aria-label={audioPlaying ? 'Pause Audio' : 'Play Audio'}
         onClick={() => {
           const audio = document.querySelector('audio');
@@ -52,13 +74,30 @@ const Home: NextPage<HomeProps> = () => {
         </span>
       </button>
 
-      <h2 className="font-bold mt-[2lh] sm:mt-[3lh] bg-white">today</h2>
-      <p className="mt-[0lh] relative">
+      <h2
+        className="font-bold mt-[2lh] sm:mt-[3lh] bg-white animate-textFade"
+        style={{
+          animationDelay: `calc(3 * var(--animation-delay-step))`,
+        }}
+      >
+        today
+      </h2>
+      <p
+        className="mt-[0lh] relative animate-textFade"
+        style={{
+          animationDelay: `calc(4 * var(--animation-delay-step))`,
+        }}
+      >
         <TextBackground text="i work as a lead design engineer at vercel designing and building interfaces. currently obsessed with weightlifting, pickelball, and learning 中文." />
         i work as a lead design engineer at <a href="https://vercel.com">vercel</a> designing and
         building interfaces. currently obsessed with weightlifting, pickelball, and learning 中文.
       </p>
-      <p className="mt-[1lh] ">
+      <p
+        className="mt-[1lh] animate-textFade"
+        style={{
+          animationDelay: `calc(5 * var(--animation-delay-step))`,
+        }}
+      >
         <TextBackground text="previously worked at highlight, codecademy, smartsheet, microsoft, nasa jpl, amazon, burberry, and spacex." />
         previously worked at <a href="https://highlight.io">highlight</a>,{' '}
         <a href="https://www.codecademy.com/">codecademy</a>,{' '}
@@ -68,8 +107,21 @@ const Home: NextPage<HomeProps> = () => {
         , and <a href="https://www.spacex.com/">spacex</a>.
       </p>
 
-      <h2 className="font-bold mt-[2lh] bg-white">angel investments</h2>
-      <p>
+      <h2
+        className="font-bold mt-[2lh] bg-white animate-textFade"
+        style={{
+          animationDelay: `calc(6 * var(--animation-delay-step))`,
+        }}
+      >
+        angel investments
+      </h2>
+
+      <p
+        className="animate-textFade"
+        style={{
+          animationDelay: `calc(7 * var(--animation-delay-step))`,
+        }}
+      >
         <TextBackground text="adaline, onboardbase, scalar, replit, wander and detangle.ai." />
         <a href="https://adaline.ai/">adaline</a>, <a href="https://onboardbase.com">onboardbase</a>
         , <a href="https://scalar.com/">scalar</a>, <a href="https://replit.com/">replit</a>,{' '}
@@ -77,14 +129,31 @@ const Home: NextPage<HomeProps> = () => {
         <a href="https://detangle.ai/">detangle.ai</a>.
       </p>
 
-      <h2 className="font-bold mt-[2lh]">links</h2>
+      <h2
+        className="font-bold mt-[2lh] animate-textFade"
+        style={{
+          animationDelay: `calc(8 * var(--animation-delay-step))`,
+        }}
+      >
+        links
+      </h2>
       <ul>
-        <li>
+        <li
+          className="animate-textFade"
+          style={{
+            animationDelay: `calc(9 * var(--animation-delay-step))`,
+          }}
+        >
           <a href="https://x.com/johnphamous" className="bg-white">
             twitter/x
           </a>
         </li>
-        <li>
+        <li
+          className="animate-textFade"
+          style={{
+            animationDelay: `calc(10 * var(--animation-delay-step))`,
+          }}
+        >
           <Link href="/blog" className="bg-white">
             blog
           </Link>
@@ -200,7 +269,14 @@ const Character = ({ value }: { value: string }) => {
   );
 };
 
-import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, {
+  CSSProperties,
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 
 export function useInterval(callback: () => void, delay: number | null) {
   const savedCallback = useRef(callback);

@@ -114,14 +114,8 @@ body {
   color: #171717;
   width: fit-content;
 
-  /* text-decoration: underline;
-  text-decoration-thickness: 1lh;
-  text-underline-offset: -18px;
-  text-decoration-color: white;
-  text-decoration-skip-ink: none; */
-
   opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
+  animation: fadeIn 0.7s ease-in both;
   animation-delay: 0.4s;
 }
 
