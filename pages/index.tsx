@@ -88,9 +88,9 @@ const Home: NextPage<HomeProps> = () => {
           animationDelay: `calc(4 * var(--animation-delay-step))`,
         }}
       >
-        <TextBackground text="i work as a lead design engineer at vercel designing and building interfaces. currently obsessed with weightlifting, pickelball, and learning 中文." />
+        <TextBackground text="i work as a lead design engineer at vercel designing and building interfaces. currently obsessed with weightlifting, pickleball, and learning 中文." />
         i work as a lead design engineer at <a href="https://vercel.com">vercel</a> designing and
-        building interfaces. currently obsessed with weightlifting, pickelball, and learning 中文.
+        building interfaces. currently obsessed with weightlifting, pickleball, and learning 中文.
       </p>
       <p
         className="mt-[1lh] animate-textFade"
