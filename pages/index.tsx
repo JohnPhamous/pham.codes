@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
-import styles from './index.module.css';
 import Link from 'next/link';
+import styles from './index.module.css';
 
 const BACKGROUND_CHARACTERS = ' *,      ./0!8#X~;$\\}%'.replaceAll(' ', '\u00A0');
 
@@ -69,7 +69,7 @@ const Home: NextPage<HomeProps> = () => {
           setAudioPlaying((prev) => !prev);
         }}
       >
-        <span className={audioPlaying ? 'rotate-90 block' : 'translate-x-[2px] inline-block'}>
+        <span className={audioPlaying ? 'block rotate-90' : 'inline-block translate-x-[2px]'}>
           {audioPlaying ? ' = ' : <>&nbsp;▶&nbsp;</>}
         </span>
       </button>
@@ -88,9 +88,9 @@ const Home: NextPage<HomeProps> = () => {
           animationDelay: `calc(4 * var(--animation-delay-step))`,
         }}
       >
-        <TextBackground text="i work as a lead design engineer at vercel designing and building interfaces. currently obsessed with weightlifting, pickleball, and learning 中文." />
-        i work as a lead design engineer at <a href="https://vercel.com">vercel</a> designing and
-        building interfaces. currently obsessed with weightlifting, pickleball, and learning 中文.
+        <TextBackground text="studying to be a webmaster, designing and building interfaces everyday. currently obsessed with weightlifting, pickleball, and learning 中文." />
+        studying to be a webmaster, designing and building interfaces everyday. currently obsessed
+        with weightlifting, pickleball, and learning 中文.
       </p>
       <p
         className="mt-[1lh] animate-textFade"
@@ -99,7 +99,8 @@ const Home: NextPage<HomeProps> = () => {
         }}
       >
         <TextBackground text="previously worked at highlight, codecademy, smartsheet, microsoft, nasa jpl, amazon, burberry, and spacex." />
-        previously worked at <a href="https://highlight.io">highlight</a>,{' '}
+        previously worked at <a href="https://vercel.com">vercel</a>,{' '}
+        <a href="https://highlight.io">highlight</a>,{' '}
         <a href="https://www.codecademy.com/">codecademy</a>,{' '}
         <a href="https://smartsheet.com">smartsheet</a>,{' '}
         <a href="https://microsoft.com">microsoft</a>, <a href="https://jpl.nasa.gov">nasa jpl</a>,{' '}
@@ -117,16 +118,16 @@ const Home: NextPage<HomeProps> = () => {
       </h2>
 
       <p
-        className="animate-textFade"
+        className="animate-textFade text-pretty"
         style={{
           animationDelay: `calc(7 * var(--animation-delay-step))`,
         }}
       >
-        <TextBackground text="adaline, onboardbase, scalar, replit, wander and detangle.ai." />
+        <TextBackground text="million, ▀█▄░█▓▒█, adaline, onboardbase, scalar, replit, wander and maybe." />
+        <a href="https://million.dev/">million</a>, <a href="https://dub.sh/Tv15Qx7">▀█▄░█▓▒█</a>,{' '}
         <a href="https://adaline.ai/">adaline</a>, <a href="https://onboardbase.com">onboardbase</a>
         , <a href="https://scalar.com/">scalar</a>, <a href="https://replit.com/">replit</a>,{' '}
-        <a href="https://www.wander.com/">wander</a> and{' '}
-        <a href="https://detangle.ai/">detangle.ai</a>.
+        <a href="https://www.wander.com/">wander</a> and <a href="https://maybe.co/">maybe</a>.
       </p>
 
       <h2
@@ -154,7 +155,7 @@ const Home: NextPage<HomeProps> = () => {
             animationDelay: `calc(10 * var(--animation-delay-step))`,
           }}
         >
-          <a href="mailto:johnphamous@pre.hi.new" className="bg-white">
+          <a href="mailto:johnphamous@gmail.com" className="bg-white">
             email
           </a>
         </li>
@@ -279,14 +280,7 @@ const Character = ({ value }: { value: string }) => {
   );
 };
 
-import React, {
-  CSSProperties,
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from 'react';
+import { CSSProperties, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 export function useInterval(callback: () => void, delay: number | null) {
   const savedCallback = useRef(callback);
