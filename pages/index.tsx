@@ -88,9 +88,9 @@ const Home: NextPage<HomeProps> = () => {
           animationDelay: `calc(4 * var(--animation-delay-step))`,
         }}
       >
-        <TextBackground text="studying to be a webmaster, designing and building interfaces everyday. currently obsessed with weightlifting, pickleball, and learning 中文." />
-        studying to be a webmaster, designing and building interfaces everyday. currently obsessed
-        with weightlifting, pickleball, and learning 中文.
+        <TextBackground text="head of design at sf compute. currently obsessed with weightlifting and learning 中文." />
+        head of design at <a href="https://sfcompute.com">sf compute</a>. currently obsessed with
+        with weightlifting and learning 中文.
       </p>
       <p
         className="mt-[1lh] animate-textFade"
@@ -123,8 +123,8 @@ const Home: NextPage<HomeProps> = () => {
           animationDelay: `calc(7 * var(--animation-delay-step))`,
         }}
       >
-        <TextBackground text="million, ▀█▄░█▓▒█, adaline, onboardbase, scalar, replit, wander and maybe." />
-        <a href="https://million.dev/">million</a>, <a href="https://dub.sh/Tv15Qx7">▀█▄░█▓▒█</a>,{' '}
+        <TextBackground text="million, paper, adaline, onboardbase, scalar, replit, wander and maybe." />
+        <a href="https://million.dev/">million</a>, <a href="https://paper.design/">paper</a>,{' '}
         <a href="https://adaline.ai/">adaline</a>, <a href="https://onboardbase.com">onboardbase</a>
         , <a href="https://scalar.com/">scalar</a>, <a href="https://replit.com/">replit</a>,{' '}
         <a href="https://www.wander.com/">wander</a> and <a href="https://maybe.co/">maybe</a>.
@@ -146,7 +146,7 @@ const Home: NextPage<HomeProps> = () => {
           }}
         >
           <a href="https://x.com/johnphamous" className="bg-white">
-            twitter/x
+            twitter
           </a>
         </li>
         <li
@@ -155,7 +155,7 @@ const Home: NextPage<HomeProps> = () => {
             animationDelay: `calc(10 * var(--animation-delay-step))`,
           }}
         >
-          <a href="mailto:johnphamous@gmail.com" className="bg-white">
+          <a href="mailto:john@pham.codes" className="bg-white">
             email
           </a>
         </li>
@@ -280,7 +280,14 @@ const Character = ({ value }: { value: string }) => {
   );
 };
 
-import { CSSProperties, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import {
+  type CSSProperties,
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 
 export function useInterval(callback: () => void, delay: number | null) {
   const savedCallback = useRef(callback);
