@@ -32,6 +32,11 @@ const VimHeader = () => {
           </NextLink>
         </li>
         <li>
+          <NextLink href="/ai-training" className={styles.link} aria-label="AI Training">
+            _aiTraining
+          </NextLink>
+        </li>
+        <li>
           <a className={styles.link} href="mailto:john@pham.codes">
             email
           </a>
