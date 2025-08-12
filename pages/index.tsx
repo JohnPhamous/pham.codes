@@ -9,6 +9,7 @@ type HomeProps = {
 };
 
 const Home: NextPage<HomeProps> = () => {
+  const mainRef = useRef<HTMLElement>(null);
   const [audioPlaying, setAudioPlaying] = useState(false);
   useEffect(() => {
     const audio = document.querySelector('audio');
@@ -24,10 +25,26 @@ const Home: NextPage<HomeProps> = () => {
     }
   }, []);
 
+  // Automatically apply staggered animation delays to elements with the
+  // `animate-textFade` class within the main container.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const container = mainRef.current;
+    if (!container) return;
+
+    const nodes = container.querySelectorAll('.animate-textFade');
+    nodes.forEach((el, index) => {
+      (el as HTMLElement).style.animationDelay = `calc(${index + 1} * var(--animation-delay-step))`;
+    });
+  }, []);
+
   return (
     <main
       className={`${styles.container} relative leading-normal pl-[2ch] pt-[1lh] pr-[2ch] sm:pt-[2lh] sm:pl-[7ch] min-h-[100dvh] pb-[1lh]`}
       id="new"
+      ref={mainRef}
       style={
         {
           '--animation-delay-step': '50ms',
@@ -36,28 +53,11 @@ const Home: NextPage<HomeProps> = () => {
     >
       <Background />
 
-      <h1
-        className="bg-white animate-textFade"
-        style={{
-          animationDelay: `calc(1 * var(--animation-delay-step))`,
-        }}
-      >
-        john phamous
-      </h1>
-      <p
-        className="block bg-white animate-textFade"
-        style={{
-          animationDelay: `calc(2 * var(--animation-delay-step))`,
-        }}
-      >
-        seattle, wa
-      </p>
+      <h1 className="bg-white animate-textFade">john phamous</h1>
+      <p className="block bg-white animate-textFade">seattle, wa</p>
 
       <button
         className="!absolute top-[1lh] right-[2ch] sm:right-[7ch] hover:bg-black h-[1lh] transition-colors !w-[3ch] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#006aff] rounded-none hover:!text-white font-medium bg-white animate-textFade"
-        style={{
-          animationDelay: `calc(1 * var(--animation-delay-step))`,
-        }}
         aria-label={audioPlaying ? 'Pause Audio' : 'Play Audio'}
         onClick={() => {
           const audio = document.querySelector('audio');
@@ -74,92 +74,37 @@ const Home: NextPage<HomeProps> = () => {
         </span>
       </button>
 
-      <h2
-        className="font-bold mt-[2lh] sm:mt-[3lh] bg-white animate-textFade"
-        style={{
-          animationDelay: `calc(3 * var(--animation-delay-step))`,
-        }}
-      >
-        today
-      </h2>
-      <p
-        className="mt-[0lh] relative animate-textFade"
-        style={{
-          animationDelay: `calc(4 * var(--animation-delay-step))`,
-        }}
-      >
+      <h2 className="font-bold mt-[2lh] sm:mt-[3lh] bg-white animate-textFade">today</h2>
+      <p className="mt-[0lh] relative animate-textFade">
         <TextBackground text="head of design at sf compute. currently obsessed with weightlifting and learning 中文." />
         head of design at <a href="https://sfcompute.com">sf compute</a>. currently obsessed with
         with weightlifting and learning 中文.
       </p>
 
-      <h2
-        className="font-bold mt-[2lh] bg-white animate-textFade"
-        style={{
-          animationDelay: `calc(5 * var(--animation-delay-step))`,
-        }}
-      >
-        past
-      </h2>
+      <h2 className="font-bold mt-[2lh] bg-white animate-textFade">past</h2>
       <ul>
-        <li
-          className="bg-white animate-textFade"
-          style={{
-            animationDelay: `calc(5.5 * var(--animation-delay-step))`,
-          }}
-        >
+        <li className="bg-white animate-textFade">
           <a href="https://vercel.com">vercel</a>, lead design engineer
         </li>
-        <li
-          className="bg-white animate-textFade"
-          style={{
-            animationDelay: `calc(6 * var(--animation-delay-step))`,
-          }}
-        >
+        <li className="bg-white animate-textFade">
           <a href="https://highlight.io">highlight</a>, founding engineer
         </li>
-        <li
-          className="bg-white animate-textFade"
-          style={{
-            animationDelay: `calc(6.5 * var(--animation-delay-step))`,
-          }}
-        >
-          <a href="https://www.codecademy.com/">codecademy</a>, consultant
-        </li>
-        <li
-          className="bg-white animate-textFade"
-          style={{
-            animationDelay: `calc(7 * var(--animation-delay-step))`,
-          }}
-        >
+        <li className="bg-white animate-textFade">
           <a href="https://microsoft.com">microsoft</a>, software engineer
         </li>
-        <li
-          className="bg-white animate-textFade"
-          style={{
-            animationDelay: `calc(7.5 * var(--animation-delay-step))`,
-          }}
-        >
+        <li className="bg-white animate-textFade">
           <a href="https://jpl.nasa.gov">nasa&nbsp;jpl</a>, software engineer
         </li>
       </ul>
 
-      <h2
-        className="font-bold mt-[2lh] bg-white animate-textFade"
-        style={{
-          animationDelay: `calc(12 * var(--animation-delay-step))`,
-        }}
-      >
-        angel investments
-      </h2>
+      <h2 className="font-bold mt-[2lh] bg-white animate-textFade">angel investments</h2>
 
-      <p
-        className="animate-textFade text-pretty"
-        style={{
-          animationDelay: `calc(13 * var(--animation-delay-step))`,
-        }}
-      >
-        <TextBackground text="million, paper, adaline, onboardbase, scalar, replit, spencer agent, puma browser, wander and maybe." />
+      <p className="animate-textFade text-pretty">
+        <TextBackground text="ssi, million, paper, adaline, scalar, replit, spencer agent, puma browser, wander and maybe." />
+        <a href="https://ssi.inc/" target="_blank">
+          ssi
+        </a>
+        ,{' '}
         <a href="https://million.dev/" target="_blank">
           million
         </a>
@@ -170,10 +115,6 @@ const Home: NextPage<HomeProps> = () => {
         ,{' '}
         <a href="https://adaline.ai/" target="_blank">
           adaline
-        </a>
-        ,{' '}
-        <a href="https://onboardbase.com" target="_blank">
-          onboardbase
         </a>
         ,{' '}
         <a href="https://scalar.com/" target="_blank">
@@ -202,41 +143,23 @@ const Home: NextPage<HomeProps> = () => {
         .
       </p>
 
-      <h2
-        className="font-bold mt-[2lh] animate-textFade bg-white"
-        style={{
-          animationDelay: `calc(14 * var(--animation-delay-step))`,
-        }}
-      >
-        links
-      </h2>
+      <p className="animate-textFade mt-[1lh] bg-white">
+        investing in devtool and design companies, msg me for the collab
+      </p>
+
+      <h2 className="font-bold mt-[2lh] animate-textFade bg-white">links</h2>
       <ul>
-        <li
-          className="animate-textFade"
-          style={{
-            animationDelay: `calc(15 * var(--animation-delay-step))`,
-          }}
-        >
+        <li className="animate-textFade">
           <a href="https://x.com/johnphamous" className="bg-white">
             twitter
           </a>
         </li>
-        <li
-          className="animate-textFade"
-          style={{
-            animationDelay: `calc(15.5 * var(--animation-delay-step))`,
-          }}
-        >
+        <li className="animate-textFade">
           <a href="mailto:john@pham.codes" className="bg-white">
             email
           </a>
         </li>
-        <li
-          className="animate-textFade"
-          style={{
-            animationDelay: `calc(16 * var(--animation-delay-step))`,
-          }}
-        >
+        <li className="animate-textFade">
           <Link href="/blog" className="bg-white">
             blog
           </Link>
