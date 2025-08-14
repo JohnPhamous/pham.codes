@@ -78,7 +78,7 @@ const Home: NextPage<HomeProps> = () => {
       <p className="mt-[0lh] relative animate-textFade">
         <TextBackground text="head of design at sf compute. currently obsessed with weightlifting and learning 中文." />
         head of design at <a href="https://sfcompute.com">sf compute</a>. currently obsessed with
-        with weightlifting and learning 中文.
+        weightlifting and learning 中文.
       </p>
 
       <h2 className="font-bold mt-[2lh] bg-white animate-textFade">past</h2>
