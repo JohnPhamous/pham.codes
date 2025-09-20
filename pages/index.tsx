@@ -76,13 +76,16 @@ const Home: NextPage<HomeProps> = () => {
 
       <h2 className="font-bold mt-[2lh] sm:mt-[3lh] bg-white animate-textFade">today</h2>
       <p className="mt-[0lh] relative animate-textFade">
-        <TextBackground text="head of design at sf compute. currently obsessed with weightlifting and learning 中文." />
-        head of design at <a href="https://sfcompute.com">sf compute</a>. currently obsessed with
+        <TextBackground text="leading the product design engineering team at vercel. currently obsessed with weightlifting and learning 中文." />
+        leading the product design engineering team at <a href="https://vercel.com">vercel</a>. currently obsessed with
         weightlifting and learning 中文.
       </p>
 
       <h2 className="font-bold mt-[2lh] bg-white animate-textFade">past</h2>
       <ul>
+        <li className="bg-white animate-textFade">
+          <a href="https://sfcompute.com">sf compute</a>, head of design
+        </li>
         <li className="bg-white animate-textFade">
           <a href="https://vercel.com">vercel</a>, lead design engineer
         </li>
