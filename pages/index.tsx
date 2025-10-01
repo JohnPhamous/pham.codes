@@ -76,8 +76,8 @@ const Home: NextPage<HomeProps> = () => {
 
       <h2 className="font-bold mt-[2lh] sm:mt-[3lh] bg-white animate-textFade">today</h2>
       <p className="mt-[0lh] relative animate-textFade">
-        <TextBackground text="leading the product design engineering team at vercel. currently obsessed with weightlifting and learning 中文." />
-        leading the product design engineering team at <a href="https://vercel.com">vercel</a>. currently obsessed with
+        <TextBackground text="supporting the product design engineering team at vercel. currently obsessed with weightlifting and learning 中文." />
+        supporting the product design engineering team at <a href="https://vercel.com">vercel</a>. currently obsessed with
         weightlifting and learning 中文.
       </p>
 
