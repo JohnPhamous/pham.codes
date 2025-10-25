@@ -77,8 +77,8 @@ const Home: NextPage<HomeProps> = () => {
       <h2 className="font-bold mt-[2lh] sm:mt-[3lh] bg-white animate-textFade">today</h2>
       <p className="mt-[0lh] relative animate-textFade">
         <TextBackground text="supporting the product design engineering team at vercel. currently obsessed with weightlifting and learning 中文." />
-        supporting the product design engineering team at <a href="https://vercel.com">vercel</a>. currently obsessed with
-        weightlifting and learning 中文.
+        supporting the product design engineering team at <a href="https://vercel.com">vercel</a>.
+        currently obsessed with weightlifting and learning 中文.
       </p>
 
       <h2 className="font-bold mt-[2lh] bg-white animate-textFade">past</h2>
@@ -103,11 +103,7 @@ const Home: NextPage<HomeProps> = () => {
       <h2 className="font-bold mt-[2lh] bg-white animate-textFade">angel investments</h2>
 
       <p className="animate-textFade text-pretty">
-        <TextBackground text="ssi, million, paper, adaline, scalar, replit, spencer agent, puma browser, wander and maybe." />
-        <a href="https://ssi.inc/" target="_blank">
-          ssi
-        </a>
-        ,{' '}
+        <TextBackground text="million, paper, adaline, scalar, replit, spencer agent, puma browser, wander, ssi and maybe." />
         <a href="https://million.dev/" target="_blank">
           million
         </a>
@@ -138,6 +134,10 @@ const Home: NextPage<HomeProps> = () => {
         ,{' '}
         <a href="https://www.wander.com/" target="_blank">
           wander
+        </a>
+        ,{' '}
+        <a href="https://ssi.inc/" target="_blank">
+          ssi
         </a>{' '}
         and{' '}
         <a href="https://maybe.co/" target="_blank">
