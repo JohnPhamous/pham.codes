@@ -103,7 +103,7 @@ const Home: NextPage<HomeProps> = () => {
       <h2 className="font-bold mt-[2lh] bg-white animate-textFade">angel investments</h2>
 
       <p className="animate-textFade text-pretty">
-        <TextBackground text="million, paper, adaline, scalar, replit, spencer agent, puma browser, wander, ssi and maybe." />
+        <TextBackground text="million, paper, adaline, scalar, replit, spencer agent, puma browser, wander, ssi, maybe, general intelligence company, the context company and aside." />
         <a href="https://million.dev/" target="_blank">
           million
         </a>
@@ -138,10 +138,22 @@ const Home: NextPage<HomeProps> = () => {
         ,{' '}
         <a href="https://ssi.inc/" target="_blank">
           ssi
-        </a>{' '}
-        and{' '}
+        </a>
+        ,{' '}
         <a href="https://maybe.co/" target="_blank">
           maybe
+        </a>
+        ,{' '}
+        <a href="https://www.generalintelligencecompany.com/" target="_blank">
+          general intelligence company
+        </a>
+        ,{' '}
+        <a href="https://www.thecontext.company/" target="_blank">
+          the context company
+        </a>{' '}
+        and{' '}
+        <a href="https://asidehq.com/" target="_blank">
+          aside
         </a>
         .
       </p>
