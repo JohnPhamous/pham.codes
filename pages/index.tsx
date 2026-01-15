@@ -103,7 +103,7 @@ const Home: NextPage<HomeProps> = () => {
       <h2 className="font-bold mt-[2lh] bg-white animate-textFade">angel investments</h2>
 
       <p className="animate-textFade text-pretty">
-        <TextBackground text="million, paper, adaline, scalar, replit, spencer agent, puma browser, wander, ssi, maybe, general intelligence company, the context company and aside." />
+        <TextBackground text="million, paper, adaline, scalar, replit, spencer agent, puma browser, wander, ssi, maybe, general intelligence company, the context company, aside, onboardbase[closed] & absurd." />
         <a href="https://million.dev/" target="_blank">
           million
         </a>
@@ -150,10 +150,18 @@ const Home: NextPage<HomeProps> = () => {
         ,{' '}
         <a href="https://www.thecontext.company/" target="_blank">
           the context company
-        </a>{' '}
-        and{' '}
+        </a>
+        ,{' '}
         <a href="https://asidehq.com/" target="_blank">
           aside
+        </a>
+        ,{' '}
+        <a href="https://onboardbase.com/" target="_blank" className="opacity-50">
+          onboardbase[closed]
+        </a>{' '}
+        &{' '}
+        <a href="https://absurd.com/" target="_blank">
+          absurd
         </a>
         .
       </p>
