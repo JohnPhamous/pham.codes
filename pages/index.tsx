@@ -1,6 +1,13 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import styles from './index.module.css';
+import { THEME, type ThemeMode } from '../config/theme';
+
+const DogFollower = dynamic(
+  () => import('../components/DogFollower/DogFollower').then((mod) => mod.DogFollower),
+  { ssr: false }
+);
 
 const BACKGROUND_CHARACTERS = ' *,      ./0!8#X~;$\\}%'.replaceAll(' ', '\u00A0');
 
@@ -11,6 +18,11 @@ type HomeProps = {
 const Home: NextPage<HomeProps> = () => {
   const mainRef = useRef<HTMLElement>(null);
   const [audioPlaying, setAudioPlaying] = useState(false);
+  const [dogEnabled, setDogEnabled] = useState(false);
+
+  const themeMode: ThemeMode = dogEnabled ? 'mello' : 'default';
+  const theme = THEME[themeMode];
+
   useEffect(() => {
     const audio = document.querySelector('audio');
     try {
@@ -42,22 +54,27 @@ const Home: NextPage<HomeProps> = () => {
 
   return (
     <main
-      className={`${styles.container} relative leading-normal pl-[2ch] pt-[1lh] pr-[2ch] sm:pt-[2lh] sm:pl-[7ch] min-h-[100dvh] pb-[1lh]`}
+      className={`${styles.container} ${
+        dogEnabled ? styles.melloMode : ''
+      } relative leading-normal pl-[2ch] pt-[1lh] pr-[2ch] sm:pt-[2lh] sm:pl-[7ch] min-h-[100dvh] pb-[1lh]`}
       id="new"
       ref={mainRef}
       style={
         {
           '--animation-delay-step': '50ms',
+          '--background-color': theme.bg,
+          backgroundColor: theme.bg,
+          color: theme.text,
         } as CSSProperties
       }
     >
-      <Background />
+      {theme.showBackground && <Background />}
 
-      <h1 className="bg-white animate-textFade">john phamous</h1>
-      <p className="block bg-white animate-textFade">seattle, wa</p>
+      <h1 className={`${styles.themedElement} animate-textFade`}>john phamous</h1>
+      <p className={`block ${styles.themedElement} animate-textFade`}>seattle, wa</p>
 
       <button
-        className="!absolute top-[1lh] right-[2ch] sm:right-[7ch] hover:bg-black h-[1lh] transition-colors !w-[3ch] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#006aff] rounded-none hover:!text-white font-medium bg-white animate-textFade"
+        className={`!absolute top-[1lh] right-[2ch] sm:right-[7ch] hover:bg-black h-[1lh] transition-colors !w-[3ch] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#006aff] rounded-none hover:!text-white font-medium ${styles.themedElement} animate-textFade`}
         aria-label={audioPlaying ? 'Pause Audio' : 'Play Audio'}
         onClick={() => {
           const audio = document.querySelector('audio');
@@ -74,36 +91,55 @@ const Home: NextPage<HomeProps> = () => {
         </span>
       </button>
 
-      <h2 className="font-bold mt-[2lh] sm:mt-[3lh] bg-white animate-textFade">today</h2>
+      <button
+        className={`!absolute top-[1lh] right-[4ch] sm:right-[10ch] hover:bg-black h-[1lh] transition-colors !w-[3ch] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#006aff] rounded-none hover:!text-white font-medium ${styles.themedElement} animate-textFade`}
+        aria-label={dogEnabled ? 'Hide Mello' : 'Show Mello'}
+        onClick={() => setDogEnabled((prev) => !prev)}
+      >
+        m
+      </button>
+
+      <h2 className={`font-bold mt-[2lh] sm:mt-[3lh] ${styles.themedElement} animate-textFade`}>
+        today
+      </h2>
       <p className="mt-[0lh] relative animate-textFade">
-        <TextBackground text="supporting the product design engineering team at vercel. currently obsessed with weightlifting and learning 中文." />
-        supporting the product design engineering team at <a href="https://vercel.com">vercel</a>.
-        currently obsessed with weightlifting and learning 中文.
+        <TextBackground text="manager supporting the product design engineering team at vercel. currently obsessed with weightlifting & learning 中文." />
+        manager supporting the product design engineering team at{' '}
+        <a href="https://vercel.com">vercel</a>. currently obsessed with weightlifting & learning
+        中文.
       </p>
 
-      <h2 className="font-bold mt-[2lh] bg-white animate-textFade">past</h2>
+      <h2 className={`font-bold mt-[2lh] ${styles.themedElement} animate-textFade`}>past</h2>
       <ul>
-        <li className="bg-white animate-textFade">
+        <li className={`${styles.themedElement} animate-textFade`}>
           <a href="https://sfcompute.com">sf compute</a>, head of design
         </li>
-        <li className="bg-white animate-textFade">
+        <li className={`${styles.themedElement} animate-textFade`}>
           <a href="https://vercel.com">vercel</a>, lead design engineer
         </li>
-        <li className="bg-white animate-textFade">
+        <li className={`${styles.themedElement} animate-textFade`}>
           <a href="https://highlight.io">highlight</a>, founding engineer
         </li>
-        <li className="bg-white animate-textFade">
+        <li className={`${styles.themedElement} animate-textFade`}>
           <a href="https://microsoft.com">microsoft</a>, software engineer
         </li>
-        <li className="bg-white animate-textFade">
+        <li className={`${styles.themedElement} animate-textFade`}>
           <a href="https://jpl.nasa.gov">nasa&nbsp;jpl</a>, software engineer
         </li>
       </ul>
 
-      <h2 className="font-bold mt-[2lh] bg-white animate-textFade">angel investments</h2>
+      <h2 className={`font-bold mt-[2lh] ${styles.themedElement} animate-textFade`}>
+        angel investments
+      </h2>
+
+      <p className={`animate-textFade my-[1lh] ${styles.themedElement} text-pretty`}>
+        investing in devtool & design companies personally & as an a16z scout.
+      </p>
 
       <p className="animate-textFade text-pretty">
-        <TextBackground text="million, paper, adaline, scalar, replit, spencer agent, puma browser, wander, ssi, maybe, general intelligence company, the context company, aside, onboardbase[closed] & absurd." />
+        {themeMode === 'default' && (
+          <TextBackground text="million, paper, adaline, scalar, replit, spencer agent, puma browser, wander, ssi, maybe, general intelligence company, the context company, aside, onboardbase[closed] & absurd." />
+        )}
         <a href="https://million.dev/" target="_blank">
           million
         </a>
@@ -166,30 +202,27 @@ const Home: NextPage<HomeProps> = () => {
         .
       </p>
 
-      <p className="animate-textFade mt-[1lh] bg-white">
-        investing in devtool and design companies, msg me for the collab
-      </p>
-
-      <h2 className="font-bold mt-[2lh] animate-textFade bg-white">links</h2>
+      <h2 className={`font-bold mt-[2lh] animate-textFade ${styles.themedElement}`}>links</h2>
       <ul>
         <li className="animate-textFade">
-          <a href="https://x.com/johnphamous" className="bg-white">
+          <a href="https://x.com/johnphamous" className={styles.themedElement}>
             twitter
           </a>
         </li>
         <li className="animate-textFade">
-          <a href="mailto:john@pham.codes" className="bg-white">
+          <a href="mailto:john@pham.codes" className={styles.themedElement}>
             email
           </a>
         </li>
         <li className="animate-textFade">
-          <Link href="/blog" className="bg-white">
+          <Link href="/blog" className={styles.themedElement}>
             blog
           </Link>
         </li>
       </ul>
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <audio src="/bg.mp3"></audio>
+      {dogEnabled && <DogFollower />}
     </main>
   );
 };
@@ -342,7 +375,7 @@ const TextBackground = ({ text }: { text: string }) => {
       aria-hidden
     >
       <span
-        className="text-white bg-white"
+        className={styles.textBackground}
         style={{
           overflowWrap: 'anywhere',
         }}

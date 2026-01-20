@@ -1,3 +1,57 @@
 .container {
   font-size: 1rem;
 }
+
+/* Element with white bg in default mode, transparent in mello */
+.themedElement {
+  background-color: white;
+}
+
+/* TextBackground - white text on white bg for masking */
+.textBackground {
+  color: white;
+  background-color: white;
+}
+
+/* Mello mode */
+.melloMode {
+  background-image: url('/sprites/grass.png');
+  background-repeat: repeat;
+  background-size: 264px;
+}
+
+.melloMode .themedElement {
+  background-color: transparent;
+}
+
+.melloMode .textBackground {
+  color: var(--background-color);
+  background-color: revert;
+}
+
+.melloMode :global(h1),
+.melloMode :global(h2),
+.melloMode :global(p),
+.melloMode :global(li),
+.melloMode :global(ul),
+.melloMode :global(span),
+.melloMode :global(button),
+.melloMode :global(a) {
+  color: var(--text-color) !important;
+}
+
+.melloMode :global(a:hover),
+.melloMode :global(#new a:hover) {
+  color: var(--text-color) !important;
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.melloMode :global(button:hover) {
+  background-color: white !important;
+  color: var(--background-color) !important;
+}
+
+.melloMode :global(::selection) {
+  background-color: white;
+  color: var(--background-color);
+}

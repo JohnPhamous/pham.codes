@@ -1,0 +1,12 @@
+.dog {
+  position: fixed;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 9999;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.left {
+  transform: scaleX(-1);
+}
