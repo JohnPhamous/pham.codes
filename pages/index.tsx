@@ -138,7 +138,7 @@ const Home: NextPage<HomeProps> = () => {
 
       <p className="animate-textFade text-pretty">
         {themeMode === 'default' && (
-          <TextBackground text="million, paper, adaline, scalar, replit, spencer agent, puma browser, wander, ssi, maybe, general intelligence company, the context company, aside, onboardbase[closed] & absurd." />
+          <TextBackground text="million, paper, adaline, scalar, replit, spencer agent, puma browser, wander, ssi, general intelligence company, the context company, aside, martini, regbase & absurd." />
         )}
         <a href="https://million.dev/" target="_blank">
           million
@@ -176,10 +176,6 @@ const Home: NextPage<HomeProps> = () => {
           ssi
         </a>
         ,{' '}
-        <a href="https://maybe.co/" target="_blank">
-          maybe
-        </a>
-        ,{' '}
         <a href="https://www.generalintelligencecompany.com/" target="_blank">
           general intelligence company
         </a>
@@ -192,8 +188,12 @@ const Home: NextPage<HomeProps> = () => {
           aside
         </a>
         ,{' '}
-        <a href="https://onboardbase.com/" target="_blank" className="opacity-50">
-          onboardbase[closed]
+        <a href="https://www.martini.film/" target="_blank">
+          martini
+        </a>
+        ,{' '}
+        <a href="https://www.regbase.com/" target="_blank">
+          regbase
         </a>{' '}
         &{' '}
         <a href="https://absurd.com/" target="_blank">
