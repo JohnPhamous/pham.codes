@@ -138,7 +138,7 @@ const Home: NextPage<HomeProps> = () => {
 
       <p className="animate-textFade text-pretty">
         {themeMode === 'default' && (
-          <TextBackground text="million, paper, adaline, scalar, replit, spencer agent, puma browser, wander, ssi, general intelligence company, the context company, aside, martini, regbase, absurd & executor." />
+          <TextBackground text="million, paper, adaline, scalar, replit, spencer agent, puma browser, wander, ssi, general intelligence company, the context company, aside, martini, regbase, absurd, executor, polar, creature, mecha, vakna, polylane & proto." />
         )}
         <a href="https://million.dev/" target="_blank">
           million
@@ -198,10 +198,34 @@ const Home: NextPage<HomeProps> = () => {
         ,{' '}
         <a href="https://absurd.com/" target="_blank">
           absurd
-        </a>{' '}
-        &{' '}
+        </a>
+        ,{' '}
         <a href="https://executor.sh/" target="_blank">
           executor
+        </a>
+        ,{' '}
+        <a href="https://polar.so/" target="_blank">
+          polar
+        </a>
+        ,{' '}
+        <a href="https://lilguy.net/" target="_blank">
+          creature
+        </a>
+        ,{' '}
+        <a href="https://mechacorp.ai/" target="_blank">
+          mecha
+        </a>
+        ,{' '}
+        <a href="https://vakna.com/" target="_blank">
+          vakna
+        </a>
+        ,{' '}
+        <a href="https://polylane.com/" target="_blank">
+          polylane
+        </a>{' '}
+        &{' '}
+        <a href="https://prototypes.fun/" target="_blank">
+          proto
         </a>
         .
       </p>
